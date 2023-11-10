@@ -2,13 +2,13 @@ name: Deploy Github pages
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@main
       with:
         persist-credentials: false
     - name: Install and Build

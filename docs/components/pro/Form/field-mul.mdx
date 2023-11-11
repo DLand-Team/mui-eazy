@@ -12,15 +12,16 @@ import BrowserWindow from '@site/src/components/BrowserWindow';
 import CodeBlock from '@theme/CodeBlock';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {FieldMulDemo,FieldTextProps,FormProvider,FieldMul,NotifyProvider} from '@site/src/theme/ReactLiveScope/components'
+import {FieldMulDemo,FieldMulDemo2,FieldTextProps,FormProvider,FieldMul,NotifyProvider} from '@site/src/theme/ReactLiveScope/components'
 ```
 
 ```mdx-code-block
 <NotifyProvider>
  <Tabs
-  defaultValue="Demo"
+  defaultValue="Demo1"
   values={[
-    {label: 'Demo', value: 'Demo'},
+    {label: 'Demo1', value: 'Demo1'},
+    {label: 'Demo2', value: 'Demo2'},
     {label: 'PlayGround', value: 'PlayGround'},
   ]}>
   <TabItem value="PlayGround">
@@ -60,13 +61,21 @@ render(<Demo />);
 
 ```mdx-code-block
 </TabItem>
-<TabItem value="Demo">
+<TabItem value="Demo1">
 ```
 
 <BrowserWindow>
   <FieldMulDemo />
 </BrowserWindow>
 
+```mdx-code-block
+</TabItem>
+<TabItem value="Demo2">
+```
+
+<BrowserWindow>
+  <FieldMulDemo2 />
+</BrowserWindow>
 ```mdx-code-block
 </TabItem>
 </Tabs>

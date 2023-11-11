@@ -17,7 +17,7 @@ export { default as FieldAutoCompleteDemo } from "./FieldAutoCompleteDemo";
 export { default as FieldCheckboxDemo } from "./FieldCheckboxDemo";
 export { default as FieldDatePickerDemo } from "./FieldDatePickerDemo";
 export { default as FieldEditorDemo } from "./FieldEditorDemo";
-export { default as FieldMulDemo } from "./FieldMulDemo";
+export { default as FieldMulDemo, FieldMulDemo2 } from "./FieldMulDemo";
 export { default as FieldRadioGroupDemo } from "./FieldRadioGroupDemo";
 export { default as FieldSelectDemo } from "./FieldSelectDemo";
 export { default as FieldSliderDemo } from "./FieldSliderDemo";
@@ -25,45 +25,45 @@ export { default as FieldSwitchDemo } from "./FieldSwitchDemo";
 export { default as FieldCodeDemo } from "./FieldCodeDemo";
 
 export {
-	default as FieldTextDemo,
-	FieldTextProps,
+  default as FieldTextDemo,
+  FieldTextProps,
 } from "./FieldTextDemo/index";
 export { default as FieldUploadDemo } from "./FieldUploadDemo";
 
 // hoc: 包装组件和函数
 const Hoc = (name, optionCallf?) => {
-	return forwardRef((props, ref) => {
-		return (
-			<BrowserOnly>
-				{() => {
-					optionCallf?.();
-					const LibComponent = require("mui-eazy")[name];
-					return <LibComponent ref={ref} {...props} />;
-				}}
-			</BrowserOnly>
-		);
-	});
+  return forwardRef((props, ref) => {
+    return (
+      <BrowserOnly>
+        {() => {
+          optionCallf?.();
+          const LibComponent = require("mui-eazy")[name];
+          return <LibComponent ref={ref} {...props} />;
+        }}
+      </BrowserOnly>
+    );
+  });
 };
 
 const HocFunc = (name, optionCallf?) => {
-	optionCallf?.();
-	return (props?) => {
-		console.log(props);
-		const isBro = useIsBrowser();
-		return isBro && require("mui-eazy")[name](props);
-	};
+  optionCallf?.();
+  return (props?) => {
+    console.log(props);
+    const isBro = useIsBrowser();
+    return isBro && require("mui-eazy")[name](props);
+  };
 };
 
 const HocObj = (name, optionCallf?) => {
-	optionCallf?.();
-	return ExecutionEnvironment.canUseDOM && require("mui-eazy")[name];
+  optionCallf?.();
+  return ExecutionEnvironment.canUseDOM && require("mui-eazy")[name];
 };
 // comp
 export const Carousel = Hoc("Carousel", () => {
-	require("mui-eazy/dist/style.css");
+  require("mui-eazy/dist/style.css");
 });
 export const TreeForm = Hoc("TreeForm", () => {
-	require("mui-eazy/dist/style.css");
+  require("mui-eazy/dist/style.css");
 });
 // base
 export const Tree = Hoc("Tree");

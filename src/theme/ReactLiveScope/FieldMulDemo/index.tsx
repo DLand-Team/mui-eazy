@@ -1,6 +1,7 @@
 import { Button, Stack } from "@mui/material";
 import PropsTable from "@site/src/components/PropsTable";
 import { FieldMul, FormProvider, notify, useFormRef } from "../components";
+import { FormConfig, FormConfigItem } from "mui-eazy";
 export const FieldTextProps = () => {
   let params = {
     name: {
@@ -37,15 +38,40 @@ export const FieldTextProps = () => {
   return <PropsTable params={params} />;
 };
 
-const Demo = () => {
+export const FieldMulDemo2 = () => {
   const formRef = useFormRef({});
   const { handleSubmit } = formRef;
   const onSubmit = handleSubmit(() => {
     notify.success(JSON.stringify(formRef.getValues()));
   });
+  const config:FormConfig = {
+    itemA: {
+      type: 'editer',
+      fieldConfig: {
+        sx:{
+          width:'100%'
+        },
+        required: true,
+      },
+    },
+    itemB: {
+      type: "datePicker",
+      fieldConfig: {
+        sx:{
+          width:'100%'
+        },
+        required: true,
+      },
+    },
+    itemc: {
+      fieldConfig: {
+        required: true,
+      },
+    },
+  };
   return (
     <FormProvider formRef={formRef} onSubmit={onSubmit}>
-      <FieldMul name="FieldMul" />
+      <FieldMul mulType="obj" mulFromConfig={config} name="FieldMul" />
       <Stack
         direction="row"
         sx={{
@@ -65,4 +91,38 @@ const Demo = () => {
   );
 };
 
-export default Demo;
+const FieldMulDemo1 = () => {
+  const formRef = useFormRef({});
+  const { handleSubmit } = formRef;
+  const onSubmit = handleSubmit(() => {
+    notify.success(JSON.stringify(formRef.getValues()));
+  });
+  const config: FormConfigItem = {
+    label: "test",
+    fieldConfig: {
+      required: true,
+    },
+  };
+  return (
+    <FormProvider formRef={formRef} onSubmit={onSubmit}>
+      <FieldMul mulType="one" mulFromConfig={config} name="FieldMul" />
+      <Stack
+        direction="row"
+        sx={{
+          justifyContent: "end",
+        }}>
+        <Button
+          sx={{
+            marginTop: "10px",
+          }}
+          variant="contained"
+          type="submit">
+          Submit
+        </Button>
+      </Stack>
+      {}
+    </FormProvider>
+  );
+};
+
+export default FieldMulDemo1;

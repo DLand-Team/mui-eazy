@@ -6,18 +6,16 @@ const config: Config = {
 	title: "Mui Eazy",
 	tagline: "Mui Eazy are cool",
 	favicon: "img/favicon.ico",
-
 	// Set the production url of your site here
 	url: "https://dland-core.github.io",
 	// Set the /<baseUrl>/ pathname under which your site is served
 	// For GitHub pages deployment, it is often '/<projectName>/'
-	baseUrl: "/",
-
+	baseUrl: "/mui-eazy/",
 	// GitHub pages deployment config.
 	// If you aren't using GitHub pages, you don't need these.
-	organizationName: " moderateMan", // Usually your GitHub org/user name.
+	organizationName: "dland-core", // Usually your GitHub org/user name.
 	projectName: "mui-eazy", // Usually your repo name.
-
+  deploymentBranch:'gh-pages',
 	onBrokenLinks: "throw",
 	onBrokenMarkdownLinks: "warn",
 

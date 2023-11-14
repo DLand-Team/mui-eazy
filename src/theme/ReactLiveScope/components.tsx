@@ -7,10 +7,9 @@
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import useIsBrowser from "@docusaurus/useIsBrowser";
 import { forwardRef } from "react";
-export { default as CarouselDemo } from "./carouselDemo";
-export { default as FormDemo } from "./formDemo";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-
+export { default as CarouselDemo } from "./CarouselDemo";
+export { default as FormDemo } from "./FormDemo";
 export { default as TreeDemo, TreeProps } from "./TreeDemo";
 export { default as TreeFormDemo } from "./TreeFormDemo";
 export { default as FieldAutoCompleteDemo } from "./FieldAutoCompleteDemo";
@@ -23,7 +22,7 @@ export { default as FieldSelectDemo } from "./FieldSelectDemo";
 export { default as FieldSliderDemo } from "./FieldSliderDemo";
 export { default as FieldSwitchDemo } from "./FieldSwitchDemo";
 export { default as FieldCodeDemo } from "./FieldCodeDemo";
-
+export { default as TabViewDemo, TabViewProps } from "./TabViewDemo";
 export {
   default as FieldTextDemo,
   FieldTextProps,
@@ -82,6 +81,7 @@ export const FormProvider = Hoc("FormProvider");
 export const FieldText = Hoc("FieldText");
 export const NotifyProvider = Hoc("NotifyProvider");
 export const FieldUpload = Hoc("FieldUpload");
+export const TabView = Hoc("TabView");
 // func
 export const useCarousel = HocFunc("useCarousel");
 export const useFields = HocFunc("useFields");

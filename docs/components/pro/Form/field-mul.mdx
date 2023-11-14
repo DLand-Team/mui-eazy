@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Field Mul
 
-Round-robin function, the incoming node, to achieve circular play, scene: round-robin picture, translation
+
 
 ```mdx-code-block
 import {PropsTable} from '@site/src/components/PropsTable';
@@ -29,14 +29,20 @@ import {FieldMulDemo,FieldMulDemo2,FieldTextProps,FormProvider,FieldMul,NotifyPr
 
 ```jsx live noInline
 const Demo = () => {
-  const formRef = useFormRef({});
+   const formRef = useFormRef({});
   const { handleSubmit } = formRef;
   const onSubmit = handleSubmit(() => {
     notify.success(JSON.stringify(formRef.getValues()));
   });
+  const config: FormConfigItem = {
+    label: "test",
+    fieldConfig: {
+      required: true,
+    },
+  };
   return (
     <FormProvider formRef={formRef} onSubmit={onSubmit}>
-      <FieldMul name="FieldMul" />
+      <FieldMul mulType="one" mulFromConfig={config} name="FieldMul" />
       <Stack
         direction="row"
         sx={{
@@ -51,7 +57,6 @@ const Demo = () => {
           Submit
         </Button>
       </Stack>
-      {}
     </FormProvider>
   );
 };

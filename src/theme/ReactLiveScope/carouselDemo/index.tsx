@@ -55,8 +55,8 @@ function CarouselDemo(props: { ref?; carouselOptions? }) {
       <Carousel
         ref={props.ref || carouselBase.carouselRef}
         {...carouselBase.carouselSettings}>
-        {slides.map((slide) => (
-          <Box key={slide.src} sx={{ px: 1 }}>
+        {slides.map((slide,index) => (
+          <Box key={index} sx={{ px: 1 }}>
             <Box
               sx={{
                 borderRadius: 2,

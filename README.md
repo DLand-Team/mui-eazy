@@ -1,6 +1,6 @@
 # Mui-Eazy
 
- [Mui-Eazy]([https://docusaurus.io/]
+ [Mui-Eazy](https://dland-core.github.io/mui-eazy)
 
 ### Installation
 

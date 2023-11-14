@@ -1,6 +1,6 @@
 # Mui-Eazy
 
-This website is built using [Mui-Eazy]([https://docusaurus.io/](https://dland-core.github.io/mui-eazy/)), a modern static website generator.
+ [Mui-Eazy]([https://docusaurus.io/]
 
 ### Installation
 

@@ -1,10 +1,18 @@
-# Mui-Eazy
+#  moderate-admin-react-antd5
 
- [Mui-Eazy](https://dland-core.github.io/mui-eazy)
+## 技术选型
+- React18
+- Antd5
+- mobx
+- react-router 6.4.3
+- vite
+- ts
 
-### Installation
-
+# 启动
 ```
-$ pnpm add @mui/material mui-eazy
-```
+第一步
+yarn
 
+第二步
+yarn start
+```

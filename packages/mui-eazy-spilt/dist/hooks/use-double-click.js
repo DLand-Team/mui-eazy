@@ -1,0 +1,1 @@
+import{useRef as t,useCallback as e}from"react";function r(r){var i=r.click,u=r.doubleClick,c=r.timeout,n=void 0===c?250:c,o=t();return e((function(t){o&&(clearTimeout(o.current),o.current=null),i&&1===t.detail&&(o.current=setTimeout((function(){i(t)}),n)),t.detail%2==0&&u(t)}),[i,u,n])}export{r as useDoubleClick};

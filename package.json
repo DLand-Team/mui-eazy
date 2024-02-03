@@ -1,56 +1,31 @@
 {
-  "name": "docs123",
-  "version": "0.0.0",
-  "private": true,
+  "name": "monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=16.17.0",
+    "npm": ">=8.15.0"
+  },
   "scripts": {
-    "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "cross-env USE_SSH=true docusaurus deploy",
-    "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
-    "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pnpm -r dev",
+    "clean": "rimraf './node_modules'&&lerna clean"
+  },
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "lerna": "^3.22.1",
+    "npm-run-all": "^4.1.5"
   },
   "dependencies": {
-    "@docusaurus/core": "3.0.0",
-    "@docusaurus/preset-classic": "3.0.0",
-    "@docusaurus/theme-live-codeblock": "^3.0.0",
-    "@mdx-js/react": "^3.0.0",
-    "@mui/material": "^5.14.7",
-    "@types/react": "^18.0.0",
-    "clsx": "^1.2.1",
-    "color": "^4.2.3",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "cross-env": "^7.0.3",
-    "dayjs": "^1.11.10",
-    "framer-motion": "^10.16.4",
-    "mui-eazy": "workspace:^",
-    "prism-react-renderer": "^2.1.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "yup": "^1.2.0"
-  },
-  "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.0.0",
-    "@docusaurus/tsconfig": "3.0.0",
-    "@docusaurus/types": "3.0.0",
-    "typescript": "~5.2.2"
-  },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 3 chrome version",
-      "last 3 firefox version",
-      "last 5 safari version"
-    ]
-  },
-  "engines": {
-    "node": ">=18.0"
+    "rimraf": "^5.0.1"
   }
 }

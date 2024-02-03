@@ -42,6 +42,12 @@ pnpm add mui-eazy react react-dom
 
 ### 如何运行
 
+安装依赖
+
+```
+pnpm i
+```
+
 仅仅在跑文档项目，皆可预览组件库
 
 ```shell

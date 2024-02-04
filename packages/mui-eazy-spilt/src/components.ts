@@ -14,4 +14,4 @@ export * from './components/editor';
 export * from './components/image';
 export * from './components/empty';
 export * from './components/notify';
-export * from './components/tabView';
+export * from './components/tab-view';

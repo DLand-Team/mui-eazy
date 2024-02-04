@@ -1,1 +1,0 @@
-import{__spreadArray as l}from"../node_modules/.pnpm/@rollup_plugin-typescript@11.1.6_rollup@4.9.6_tslib@2.6.2_typescript@5.3.3/node_modules/tslib/tslib.es6.js";function n(t,o){void 0===o&&(o="children");var e=[],i=null==t?void 0:t.map((function(n){return n[o]&&n[o].length&&(e=l(l([],e,!0),n[o],!0)),n}));return null==i?void 0:i.concat(e.length?n(e,o):e)}export{n as flattenArray};

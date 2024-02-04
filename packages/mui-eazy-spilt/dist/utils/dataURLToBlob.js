@@ -1,1 +1,0 @@
-function t(t){for(var n,o=null===(n=t.match(/data:(.+);/))||void 0===n?void 0:n[1],e=t.split(",")[1],r=atob(e),a=new Uint8Array(r.length),i=r.length;i;)a[--i]=r.codePointAt(i);return new Blob([a],{type:o})}export{t as dataURLToBlob};

@@ -1,1 +1,0 @@
-import{useState as t,useEffect as r}from"react";function n(n,o){void 0===o&&(o=500);var e=t(n),i=e[0],u=e[1];return r((function(){var t=setTimeout((function(){u(n)}),o);return function(){clearTimeout(t)}}),[n,o]),i}export{n as useDebounce};

@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"baseUrl": "./",
-		"target": "es5", // 转化成的目标语言
+		"target": "ESNext", // 转化成的目标语言
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"strict": true,
 		// "noEmit": true,

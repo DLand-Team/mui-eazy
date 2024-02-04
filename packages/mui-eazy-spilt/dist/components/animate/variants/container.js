@@ -1,1 +1,0 @@
-var n=function(n){return{animate:{transition:{staggerChildren:(null==n?void 0:n.staggerIn)||.05,delayChildren:(null==n?void 0:n.staggerIn)||.05}},exit:{transition:{staggerChildren:(null==n?void 0:n.staggerIn)||.05,staggerDirection:-1}}}};export{n as varContainer};

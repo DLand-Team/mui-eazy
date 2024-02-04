@@ -37,7 +37,7 @@ pnpm add mui-eazy react react-dom
 ## 组成介绍
 
 -   项目是 monorepo，通过pnpm的workspace进行的管理
--   组件库使用的是rollUp进行的打包
+-   组件库使用的是rollup进行的打包
 -   目前文档使用的`mui-eazy 青春版`作为组件库进行展示，默认目录下已经有打包好的组件库了
 
 ### 如何运行

@@ -14,16 +14,13 @@ sidebar_position: 1
 
 - `fieldText`
 
-```mdx-code-block
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import CodeBlock from '@theme/CodeBlock';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import {FormDemoEx} from '@site/src/theme/ReactLiveScope/components'
 import BrowserOnly from "@docusaurus/BrowserOnly";
-```
 
-```mdx-code-block
  <Tabs
   defaultValue="Demo"
   values={[
@@ -31,7 +28,6 @@ import BrowserOnly from "@docusaurus/BrowserOnly";
     {label: 'PlayGround', value: 'PlayGround'},
   ]}>
   <TabItem value="PlayGround">
-```
 
 ```jsx live noInline
 const useFormConfigCreater_root = (
@@ -96,26 +92,20 @@ const Play = () => {
 render(<Play />);
 ```
 
-```mdx-code-block
 </TabItem>
 <TabItem value="Demo">
-```
 
 <BrowserWindow>
   <FormDemoEx />
 </BrowserWindow>
 
-```mdx-code-block
 </TabItem>
 </Tabs>
-```
 
 <details>
   <summary>show code</summary>
-```mdx-code-block
 <Tabs>
 <TabItem value="componennt">
-```
 
 ```tsx {8,16,24,26,46,61-68} showLineNumbers
 import { useFields } from "mui-eazy";
@@ -128,10 +118,8 @@ export default () => {
 };
 ```
 
-```mdx-code-block
 </TabItem>
 <TabItem value="form config">
-```
 
 ```tsx {61-68} showLineNumbers
 import dayjs from "dayjs";
@@ -193,10 +181,8 @@ export const useFormConfigCreater_root = (
 };
 ```
 
-```mdx-code-block
 </TabItem>
 </Tabs>
-```
 
 </details>
 

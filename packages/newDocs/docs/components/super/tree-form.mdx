@@ -6,16 +6,13 @@ sidebar_position: 1
 
 "tree + from" combined high-level component, suitable for dynamic and complex form submission functionality.
 
-```mdx-code-block
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import CodeBlock from '@theme/CodeBlock';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import styles from '../markdown-features-tabs-styles.module.css';
 import {TreeFormDemo,NotifyProvider} from '@site/src/theme/ReactLiveScope/components'
-```
 
-```mdx-code-block
 <NotifyProvider>
  <Tabs
   defaultValue="Demo"
@@ -24,7 +21,6 @@ import {TreeFormDemo,NotifyProvider} from '@site/src/theme/ReactLiveScope/compon
     {label: 'PlayGround', value: 'PlayGround'},
   ]}>
   <TabItem value="PlayGround">
-```
 
 ```jsx live noInline
 const useFormConfigCreater_general = (props) => {
@@ -201,27 +197,21 @@ function MyPlayground(props) {
 render(<MyPlayground />);
 ```
 
-```mdx-code-block
 </TabItem>
 <TabItem value="Demo">
-```
 
 <BrowserWindow>
   <TreeFormDemo />
 </BrowserWindow>
 
-```mdx-code-block
 </TabItem>
 </Tabs>
 </NotifyProvider>
-```
 
 <details>
   <summary>show code</summary>
-```mdx-code-block
 <Tabs>
 <TabItem value="componennt">
-```
 
 ```tsx {8,16,24,26,46,61-68} showLineNumbers
 import { TreeForm } from "mui-eazy";
@@ -296,10 +286,9 @@ export default function ProductEditView() {
 }
 ```
 
-```mdx-code-block
+
 </TabItem>
 <TabItem value="tree config">
-```
 
 ```tsx {61-68} showLineNumbers
 const useTreeConfig = (): TreeItemProps => {
@@ -366,10 +355,8 @@ const useTreeConfig = (): TreeItemProps => {
 };
 ```
 
-```mdx-code-block
 </TabItem>
 <TabItem value="form config">
-```
 
 ```tsx showLineNumbers
 export const useFormConfigCreater_general = (
@@ -393,10 +380,8 @@ export const useFormConfigCreater_general = (
 };
 ```
 
-```mdx-code-block
 </TabItem>
 </Tabs>
-```
 
 </details>
 

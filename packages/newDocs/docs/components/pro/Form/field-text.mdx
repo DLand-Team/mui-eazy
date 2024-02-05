@@ -6,16 +6,13 @@ sidebar_position: 1
 
 
 
-```mdx-code-block
 import {PropsTable} from '@site/src/components/PropsTable';
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import CodeBlock from '@theme/CodeBlock';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import {FieldTextDemo,FieldTextProps,FormProvider,FieldText,NotifyProvider} from '@site/src/theme/ReactLiveScope/components'
-```
 
-```mdx-code-block
 <NotifyProvider>
  <Tabs
   defaultValue="Demo"
@@ -24,7 +21,6 @@ import {FieldTextDemo,FieldTextProps,FormProvider,FieldText,NotifyProvider} from
     {label: 'PlayGround', value: 'PlayGround'},
   ]}>
   <TabItem value="PlayGround">
-```
 
 ```jsx live noInline
 const MyPlayground = () => {
@@ -57,27 +53,21 @@ const MyPlayground = () => {
 render(<MyPlayground />);
 ```
 
-```mdx-code-block
 </TabItem>
 <TabItem value="Demo">
-```
 
 <BrowserWindow>
   <FieldTextDemo />
 </BrowserWindow>
 
-```mdx-code-block
 </TabItem>
 </Tabs>
 </NotifyProvider>
-```
 
 <details>
   <summary>show code</summary>
-```mdx-code-block
 <Tabs>
 <TabItem value="componennt">
-```
 
 ```tsx {5,8,12,41-61} showLineNumbers
 import { Button, Stack } from "@mui/material";
@@ -115,10 +105,8 @@ export default () => {
 };
 ```
 
-```mdx-code-block
 </TabItem>
 </Tabs>
-```
 
 </details>
 

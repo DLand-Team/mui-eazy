@@ -40,7 +40,7 @@
   font-size: 24px;
   font-weight: 500;
   white-space: pre-wrap;
-  color: rgba(60, 60, 67, .78);
+  color: --ifm-color-primary-light;
 }
 
 .image {

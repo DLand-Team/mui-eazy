@@ -4,19 +4,20 @@ sidebar_position: 1
 
 # Tree
 
-```mdx-code-block
-import BrowserWindow from '@site/src/components/BrowserWindow';
-import CodeBlock from '@theme/CodeBlock';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import styles from '../markdown-features-tabs-styles.module.css';
-import {TreeDemo,TreeProps,NotifyProvider} from '@site/src/theme/ReactLiveScope/components'
+import BrowserWindow from "@site/src/components/BrowserWindow";
+import CodeBlock from "@theme/CodeBlock";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "../markdown-features-tabs-styles.module.css";
+import {
+	TreeDemo,
+	TreeProps,
+	NotifyProvider,
+} from "@site/src/theme/ReactLiveScope/components";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-```
 
-```mdx-code-block
 <NotifyProvider>
  <Tabs
   defaultValue="Demo"
@@ -25,7 +26,6 @@ import Typography from "@mui/material/Typography";
     {label: 'PlayGround', value: 'PlayGround'},
   ]}>
   <TabItem value="PlayGround">
-```
 
 ```jsx live noInline
 enum DealType {
@@ -185,36 +185,31 @@ const useTreeConfig = (): TreeItemProps => {
 };
 
 const Demo = () => {
-	const treeFromConfig = useTreeConfig();
-	return <Tree onSwitch={(id, record) => {
-    debugger
-  }} treeRoot={treeFromConfig} />;
+const treeFromConfig = useTreeConfig();
+return <Tree onSwitch={(id, record) => {
+debugger
+}} treeRoot={treeFromConfig} />;
 };
 
 render(<Demo />);
+
 ```
 
-```mdx-code-block
 </TabItem>
 <TabItem value="Demo">
-```
 
 <BrowserWindow>
 	<TreeDemo />
 </BrowserWindow>
 
-```mdx-code-block
 </TabItem>
 </Tabs>
 </NotifyProvider>
-```
 
 <details>
   <summary>show code</summary>
-```mdx-code-block
 <Tabs>
 <TabItem value="componennt">
-```
 
 ```tsx {5,8,12,41-61} showLineNumbers
 import { TreeItemProps, Tree } from "mui-eazy";
@@ -393,10 +388,8 @@ const Demo = () => {
 };
 ```
 
-```mdx-code-block
 </TabItem>
 <TabItem value="data">
-```
 
 ```tsx {61-68} showLineNumbers
 export const imgeList = [
@@ -412,10 +405,8 @@ export const imgeList = [
 ];
 ```
 
-```mdx-code-block
 </TabItem>
 </Tabs>
-```
 
 </details>
 

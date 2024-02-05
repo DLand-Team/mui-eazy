@@ -15,7 +15,7 @@ const config: Config = {
 	// If you aren't using GitHub pages, you don't need these.
 	organizationName: "dland-core", // Usually your GitHub org/user name.
 	projectName: "mui-eazy", // Usually your repo name.
-  deploymentBranch:'gh-pages',
+	deploymentBranch: "gh-pages",
 	onBrokenLinks: "throw",
 	onBrokenMarkdownLinks: "warn",
 
@@ -53,6 +53,9 @@ const config: Config = {
 	],
 	themes: ["@docusaurus/theme-live-codeblock"],
 	themeConfig: {
+		colorMode: {
+			defaultMode: "dark",
+		},
 		// Replace with your project's social card
 		image: "img/docusaurus-social-card.jpg",
 		navbar: {
@@ -126,9 +129,7 @@ const config: Config = {
 			darkTheme: prismThemes.dracula,
 		},
 	} satisfies Preset.ThemeConfig,
-	plugins:[
-		"config-webpack"
-	]
+	plugins: ["config-webpack", "docusaurus-plugin-sass"],
 };
 
 export default config;

@@ -247,6 +247,11 @@ div[class^="announcementBar_"] {
 
 html[data-navbar="false"] .navbar {
 	display: none;
+	box-shadow: initial;
+}
+
+.navbar {
+	box-shadow: initial;
 }
 
 html[data-red-border] div#__docusaurus {
@@ -255,6 +260,7 @@ html[data-red-border] div#__docusaurus {
 
 table {
 	margin-bottom: initial;
+
 }
 
 table tr:nth-child(2n) {

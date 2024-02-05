@@ -3,28 +3,41 @@ import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import Logo from "@site/static/img/logo.svg";
 import Layout from "@theme/Layout";
 import styles from "./index.module.scss";
+import Link from "@docusaurus/Link";
+
 function HomepageHeader() {
 	const { siteConfig } = useDocusaurusContext();
 	debugger;
 	return (
 		<header className={styles.heroBanner}>
-			<div className="container">
+			<div
+				className="container"
+				style={{
+					display: "flex",
+					justifyContent: "center",
+				}}
+			>
 				<div className={styles.header}>
 					<div className={styles.infoPart}>
-						<h1>
-							<p className={styles.title}>MuiEazy</p>
-						</h1>
-						<h1>
-							<p className={styles.title2}>
-								A high-level component library based on mui
-							</p>
-							<p className={styles.title3}>
-								Developing practical components for common
-								business scenarios to provide robust support for
-								development.
-							</p>
-						</h1>
-						<div className={styles.btn}>Get Started</div>
+						<p className={styles.title}>MuiEazy</p>
+						<p className={styles.title2}>
+							A high-level component library based on mui
+						</p>
+						<p className={styles.title3}>
+							Powerful, clean code, efficient development, always
+							open source
+						</p>
+						<div className={styles.btnPart}>
+							<Link className={styles.btn} to="/docs/intro">
+								Get Started
+							</Link>
+							<Link
+								className={`${styles.btn} ${styles.btn2}`}
+								to="https://github.com/DLand-Team/mui-eazy"
+							>
+								View on GitHub
+							</Link>
+						</div>
 					</div>
 					<div className={styles.logoPart}>
 						<div className={styles.image}>

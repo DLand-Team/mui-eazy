@@ -1,0 +1,1 @@
+const t=t=>({animate:{transition:{staggerChildren:t?.staggerIn||.05,delayChildren:t?.staggerIn||.05}},exit:{transition:{staggerChildren:t?.staggerIn||.05,staggerDirection:-1}}});export{t as varContainer};

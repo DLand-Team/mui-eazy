@@ -6,7 +6,7 @@
 	],
 	"type": "module",
 	"types": "dist/types/index.d.ts",
-	"version": "0.0.15",
+	"version": "0.0.16",
 	"author": "闲D阿强",
 	"homepage": "https://design.06k4.com",
 	"repository": {
@@ -72,6 +72,7 @@
 		"react-slick": "^0.29.0",
 		"rollup-plugin-terser": "^7.0.2",
 		"slick-carousel": "^1.8.1",
+		"tslib": "^2.6.2",
 		"yet-another-react-lightbox": "^3.12.1"
 	},
 	"devDependencies": {

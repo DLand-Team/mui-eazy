@@ -1,0 +1,1 @@
+function t(t){const n=t.match(/data:(.+);/)?.[1],e=t.split(",")[1],o=atob(e),r=new Uint8Array(o.length);let a=o.length;for(;a;)a--,r[a]=o.codePointAt(a);return new Blob([r],{type:n})}export{t as dataURLToBlob};

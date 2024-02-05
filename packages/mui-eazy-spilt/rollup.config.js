@@ -50,7 +50,6 @@ export default () => {
     },
     external: ['react', 'react-dom', '@emotion/react', '@mui/material', '@emotion/styled', '@mui/system', '@mui/x-data-grid', '@mui/x-date-pickers', 'yup', '@mui/lab', 'tslib'],
     plugins: [...commonPlugins],
-    logLevel: "silent",
-    treeshake: 'smallest'
+    logLevel: "silent"
   };
 };

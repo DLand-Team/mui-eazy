@@ -466,6 +466,9 @@ importers:
       slick-carousel:
         specifier: ^1.8.1
         version: 1.8.1(jquery@3.7.1)
+      tslib:
+        specifier: ^2.6.2
+        version: 2.6.2
       yet-another-react-lightbox:
         specifier: ^3.12.1
         version: 3.12.1(react-dom@18.2.0)(react@18.2.0)
@@ -539,9 +542,6 @@ importers:
       sass:
         specifier: ^1.70.0
         version: 1.70.0
-      tslib:
-        specifier: ^2.6.2
-        version: 2.6.2
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -583,7 +583,7 @@ importers:
         version: 6.0.0(@mui/material@5.15.5)(@mui/system@5.15.5)(@types/react@18.2.51)(react-dom@18.2.0)(react@18.2.0)
       '@mui/x-date-pickers':
         specifier: ^6.0.0
-        version: 6.0.0(@emotion/react@11.5.0)(@emotion/styled@11.6.0)(@mui/material@5.15.5)(@mui/system@5.15.5)(@types/react@18.2.51)(date-fns@2.30.0)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
+        version: 6.0.0(@emotion/react@11.5.0)(@emotion/styled@11.6.0)(@mui/material@5.15.5)(@mui/system@5.15.5)(@types/react@18.2.51)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
       '@types/react':
         specifier: ^18.0.0
         version: 18.2.51
@@ -7653,6 +7653,68 @@ packages:
       '@types/react-transition-group': 4.4.10
       clsx: 1.2.1
       date-fns: 2.30.0
+      dayjs: 1.11.10
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
+    transitivePeerDependencies:
+      - '@types/react'
+    dev: false
+
+  /@mui/x-date-pickers@6.0.0(@emotion/react@11.5.0)(@emotion/styled@11.6.0)(@mui/material@5.15.5)(@mui/system@5.15.5)(@types/react@18.2.51)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-6kraEcal5oBM/14CyJteNYcr0BqVD3qy4fX83dQrruRf2B3j8evzCVPZiT7T+Qdrx3AvbUS2wQdGP+9BcHByhA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      '@emotion/react': ^11.9.0
+      '@emotion/styled': ^11.8.1
+      '@mui/material': ^5.4.1
+      '@mui/system': ^5.4.1
+      date-fns: ^2.25.0
+      date-fns-jalali: ^2.13.0-0
+      dayjs: ^1.10.7
+      luxon: ^3.0.2
+      moment: ^2.29.4
+      moment-hijri: ^2.1.2
+      moment-jalaali: ^0.7.4 || ^0.8.0 || ^0.9.0
+      react: ^17.0.2 || ^18.0.0
+      react-dom: ^17.0.2 || ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/react':
+        optional: true
+      '@emotion/styled':
+        optional: true
+      date-fns:
+        optional: true
+      date-fns-jalali:
+        optional: true
+      dayjs:
+        optional: true
+      luxon:
+        optional: true
+      moment:
+        optional: true
+      moment-hijri:
+        optional: true
+      moment-jalaali:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.23.9
+      '@date-io/core': 2.17.0
+      '@date-io/date-fns': 2.17.0(date-fns@2.30.0)
+      '@date-io/date-fns-jalali': 2.17.0
+      '@date-io/dayjs': 2.17.0(dayjs@1.11.10)
+      '@date-io/hijri': 2.17.0
+      '@date-io/jalaali': 2.17.0
+      '@date-io/luxon': 2.17.0
+      '@date-io/moment': 2.17.0
+      '@emotion/react': 11.5.0(@babel/core@7.23.9)(@types/react@18.2.51)(react@18.2.0)
+      '@emotion/styled': 11.6.0(@babel/core@7.23.9)(@emotion/react@11.5.0)(@types/react@18.2.51)(react@18.2.0)
+      '@mui/material': 5.15.5(@emotion/react@11.5.0)(@emotion/styled@11.6.0)(@types/react@18.2.51)(react-dom@18.2.0)(react@18.2.0)
+      '@mui/system': 5.15.5(@emotion/react@11.5.0)(@emotion/styled@11.6.0)(@types/react@18.2.51)(react@18.2.0)
+      '@mui/utils': 5.15.7(@types/react@18.2.51)(react@18.2.0)
+      '@types/react-transition-group': 4.4.10
+      clsx: 1.2.1
       dayjs: 1.11.10
       prop-types: 15.8.1
       react: 18.2.0

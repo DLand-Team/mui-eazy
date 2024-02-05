@@ -1,0 +1,1 @@
+import{getAugmentedNamespace as e}from"./_commonjsHelpers.js";import*as s from"../node_modules/.pnpm/resize-observer-polyfill@1.5.1/node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js";var o=e(s);export{o as default};

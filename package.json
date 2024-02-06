@@ -8,9 +8,10 @@
     "npm": ">=8.15.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pnpm -r dev",
-    "clean": "rimraf './node_modules'&&lerna clean"
+    "start": "pnpm --filter mui-eazy-docs run start",
+		"build:doc": "pnpm --filter mui-eazy-docs run build",
+		"build:split": "pnpm --filter mui-eazy run build",
+		"build:full": "pnpm --filter mui-eazy-full run build"
   },
   "author": "",
   "license": "ISC",

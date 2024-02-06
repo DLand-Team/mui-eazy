@@ -1,0 +1,85 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+
+	.banner {
+		position: relative;
+		width: 100%;
+		height: 350px;
+
+		video {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.cover {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, .65) 40%);
+
+			.topText {
+				font-size: 36px;
+				font-weight: bold;
+				color: #EEEEEE;
+				text-align: center;
+			}
+
+			.bottomText {
+				font-size: 26px;
+				color: #EEEEEE;
+				text-align: center;
+			}
+		}
+	}
+
+	.cards {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 12px 40px;
+		width: 100%;
+		max-width: 1800px;
+
+		.each {
+			padding: 12px;
+		}
+
+		// >= 600px 显示2个
+		@media screen and (min-width: 600px) {
+			.each {
+				width: 50%;
+			}
+		}
+
+		// >= 800px 显示3个
+		@media screen and (min-width: 800px) {
+			.each {
+				width: 33.3%;
+			}
+		}
+
+		// >= 1024px 显示4个
+		@media screen and (min-width: 1024px) {
+			.each {
+				width: 25%;
+			}
+		}
+
+		// >= 1440px 显示5个
+		@media screen and (min-width: 1440px) {
+			.each {
+				width: 20%;
+			}
+		}
+	}
+}

@@ -11,7 +11,7 @@ export declare function useFields(fromCg: FormConfig, options?: {
         values: any;
         formRef: UseFormReturn<{
             [key: string]: any;
-        }, any, undefined>;
+        }, any, any>;
     }) => void;
     formPrefix?: string;
     formId?: string;
@@ -22,5 +22,9 @@ export declare function useFields(fromCg: FormConfig, options?: {
         [x: string]: any;
         [x: number]: any;
         [x: symbol]: any;
-    }, any, undefined>;
+    }, any, {
+        [x: string]: any;
+        [x: number]: any;
+        [x: symbol]: any;
+    }>;
 };

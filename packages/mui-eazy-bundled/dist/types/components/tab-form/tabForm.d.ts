@@ -3,7 +3,7 @@ import { UseFormReturn } from 'react-hook-form';
 import { FormConfig } from '../../index';
 export type FormRefType = UseFormReturn<{
     [key: string]: any;
-}, any, undefined>;
+}, any, any>;
 export interface TabFormRef {
     validate: (formArr: FormRefType[]) => Promise<boolean>;
     getTabFormRef: () => Record<PropertyKey, FormRefType>;

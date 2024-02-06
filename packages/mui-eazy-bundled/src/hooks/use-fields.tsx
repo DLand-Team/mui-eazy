@@ -34,7 +34,7 @@ export function useFields(
           [key: string]: any;
         },
         any,
-        undefined
+        any
       >;
     }) => void;
     formPrefix?: string;

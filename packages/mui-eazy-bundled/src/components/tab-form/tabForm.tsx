@@ -9,7 +9,7 @@ export type FormRefType = UseFormReturn<
     [key: string]: any;
   },
   any,
-  undefined
+  any
 >;
 
 export interface TabFormRef {

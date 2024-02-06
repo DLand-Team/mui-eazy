@@ -5,5 +5,5 @@ export type FromRefType = UseFormReturn<
     [key: string]: any;
   },
   any,
-  undefined
+  any
 >;

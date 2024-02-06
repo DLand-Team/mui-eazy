@@ -1,14 +1,14 @@
+import { Box, Theme } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import ListItemText from '@mui/material/ListItemText';
 import Stack from '@mui/material/Stack';
 import { SxProps, alpha } from '@mui/material/styles';
-import { FileThumbnail } from '../../../file-thumbnail';
-import { Iconify } from '../../../iconify';
-import { Box, Theme } from '@mui/material';
-import { CustomFile, UploadProps } from '../../types';
 import { useRef } from 'react';
 import { DndProvider, XYCoord, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { FileThumbnail } from '../../../file-thumbnail';
+import { Iconify } from '../../../iconify';
+import { CustomFile } from '../../types';
 
 // ----------------------------------------------------------------------
 export const ItemTypes = {
@@ -23,13 +23,15 @@ interface DragItem {
 function Card({
   index,
   file,
+  fileName,
   onRemove,
   sx = {},
   moveCard,
 }: {
   index: number;
   onRemove: ((fileName: string | CustomFile, fileIndex?: number | undefined) => void) | undefined;
-  file: string;
+  fileName: string;
+  file: File;
   sx: SxProps<Theme> | undefined;
   moveCard: (dragIndex: number, hoverIndex: number) => void;
 }) {
@@ -82,7 +84,7 @@ function Card({
     <Stack
       ref={ref}
       data-handler-id={handlerId}
-      key={file}
+      key={fileName}
       spacing={2}
       direction="row"
       alignItems="center"
@@ -96,10 +98,10 @@ function Card({
         ...sx,
       }}
     >
-      <FileThumbnail file={file} />
+      <FileThumbnail fileName={fileName} file={file} />
 
       <ListItemText
-        primary={file.split('/').slice(-1)[0]}
+        primary={fileName.split('/').slice(-1)[0]}
         secondary={''}
         secondaryTypographyProps={{
           component: 'span',
@@ -111,7 +113,7 @@ function Card({
         <IconButton
           size="small"
           onClick={() => {
-            onRemove(file);
+            onRemove(fileName);
           }}
         >
           <Iconify icon="mingcute:close-line" width={16} />
@@ -120,14 +122,33 @@ function Card({
     </Stack>
   );
 }
-export default function MultiFilePreview({ fileNameList, onRemove, sx, moveCard }: UploadProps) {
+export default function MultiFilePreview({
+  fileNameList,
+  onRemove,
+  sx,
+  moveCard,
+  files,
+}: {
+  fileNameList: string[];
+  files?: File[];
+  sx?: SxProps<Theme>;
+  onRemove?: (fileName: CustomFile | string, fileIndex?: number) => void;
+  moveCard?: (dragIndex: number, hoverIndex: number) => void;
+}) {
   return (
     <Box>
       <DndProvider backend={HTML5Backend}>
         {fileNameList?.map((file, index) => {
           return (
             <div key={file}>
-              <Card index={index} moveCard={moveCard!} file={file} onRemove={onRemove} sx={sx} />
+              <Card
+                index={index}
+                moveCard={moveCard!}
+                file={files!?.[index]}
+                fileName={file}
+                onRemove={onRemove}
+                sx={sx}
+              />
             </div>
           );
         })}

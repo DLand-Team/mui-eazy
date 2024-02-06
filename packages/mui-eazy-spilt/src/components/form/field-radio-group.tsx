@@ -64,19 +64,27 @@ export default function FieldRadioGroup({
                     }),
                   }}
                 />
-                <Typography
-                  sx={{
-                    color: 'var(--Scaling-Grey2, #696969)',
-                    fontFamily: 'Public Sans',
-                    fontSize: '14px',
-                    fontStyle: 'normal',
-                    fontWeight: '400',
-                    lineHeight: '22px',
-                    marginBottom: '16px',
-                  }}
-                >
-                  {option.info}
-                </Typography>
+                {option.info && (
+                  <>
+                    {typeof option.info == 'string' ? (
+                      <Typography
+                        sx={{
+                          color: 'var(--Scaling-Grey2, #696969)',
+                          fontFamily: 'Public Sans',
+                          fontSize: '14px',
+                          fontStyle: 'normal',
+                          fontWeight: '400',
+                          lineHeight: '22px',
+                          marginBottom: '16px',
+                        }}
+                      >
+                        {option.info}
+                      </Typography>
+                    ) : (
+                      option.info
+                    )}
+                  </>
+                )}
               </div>
             ))}
           </RadioGroup>

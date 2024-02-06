@@ -1,2 +1,2 @@
-export * from "./tabForm";
+export { default as TabForm } from "./tabForm";
 export * from "./types";

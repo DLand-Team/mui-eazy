@@ -11,7 +11,6 @@ import { UploadProps } from '../../types';
 import icon from '../../ic-eva_cloud-upload-fill.svg';
 import { CircularProgress } from '@mui/material';
 import { useBoolean } from '../../../../hooks/use-boolean';
-// ----------------------------------------------------------------------
 
 export function UploadDragSingle({
   disabled,
@@ -29,12 +28,12 @@ export function UploadDragSingle({
   onRemoveAll,
   sx,
   uploadAction,
+  uploadLoabel,
   ...other
 }: UploadProps) {
   const showLoading = useBoolean(false);
   const [fileNameList, setFilenameList] = useState<string[]>((files as string[]) || []);
   const [fileList, setFileList] = useState<File[]>([]);
-  // ;
   const { getRootProps, getInputProps, isDragActive, isDragReject } = useDropzone({
     multiple,
     disabled,
@@ -42,12 +41,16 @@ export function UploadDragSingle({
       document.body.focus();
     },
     onDrop: async (acceptedFiles) => {
+      onDel!?.(fileNameList?.[0] as string);
       showLoading.onTrue();
-      const newFile = await uploadAction?.(acceptedFiles[0]);
-      showLoading.onFalse();
-      if (newFile!) {
-        onAdd!?.(newFile);
-        setFileList([...fileList, ...acceptedFiles]);
+      if (acceptedFiles[0]) {
+        const newFile = await uploadAction?.(acceptedFiles[0]).finally(() => {
+          showLoading.onFalse();
+        });
+        if (newFile!) {
+          onAdd!?.(newFile);
+          setFileList([...fileList, ...acceptedFiles]);
+        }
       }
     },
     ...other,
@@ -73,9 +76,11 @@ export function UploadDragSingle({
         }}
       />
       <Stack spacing={1} sx={{ textAlign: 'center' }}>
-        {placeholder || (
+        {placeholder || uploadLoabel ? (
+          <>{uploadLoabel}</>
+        ) : (
           <Typography sx={{ color: '#919EAB', fontSize: '14px' }}>
-            Drag and drop or click to choose files
+            {'Drag and drop or click to choose files'}
           </Typography>
         )}
       </Stack>
@@ -84,7 +89,10 @@ export function UploadDragSingle({
 
   // 显示单文件
   const renderSinglePreview = !multiple && (
-    <SingleFilePreview imgUrl={typeof fileNameList?.[0] == 'string' ? fileNameList?.[0] : ''} />
+    <SingleFilePreview
+      type={fileList?.[0]?.type}
+      imgUrl={typeof fileNameList?.[0] == 'string' ? fileNameList?.[0] : ''}
+    />
   );
   // 去除单文件按钮
   const removeSinglePreview = hasFile && onDel && (

@@ -1,11 +1,11 @@
-import { useFormContext, Controller } from "react-hook-form";
-import TextField, { TextFieldProps } from "@mui/material/TextField";
+import TextField, { TextFieldProps } from '@mui/material/TextField';
+import { Controller, useFormContext } from 'react-hook-form';
+import { fCurrencyWithout } from 'src/utils';
 
 // ----------------------------------------------------------------------
 
 export type FieldTextProps = TextFieldProps & {
   name: string;
-
 };
 
 export default function FieldText({
@@ -20,8 +20,15 @@ export default function FieldText({
     <Controller
       name={name}
       control={control}
-      defaultValue={defaultValue || ""}
       render={({ field, fieldState: { error } }) => {
+        if (field.value && type === 'money') {
+          let newVal = fCurrencyWithout(Number(String(field.value).replace(/\,/g, '')));
+          if (newVal !== 'NaN') {
+            field.value = newVal;
+          } else {
+            field.value = 0;
+          }
+        }
         return (
           <TextField
             {...field}
@@ -30,11 +37,10 @@ export default function FieldText({
             }}
             InputLabelProps={{ shrink: true }}
             fullWidth
-            type={type}
-            value={field.value || null}
+            value={field.value || ''}
             onChange={(event) => {
-              if (type === "number") {
-                field.onChange(Number(event.target.value));
+              if (type === 'number') {
+                field.onChange(Number(event.target.value.replace(/\,/g, '')));
               } else {
                 field.onChange(event.target.value);
               }

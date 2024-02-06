@@ -1,14 +1,6 @@
-import React from "react";
-import { UseFormReturn } from "react-hook-form";
-import { FormConfig } from "../../index";
-export type FormRefType = UseFormReturn<{
-    [key: string]: any;
-}, any, undefined>;
-export interface TabFormRef {
-    validate: (formArr: FormRefType[]) => Promise<boolean>;
-    getTabFormRef: () => Record<PropertyKey, FormRefType>;
-}
-export declare const TabForm: React.MemoExoticComponent<React.ForwardRefExoticComponent<{
+import React from 'react';
+import { FormConfig } from '../../index';
+declare const TabForm: React.MemoExoticComponent<React.ForwardRefExoticComponent<{
     tabId: string;
     tabConfig: {
         id: string;
@@ -17,3 +9,4 @@ export declare const TabForm: React.MemoExoticComponent<React.ForwardRefExoticCo
     }[];
     handleTabChange: (tabId: string) => void;
 } & React.RefAttributes<unknown>>>;
+export default TabForm;

@@ -1,6 +1,6 @@
-/// <reference types="react" />
 import { DropzoneOptions } from 'react-dropzone';
 import { Theme, SxProps } from '@mui/material/styles';
+import React from 'react';
 export interface CustomFile extends File {
     path?: string;
     preview?: string;
@@ -21,11 +21,12 @@ export interface UploadProps extends DropzoneOptions {
     onUpload?: VoidFunction;
     onRemove?: (fileName: CustomFile | string, fileIndex?: number) => void;
     onRemoveAll?: VoidFunction;
-    uploadAction?: (file: File) => Promise<string>;
+    uploadAction?: (file: File) => Promise<string | undefined>;
     onAdd?: (url: string) => void;
     onDel?: (url: string) => void;
     onOrder?: (fileUrls: string[]) => void;
     moveCard?: (dragIndex: number, hoverIndex: number) => void;
+    uploadLoabel?: React.ReactNode;
 }
 export interface UploadPropsEx extends DropzoneOptions {
     fileNameList?: string[];

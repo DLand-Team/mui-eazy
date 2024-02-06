@@ -85,8 +85,13 @@ export function useFields(
           current[key] = defaultValue;
           if (schema) {
             currentShape[key] = schema;
-          } else if (required) {
-            currentShape[key] = Yup.string().required(name + ' is required');
+          }
+          if (required) {
+            if (currentShape[key]) {
+              currentShape[key] = currentShape[key].required(name + ' is required');
+            } else {
+              currentShape[key] = Yup.string().required(name + ' is required');
+            }
           }
         }
       });
@@ -114,7 +119,7 @@ export function useFields(
   const methods = useForm({
     resolver: yupResolver(PersonalSchema),
     defaultValues,
-    mode
+    mode,
   });
 
   const {
@@ -146,7 +151,7 @@ export function useFields(
                 values,
                 info,
                 api: methods,
-              })
+              });
               setIsFresh(uuidv4());
             }
           }
@@ -166,7 +171,7 @@ export function useFields(
   }, [watch, fromConfig]);
   let formNode = useMemo(() => {
     return (
-      <FormProvider onSubmit={handleSubmit(() => { })} formRef={methods}>
+      <FormProvider onSubmit={handleSubmit(() => {})} formRef={methods}>
         <Stack sx={sx} spacing={3}>
           {fileds}
           {onSubmit && (

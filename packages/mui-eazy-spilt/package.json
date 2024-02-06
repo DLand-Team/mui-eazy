@@ -1,12 +1,12 @@
 {
-	"name": "mui-eazy",
+	"name": "mui-eazy-split",
 	"main": "dist/index.js",
 	"files": [
 		"dist/"
 	],
 	"type": "module",
 	"types": "dist/types/index.d.ts",
-	"version": "0.0.16",
+	"version": "0.0.19",
 	"author": "闲D阿强",
 	"homepage": "https://design.06k4.com",
 	"repository": {
@@ -38,11 +38,13 @@
 		"@mui/x-date-pickers": "^6.0.0",
 		"react": "^17.0.0 || ^18.0.0",
 		"react-dom": "^17.0.0 || ^18.0.0",
-		"yup": "^1.0.0"
+		"yup": "^1.0.0",
+		"@mui/icons-material": "^5"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^3.3.1",
 		"@iconify/react": "^4.1.1",
+		"@mui/icons-material": "^5.15.7",
 		"@rollup/plugin-image": "^3.0.3",
 		"@rollup/plugin-url": "^8.0.2",
 		"LocalizationProvider": "link:@mui/x-date-pickers/LocalizationProvider",

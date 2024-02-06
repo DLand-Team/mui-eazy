@@ -8,3 +8,4 @@ export * from './themeUtil';
 export * from './uuidv4';
 export * from './dataURLToBlob';
 export * from './getValueByPath';
+export * from './dateUtil';

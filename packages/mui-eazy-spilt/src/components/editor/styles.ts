@@ -1,5 +1,6 @@
 import { styled, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+
 // ----------------------------------------------------------------------
 
 export const StyledEditor = styled(Box)(({ theme }) => ({

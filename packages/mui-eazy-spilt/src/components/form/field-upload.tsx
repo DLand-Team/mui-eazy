@@ -42,11 +42,11 @@ export function FieldUpload({
   useEffect(() => {
     const subscription = watch((_, info) => {
       if (info.name == name) {
-        trigger(name)
+        trigger(name);
       }
-    })
+    });
     return () => subscription.unsubscribe();
-  }, [])
+  }, []);
   return (
     <Controller
       name={name}

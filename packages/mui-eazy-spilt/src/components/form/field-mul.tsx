@@ -12,13 +12,13 @@ export type FieldMulProps = {
   childFieldConfig?: FormConfig | FormConfigItem;
   mulType?: 'one' | 'obj';
   placeholder?: string;
-  addLabel?: string;
+  addLabel?: string; // add btn label
   itemFieldConfig?: FieldConfig;
-  methods?: UseFormReturn
+  methods?: UseFormReturn;
 };
 
 export default function FieldMul(props: FieldMulProps) {
-  const { name, childFieldConfig, mulType = 'one', addLabel, itemFieldConfig } = props;
+  const { name, mulType = 'one', addLabel, itemFieldConfig, childFieldConfig } = props;
   const { setValue, getValues, unregister, register } = useFormContext();
   const { control } = useFormContext();
   let value = getValues(name);
@@ -39,7 +39,12 @@ export default function FieldMul(props: FieldMulProps) {
     let itemName = `${name}.${index}`;
     let fields: any;
     if (mulType == 'one') {
-      fields = childFieldConfig ? getField(itemName, childFieldConfig) : getField(itemName, { label: itemFieldConfig?.placeholder || itemFieldConfig?.label, fieldConfig: itemFieldConfig || props });
+      fields = childFieldConfig
+        ? getField(itemName, childFieldConfig)
+        : getField(itemName, {
+            label: itemFieldConfig?.placeholder || itemFieldConfig?.label,
+            fieldConfig: itemFieldConfig || props,
+          });
       comp = (
         <Stack
           sx={{
@@ -80,7 +85,7 @@ export default function FieldMul(props: FieldMulProps) {
               for (let i in temp) {
                 register(`${name}.${i}`);
               }
-              setValue(`${name}`, formValue)
+              setValue(`${name}`, formValue);
               formValue.forEach((value, index) => {
                 setValue(`${name}.${index}`, value);
               });
@@ -96,7 +101,7 @@ export default function FieldMul(props: FieldMulProps) {
         (value as any).name = `${itemName}.${key}`;
         let temp: any = { ...value };
         if (value.labelMap?.[index]) {
-          temp.label = value.labelMap?.[index]
+          temp.label = value.labelMap?.[index];
         }
         return (
           <Stack
@@ -112,10 +117,16 @@ export default function FieldMul(props: FieldMulProps) {
         );
       });
       comp = (
-        <Stack key={id}>
+        <Stack
+          sx={{
+            width: '100%',
+          }}
+          key={id}
+        >
           {fields}
           <Stack
             sx={{
+              width: '100%',
               mb: 2,
             }}
             direction="row"
@@ -143,7 +154,7 @@ export default function FieldMul(props: FieldMulProps) {
                 for (let i in temp) {
                   register(`${name}.${i}`);
                 }
-                setValue(`${name}`, formValue)
+                setValue(`${name}`, formValue);
                 formValue.forEach((value, index) => {
                   setValue(`${name}.${index}`, value);
                 });
@@ -159,7 +170,7 @@ export default function FieldMul(props: FieldMulProps) {
       return <>error</>;
     }
     return comp;
-  })
+  });
 
   return (
     <>

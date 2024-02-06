@@ -1,7 +1,8 @@
 import { SxProps, Theme } from '@mui/material';
 type FileIconProps = {
-    file: string;
+    file: File;
+    fileName: string;
     sx?: SxProps<Theme>;
 };
-export declare function FileThumbnail({ file, sx }: FileIconProps): import("react/jsx-runtime").JSX.Element;
+export declare function FileThumbnail({ fileName, file, sx }: FileIconProps): import("react/jsx-runtime").JSX.Element;
 export {};

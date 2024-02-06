@@ -8,6 +8,7 @@
     "npm": ">=8.15.0"
   },
   "scripts": {
+    "dev":"pnpm --filter next-mui-ts run dev",
     "start": "pnpm --filter mui-eazy-docs run start",
 		"build:doc": "pnpm --filter mui-eazy-docs run build",
 		"build:split": "pnpm --filter mui-eazy run build",

@@ -1,5 +1,5 @@
 import View from "./view";
 
 export default function Home() {
-  return <View></View>;
+	return <View></View>;
 }

@@ -1,0 +1,258 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+
+	.content {
+		padding: 8px 40px;
+		width: 100%;
+
+		.titleBlock {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			margin: 12px 0;
+			width: 100%;
+
+			.titleBlockLeft {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+
+				.title {
+					font-size: 26px;
+					font-weight: bold;
+				}
+
+				.subTitle {
+					display: flex;
+					flex-direction: row;
+					align-items: baseline;
+
+					.subTitleLeft {
+						flex: 1;
+						display: flex;
+						flex-direction: row;
+					}
+
+					.subTitleRight {
+						flex: 1;
+						display: flex;
+						flex-direction: row-reverse;
+						gap: 8px;
+					}
+				}
+			}
+
+			.titleBlockRight {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+
+				.titleIcon {
+					width: 56px;
+					height: 56px;
+					border-radius: 50%;
+					overflow: hidden;
+				}
+			}
+		}
+
+		.divideLine {
+			width: 100%;
+			height: 0;
+			margin: 8px 0;
+			border-bottom: 1px solid #EEEEEE;
+		}
+
+		.images {
+			position: relative;
+			margin: 12px 0;
+			padding-bottom: 35%;
+			width: 100%;
+			border-radius: 12px;
+			overflow: hidden;
+
+			--image-gap: 10px;
+
+			.imageAutoHeightContainer {
+				display: flex;
+				flex-direction: row;
+				gap: var(--image-gap);
+				position: absolute;
+				width: 100%;
+				height: 100%;
+
+				.left {
+					flex: 1;
+
+					img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+
+				.right {
+					flex: 1;
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					gap: var(--image-gap);
+
+					img {
+						width: calc(50% - var(--image-gap) / 2);
+						height: calc(50% - var(--image-gap) / 2);
+					}
+				}
+			}
+		}
+
+		.itemList {
+			display: flex;
+			flex-direction: column;
+			margin: 12px 0;
+
+			.item {
+				display: flex;
+				flex-direction: row;
+				padding: 8px 0;
+
+				.itemIcon {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin-right: 16px;
+				}
+
+				.itemText {
+					flex: 1;
+					display: flex;
+					flex-direction: column;
+
+					.itemHeader {
+						font-size: 18px;
+						font-weight: bold;
+						color: #000000;
+					}
+
+					.itemLabel {
+						font-size: 14px;
+						color: #717171;
+					}
+				}
+			}
+		}
+
+		.stickyCard {
+			display: flex;
+			flex-direction: column;
+			position: sticky;
+			width: 100%;
+			margin: 12px 0;
+			padding: 24px;
+			top: 12px;
+			border: 1px solid rgb(221, 221, 221);
+			border-radius: 12px;
+			box-shadow: rgba(0, 0, 0, 0.12) 0 6px 16px;
+
+			.cardTitle {
+				display: flex;
+				flex-direction: row;
+				align-items: baseline;
+
+				.cardTitleText {
+					flex: 1;
+					font-size: 18px;
+					font-weight: bold;
+					color: #000000;
+				}
+
+				.cardTitleSubText {
+					font-size: 14px;
+					color: #717171;
+				}
+			}
+
+			.cardContent {
+				margin: 12px 0;
+
+				.outlinePanel {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					border: 1px solid #556CD6;
+					border-radius: 12px;
+
+					.panelTop {
+						display: flex;
+						flex-direction: row;
+
+						.panelTopLeft {
+							flex: 1;
+							border-right: 1px solid #556CD6;
+							border-bottom: 1px solid #556CD6;
+						}
+
+						.panelTopRight {
+							flex: 1;
+							border-bottom: 1px solid #556CD6;
+						}
+					}
+
+					.panelBottom {
+
+					}
+
+					.panelBlock {
+						padding: 12px;
+
+						.panelBlockTitle {
+							font-size: 14px;
+							font-weight: bold;
+							color: #556CD6;
+						}
+
+						.panelBlockText {
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+
+		.doubleArea {
+			display: flex;
+			flex-direction: row;
+
+			.leftContent {
+				flex: 1;
+				position: relative;
+				margin-right: 36px;
+			}
+
+			.rightContent {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				position: relative;
+				width: 36%;
+			}
+		}
+	}
+
+	img {
+		object-fit: cover;
+		cursor: pointer;
+		transition: 0.35s;
+	}
+
+	img:hover {
+		box-shadow: 0 5px 10px rgba(50, 50, 50, 0.5);
+	}
+}
+

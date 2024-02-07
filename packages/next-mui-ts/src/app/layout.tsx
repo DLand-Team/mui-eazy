@@ -2,7 +2,7 @@ import * as React from "react";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import theme from "@/theme";
+import theme from "@/theme/index";
 import Footer from "@/common/components/Footer";
 import Header from "@/common/components/Header";
 

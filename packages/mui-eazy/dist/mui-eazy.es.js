@@ -93434,12 +93434,12 @@ Object.defineProperty(pa, "__esModule", {
   value: !0
 });
 pa.loadGoogleMapScript = pa.isBrowser = void 0;
-var IP = typeof window < "u" && window.document;
+var IP = typeof window < "u" && window;
 pa.isBrowser = IP;
 var Kse = function(t, n) {
   if (!IP || typeof google < "u" && google.maps && google.maps.api)
     return Promise.resolve();
-  var r = document.querySelectorAll('script[src*="'.concat(t, '"]'));
+  var r = {}.querySelectorAll('script[src*="'.concat(t, '"]'));
   if (r && r.length)
     return new Promise(function(a) {
       if (typeof google < "u")

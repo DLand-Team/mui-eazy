@@ -16,12 +16,15 @@
 		"@mui/icons-material": "latest",
 		"@mui/material": "latest",
 		"@mui/material-nextjs": "latest",
+		"lodash-es": "^4.17.21",
 		"mui-eazy": "workspace:^",
 		"next": "latest",
 		"react": "latest",
-		"react-dom": "latest"
+		"react-dom": "latest",
+		"stylis-plugin-rtl": "^2.1.1"
 	},
 	"devDependencies": {
+		"@types/lodash-es": "^4.17.12",
 		"@types/node": "latest",
 		"@types/react": "latest",
 		"@types/react-dom": "latest",

@@ -32,7 +32,7 @@ export const Editor: React.FC<{
 		return () => {
 			editor.current.dispose();
 		};
-	}, []);
+	}, [current]);
 
 	editor.current?.layout();
 	useEffect(() => {

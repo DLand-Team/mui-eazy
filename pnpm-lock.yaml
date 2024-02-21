@@ -28,212 +28,7 @@ importers:
         specifier: ^4.1.5
         version: 4.1.5
 
-  packages/mui-eazy:
-    dependencies:
-      '@emotion/react':
-        specifier: ^11.5.0
-        version: 11.11.3(@types/react@18.2.57)(react@18.2.0)
-      '@emotion/styled':
-        specifier: ^11.5.0
-        version: 11.11.0(@emotion/react@11.11.3)(@types/react@18.2.57)(react@18.2.0)
-      '@hookform/resolvers':
-        specifier: ^3.3.1
-        version: 3.3.4(react-hook-form@7.50.1)
-      '@iconify/react':
-        specifier: ^4.1.1
-        version: 4.1.1(react@18.2.0)
-      '@mui/icons-material':
-        specifier: ^5
-        version: 5.15.10(@mui/material@5.15.10)(@types/react@18.2.57)(react@18.2.0)
-      '@mui/lab':
-        specifier: ^5.0.0-alpha.142
-        version: 5.0.0-alpha.165(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@mui/material@5.15.10)(@types/react@18.2.57)(react-dom@18.2.0)(react@18.2.0)
-      '@mui/material':
-        specifier: ^5.15.5
-        version: 5.15.10(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.57)(react-dom@18.2.0)(react@18.2.0)
-      '@mui/system':
-        specifier: ^5.15.5
-        version: 5.15.9(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.57)(react@18.2.0)
-      '@mui/x-data-grid':
-        specifier: ^6.0.0
-        version: 6.19.4(@mui/material@5.15.10)(@mui/system@5.15.9)(@types/react@18.2.57)(react-dom@18.2.0)(react@18.2.0)
-      '@mui/x-date-pickers':
-        specifier: ^6.0.0
-        version: 6.19.4(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@mui/material@5.15.10)(@mui/system@5.15.9)(@types/react@18.2.57)(date-fns@2.30.0)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
-      '@rollup/plugin-image':
-        specifier: ^3.0.3
-        version: 3.0.3(rollup@4.12.0)
-      '@rollup/plugin-url':
-        specifier: ^8.0.2
-        version: 8.0.2(rollup@4.12.0)
-      LocalizationProvider:
-        specifier: link:@mui/x-date-pickers/LocalizationProvider
-        version: link:@mui/x-date-pickers/LocalizationProvider
-      cropperjs:
-        specifier: ^1.6.1
-        version: 1.6.1
-      date-fns:
-        specifier: ^2.30.0
-        version: 2.30.0
-      dayjs:
-        specifier: ^1.11.10
-        version: 1.11.10
-      framer-motion:
-        specifier: ^10.16.2
-        version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
-      highlight.js:
-        specifier: ^11.8.0
-        version: 11.9.0
-      i18next:
-        specifier: ^23.4.6
-        version: 23.9.0
-      i18next-browser-languagedetector:
-        specifier: ^7.1.0
-        version: 7.2.0
-      lodash:
-        specifier: ^4.17.21
-        version: 4.17.21
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
-      mui-one-time-password-input:
-        specifier: ^2.0.0
-        version: 2.0.2(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@mui/material@5.15.10)(@types/react@18.2.57)(react-dom@18.2.0)(react@18.2.0)
-      notistack:
-        specifier: ^3.0.1
-        version: 3.0.1(csstype@3.1.3)(react-dom@18.2.0)(react@18.2.0)
-      nprogress:
-        specifier: ^0.2.0
-        version: 0.2.0
-      numeral:
-        specifier: ^2.0.6
-        version: 2.0.6
-      react:
-        specifier: ^17.0.0 || ^18.0.0
-        version: 18.2.0
-      react-cropper:
-        specifier: ^2.3.3
-        version: 2.3.3(react@18.2.0)
-      react-dnd:
-        specifier: ^16.0.1
-        version: 16.0.1(@types/node@20.11.19)(@types/react@18.2.57)(react@18.2.0)
-      react-dnd-html5-backend:
-        specifier: ^16.0.1
-        version: 16.0.1
-      react-dom:
-        specifier: ^17.0.0 || ^18.0.0
-        version: 18.2.0(react@18.2.0)
-      react-dropzone:
-        specifier: ^14.2.3
-        version: 14.2.3(react@18.2.0)
-      react-google-autocomplete:
-        specifier: ^2.7.3
-        version: 2.7.3(react@18.2.0)
-      react-hook-form:
-        specifier: ^7.45.4
-        version: 7.50.1(react@18.2.0)
-      react-i18next:
-        specifier: ^13.2.1
-        version: 13.5.0(i18next@23.9.0)(react-dom@18.2.0)(react@18.2.0)
-      react-lazy-load-image-component:
-        specifier: ^1.6.0
-        version: 1.6.0(react-dom@18.2.0)(react@18.2.0)
-      react-markdown:
-        specifier: ^8.0.7
-        version: 8.0.7(@types/react@18.2.57)(react@18.2.0)
-      react-quill:
-        specifier: ^2.0.0
-        version: 2.0.0(react-dom@18.2.0)(react@18.2.0)
-      react-slick:
-        specifier: ^0.29.0
-        version: 0.29.0(react-dom@18.2.0)(react@18.2.0)
-      rollup-plugin-terser:
-        specifier: ^7.0.2
-        version: 7.0.2(rollup@4.12.0)
-      slick-carousel:
-        specifier: ^1.8.1
-        version: 1.8.1(jquery@3.7.1)
-      yet-another-react-lightbox:
-        specifier: ^3.12.1
-        version: 3.17.0(react-dom@18.2.0)(react@18.2.0)
-      yup:
-        specifier: ^1.2.0
-        version: 1.3.3
-    devDependencies:
-      '@babel/plugin-transform-runtime':
-        specifier: ^7.23.9
-        version: 7.23.9(@babel/core@7.23.9)
-      '@babel/preset-env':
-        specifier: ^7.23.9
-        version: 7.23.9(@babel/core@7.23.9)
-      '@babel/preset-react':
-        specifier: ^7.23.3
-        version: 7.23.3(@babel/core@7.23.9)
-      '@babel/preset-typescript':
-        specifier: ^7.23.3
-        version: 7.23.3(@babel/core@7.23.9)
-      '@rollup/plugin-babel':
-        specifier: ^6.0.4
-        version: 6.0.4(@babel/core@7.23.9)(rollup@4.12.0)
-      '@rollup/plugin-commonjs':
-        specifier: ^25.0.7
-        version: 25.0.7(rollup@4.12.0)
-      '@rollup/plugin-json':
-        specifier: ^6.1.0
-        version: 6.1.0(rollup@4.12.0)
-      '@rollup/plugin-node-resolve':
-        specifier: ^15.2.3
-        version: 15.2.3(rollup@4.12.0)
-      '@rollup/plugin-typescript':
-        specifier: ^11.1.6
-        version: 11.1.6(rollup@4.12.0)(tslib@2.6.2)(typescript@5.3.3)
-      '@svgr/rollup':
-        specifier: ^8.1.0
-        version: 8.1.0(rollup@4.12.0)(typescript@5.3.3)
-      '@types/node':
-        specifier: ^20.11.16
-        version: 20.11.19
-      '@types/react':
-        specifier: ^18.2.51
-        version: 18.2.57
-      '@types/react-dom':
-        specifier: ^18.2.18
-        version: 18.2.19
-      '@vitejs/plugin-react':
-        specifier: ^4.2.1
-        version: 4.2.1(vite@5.1.3)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
-      rimraf:
-        specifier: ^5.0.5
-        version: 5.0.5
-      rollup:
-        specifier: ^4.9.6
-        version: 4.12.0
-      rollup-plugin-dts:
-        specifier: ^6.1.0
-        version: 6.1.0(rollup@4.12.0)(typescript@5.3.3)
-      rollup-plugin-peer-deps-external:
-        specifier: ^2.2.4
-        version: 2.2.4(rollup@4.12.0)
-      rollup-plugin-postcss:
-        specifier: ^4.0.2
-        version: 4.0.2(postcss@8.4.35)
-      rollup-plugin-svg:
-        specifier: ^2.0.0
-        version: 2.0.0
-      sass:
-        specifier: ^1.70.0
-        version: 1.71.1
-      typescript:
-        specifier: ^5.3.3
-        version: 5.3.3
-      vite:
-        specifier: ^5.0.12
-        version: 5.1.3(@types/node@20.11.19)(sass@1.71.1)
-
-  packages/mui-eazy-spilt:
+  packages/mui-eazy-rollup:
     dependencies:
       '@emotion/react':
         specifier: ^11.5.0
@@ -441,6 +236,211 @@ importers:
         specifier: ^5.0.12
         version: 5.1.3(@types/node@20.11.19)(sass@1.71.1)
 
+  packages/mui-eazy-vite:
+    dependencies:
+      '@emotion/react':
+        specifier: ^11.5.0
+        version: 11.11.3(@types/react@18.2.57)(react@18.2.0)
+      '@emotion/styled':
+        specifier: ^11.5.0
+        version: 11.11.0(@emotion/react@11.11.3)(@types/react@18.2.57)(react@18.2.0)
+      '@hookform/resolvers':
+        specifier: ^3.3.1
+        version: 3.3.4(react-hook-form@7.50.1)
+      '@iconify/react':
+        specifier: ^4.1.1
+        version: 4.1.1(react@18.2.0)
+      '@mui/icons-material':
+        specifier: ^5
+        version: 5.15.10(@mui/material@5.15.10)(@types/react@18.2.57)(react@18.2.0)
+      '@mui/lab':
+        specifier: ^5.0.0-alpha.142
+        version: 5.0.0-alpha.165(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@mui/material@5.15.10)(@types/react@18.2.57)(react-dom@18.2.0)(react@18.2.0)
+      '@mui/material':
+        specifier: ^5.15.5
+        version: 5.15.10(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.57)(react-dom@18.2.0)(react@18.2.0)
+      '@mui/system':
+        specifier: ^5.15.5
+        version: 5.15.9(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.57)(react@18.2.0)
+      '@mui/x-data-grid':
+        specifier: ^6.0.0
+        version: 6.19.4(@mui/material@5.15.10)(@mui/system@5.15.9)(@types/react@18.2.57)(react-dom@18.2.0)(react@18.2.0)
+      '@mui/x-date-pickers':
+        specifier: ^6.0.0
+        version: 6.19.4(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@mui/material@5.15.10)(@mui/system@5.15.9)(@types/react@18.2.57)(date-fns@2.30.0)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
+      '@rollup/plugin-image':
+        specifier: ^3.0.3
+        version: 3.0.3(rollup@4.12.0)
+      '@rollup/plugin-url':
+        specifier: ^8.0.2
+        version: 8.0.2(rollup@4.12.0)
+      LocalizationProvider:
+        specifier: link:@mui/x-date-pickers/LocalizationProvider
+        version: link:@mui/x-date-pickers/LocalizationProvider
+      cropperjs:
+        specifier: ^1.6.1
+        version: 1.6.1
+      date-fns:
+        specifier: ^2.30.0
+        version: 2.30.0
+      dayjs:
+        specifier: ^1.11.10
+        version: 1.11.10
+      framer-motion:
+        specifier: ^10.16.2
+        version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
+      highlight.js:
+        specifier: ^11.8.0
+        version: 11.9.0
+      i18next:
+        specifier: ^23.4.6
+        version: 23.9.0
+      i18next-browser-languagedetector:
+        specifier: ^7.1.0
+        version: 7.2.0
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      mui-one-time-password-input:
+        specifier: ^2.0.0
+        version: 2.0.2(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@mui/material@5.15.10)(@types/react@18.2.57)(react-dom@18.2.0)(react@18.2.0)
+      notistack:
+        specifier: ^3.0.1
+        version: 3.0.1(csstype@3.1.3)(react-dom@18.2.0)(react@18.2.0)
+      nprogress:
+        specifier: ^0.2.0
+        version: 0.2.0
+      numeral:
+        specifier: ^2.0.6
+        version: 2.0.6
+      react:
+        specifier: ^17.0.0 || ^18.0.0
+        version: 18.2.0
+      react-cropper:
+        specifier: ^2.3.3
+        version: 2.3.3(react@18.2.0)
+      react-dnd:
+        specifier: ^16.0.1
+        version: 16.0.1(@types/node@20.11.19)(@types/react@18.2.57)(react@18.2.0)
+      react-dnd-html5-backend:
+        specifier: ^16.0.1
+        version: 16.0.1
+      react-dom:
+        specifier: ^17.0.0 || ^18.0.0
+        version: 18.2.0(react@18.2.0)
+      react-dropzone:
+        specifier: ^14.2.3
+        version: 14.2.3(react@18.2.0)
+      react-google-autocomplete:
+        specifier: ^2.7.3
+        version: 2.7.3(react@18.2.0)
+      react-hook-form:
+        specifier: ^7.45.4
+        version: 7.50.1(react@18.2.0)
+      react-i18next:
+        specifier: ^13.2.1
+        version: 13.5.0(i18next@23.9.0)(react-dom@18.2.0)(react@18.2.0)
+      react-lazy-load-image-component:
+        specifier: ^1.6.0
+        version: 1.6.0(react-dom@18.2.0)(react@18.2.0)
+      react-markdown:
+        specifier: ^8.0.7
+        version: 8.0.7(@types/react@18.2.57)(react@18.2.0)
+      react-quill:
+        specifier: ^2.0.0
+        version: 2.0.0(react-dom@18.2.0)(react@18.2.0)
+      react-slick:
+        specifier: ^0.29.0
+        version: 0.29.0(react-dom@18.2.0)(react@18.2.0)
+      rollup-plugin-terser:
+        specifier: ^7.0.2
+        version: 7.0.2(rollup@4.12.0)
+      slick-carousel:
+        specifier: ^1.8.1
+        version: 1.8.1(jquery@3.7.1)
+      yet-another-react-lightbox:
+        specifier: ^3.12.1
+        version: 3.17.0(react-dom@18.2.0)(react@18.2.0)
+      yup:
+        specifier: ^1.2.0
+        version: 1.3.3
+    devDependencies:
+      '@babel/plugin-transform-runtime':
+        specifier: ^7.23.9
+        version: 7.23.9(@babel/core@7.23.9)
+      '@babel/preset-env':
+        specifier: ^7.23.9
+        version: 7.23.9(@babel/core@7.23.9)
+      '@babel/preset-react':
+        specifier: ^7.23.3
+        version: 7.23.3(@babel/core@7.23.9)
+      '@babel/preset-typescript':
+        specifier: ^7.23.3
+        version: 7.23.3(@babel/core@7.23.9)
+      '@rollup/plugin-babel':
+        specifier: ^6.0.4
+        version: 6.0.4(@babel/core@7.23.9)(rollup@4.12.0)
+      '@rollup/plugin-commonjs':
+        specifier: ^25.0.7
+        version: 25.0.7(rollup@4.12.0)
+      '@rollup/plugin-json':
+        specifier: ^6.1.0
+        version: 6.1.0(rollup@4.12.0)
+      '@rollup/plugin-node-resolve':
+        specifier: ^15.2.3
+        version: 15.2.3(rollup@4.12.0)
+      '@rollup/plugin-typescript':
+        specifier: ^11.1.6
+        version: 11.1.6(rollup@4.12.0)(tslib@2.6.2)(typescript@5.3.3)
+      '@svgr/rollup':
+        specifier: ^8.1.0
+        version: 8.1.0(rollup@4.12.0)(typescript@5.3.3)
+      '@types/node':
+        specifier: ^20.11.16
+        version: 20.11.19
+      '@types/react':
+        specifier: ^18.2.51
+        version: 18.2.57
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.2.19
+      '@vitejs/plugin-react':
+        specifier: ^4.2.1
+        version: 4.2.1(vite@5.1.3)
+      cross-env:
+        specifier: ^7.0.3
+        version: 7.0.3
+      rimraf:
+        specifier: ^5.0.5
+        version: 5.0.5
+      rollup:
+        specifier: ^4.9.6
+        version: 4.12.0
+      rollup-plugin-dts:
+        specifier: ^6.1.0
+        version: 6.1.0(rollup@4.12.0)(typescript@5.3.3)
+      rollup-plugin-peer-deps-external:
+        specifier: ^2.2.4
+        version: 2.2.4(rollup@4.12.0)
+      rollup-plugin-postcss:
+        specifier: ^4.0.2
+        version: 4.0.2(postcss@8.4.35)
+      rollup-plugin-svg:
+        specifier: ^2.0.0
+        version: 2.0.0
+      sass:
+        specifier: ^1.70.0
+        version: 1.71.1
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
+      vite:
+        specifier: ^5.0.12
+        version: 5.1.3(@types/node@20.11.19)(sass@1.71.1)
+
   packages/newDocs:
     dependencies:
       '@docusaurus/core':
@@ -505,7 +505,7 @@ importers:
         version: 7.1.0(monaco-editor@0.45.0)(webpack@5.90.3)
       mui-eazy:
         specifier: workspace:^
-        version: link:../mui-eazy
+        version: link:../mui-eazy-rollup
       prettier:
         specifier: ^3.0.3
         version: 3.2.5
@@ -572,7 +572,7 @@ importers:
         version: 4.17.21
       mui-eazy:
         specifier: workspace:^
-        version: link:../mui-eazy
+        version: link:../mui-eazy-rollup
       next:
         specifier: latest
         version: 14.1.0(@babel/core@7.23.9)(react-dom@18.2.0)(react@18.2.0)(sass@1.71.1)
@@ -6476,7 +6476,7 @@ packages:
       es-errors: 1.3.0
       get-intrinsic: 1.2.4
       is-array-buffer: 3.0.4
-      is-shared-array-buffer: 1.0.2
+      is-shared-array-buffer: 1.0.3
     dev: true
 
   /arrify@1.0.1:
@@ -8511,7 +8511,7 @@ packages:
       is-callable: 1.2.7
       is-negative-zero: 2.0.3
       is-regex: 1.1.4
-      is-shared-array-buffer: 1.0.2
+      is-shared-array-buffer: 1.0.3
       is-string: 1.0.7
       is-typed-array: 1.1.13
       is-weakref: 1.0.2
@@ -8525,7 +8525,7 @@ packages:
       string.prototype.trimend: 1.0.7
       string.prototype.trimstart: 1.0.7
       typed-array-buffer: 1.0.2
-      typed-array-byte-length: 1.0.0
+      typed-array-byte-length: 1.0.1
       typed-array-byte-offset: 1.0.2
       typed-array-length: 1.0.5
       unbox-primitive: 1.0.2
@@ -11073,8 +11073,9 @@ packages:
     resolution: {integrity: sha512-+2cnTEZeY5z/iXGbLhPrOAaK/Mau5k5eXq9j14CpRTftq0pAJu2MwVRSZhyZWBzx3o6X795Lz6Bpb6R0GKf37g==}
     dev: true
 
-  /is-shared-array-buffer@1.0.2:
-    resolution: {integrity: sha512-sqN2UDu1/0y6uvXyStCOzyhAjCSlHceFoMKJW8W9EU9cvic/QdsZ0kEU93HEy3IUEFZIiH/3w+AH/UQbPHNdhA==}
+  /is-shared-array-buffer@1.0.3:
+    resolution: {integrity: sha512-nA2hv5XIhLR3uVzDDfCIknerhx8XUKnstuOERPNNIinXG7v9u+ohXF67vxm4TPTEPU6lm61ZkwP3c9PCB97rhg==}
+    engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.7
     dev: true
@@ -17110,12 +17111,13 @@ packages:
       is-typed-array: 1.1.13
     dev: true
 
-  /typed-array-byte-length@1.0.0:
-    resolution: {integrity: sha512-Or/+kvLxNpeQ9DtSydonMxCx+9ZXOswtwJn17SNLvhptaXYDJvkFFP5zbfU/uLmvnBJlI4yrnXRxpdWH/M5tNA==}
+  /typed-array-byte-length@1.0.1:
+    resolution: {integrity: sha512-3iMJ9q0ao7WE9tWcaYKIptkNBuOIcZCCT0d4MRvuuH88fEoEH62IuQe0OtraD3ebQEoTRk8XCBoknUNc1Y67pw==}
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.7
       for-each: 0.3.3
+      gopd: 1.0.1
       has-proto: 1.0.3
       is-typed-array: 1.1.13
     dev: true

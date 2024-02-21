@@ -1,1 +1,23 @@
-import{useState as e,useCallback as o}from"react";function n(n){const[r,t]=e(!!n);return{value:r,onTrue:o((()=>{t(!0)}),[]),onFalse:o((()=>{t(!1)}),[]),onToggle:o((()=>{t((e=>!e))}),[]),setValue:t}}export{n as useFlag};
+import { useState, useCallback } from 'react';
+
+function useFlag(defaultValue) {
+  const [value, setValue] = useState(!!defaultValue);
+  const onTrue = useCallback(() => {
+    setValue(true);
+  }, []);
+  const onFalse = useCallback(() => {
+    setValue(false);
+  }, []);
+  const onToggle = useCallback(() => {
+    setValue(prev => !prev);
+  }, []);
+  return {
+    value,
+    onTrue,
+    onFalse,
+    onToggle,
+    setValue
+  };
+}
+
+export { useFlag };

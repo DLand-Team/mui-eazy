@@ -1,1 +1,61 @@
-const e=["pdf"],s=["txt"],a=["psd"],c=["doc","docx"],i=["xls","xlsx"],p=["zip","rar","iso"],r=["ai","esp"],d=["ppt","pptx"],n=["wav","aif","mp3","aac"],l=["jpg","jpeg","gif","bmp","png","svg"],t=["m4v","avi","mpg","mp4","webm"];function u(u){let b;switch(u?.includes(o(u))){case s.includes(o(u)):b="txt";break;case p.includes(o(u)):b="zip";break;case n.includes(o(u)):b="audio";break;case l.includes(o(u)):b="image";break;case t.includes(o(u)):b="video";break;case c.includes(o(u)):b="word";break;case i.includes(o(u)):b="excel";break;case d.includes(o(u)):b="powerpoint";break;case e.includes(o(u)):b="pdf";break;case a.includes(o(u)):b="photoshop";break;case r.includes(o(u)):b="illustrator";break;default:b=o(u)}return b}function o(e=""){return e&&e.split(".").pop()||""}export{u as fileFormat,o as fileTypeByUrl};
+// ----------------------------------------------------------------------
+// Define more types here
+const FORMAT_PDF = ['pdf'];
+const FORMAT_TEXT = ['txt'];
+const FORMAT_PHOTOSHOP = ['psd'];
+const FORMAT_WORD = ['doc', 'docx'];
+const FORMAT_EXCEL = ['xls', 'xlsx'];
+const FORMAT_ZIP = ['zip', 'rar', 'iso'];
+const FORMAT_ILLUSTRATOR = ['ai', 'esp'];
+const FORMAT_POWERPOINT = ['ppt', 'pptx'];
+const FORMAT_AUDIO = ['wav', 'aif', 'mp3', 'aac'];
+const FORMAT_IMG = ['jpg', 'jpeg', 'gif', 'bmp', 'png', 'svg'];
+const FORMAT_VIDEO = ['m4v', 'avi', 'mpg', 'mp4', 'webm'];
+// ----------------------------------------------------------------------
+function fileFormat(fileUrl) {
+  let format;
+  switch (fileUrl?.includes(fileTypeByUrl(fileUrl))) {
+    case FORMAT_TEXT.includes(fileTypeByUrl(fileUrl)):
+      format = 'txt';
+      break;
+    case FORMAT_ZIP.includes(fileTypeByUrl(fileUrl)):
+      format = 'zip';
+      break;
+    case FORMAT_AUDIO.includes(fileTypeByUrl(fileUrl)):
+      format = 'audio';
+      break;
+    case FORMAT_IMG.includes(fileTypeByUrl(fileUrl)):
+      format = 'image';
+      break;
+    case FORMAT_VIDEO.includes(fileTypeByUrl(fileUrl)):
+      format = 'video';
+      break;
+    case FORMAT_WORD.includes(fileTypeByUrl(fileUrl)):
+      format = 'word';
+      break;
+    case FORMAT_EXCEL.includes(fileTypeByUrl(fileUrl)):
+      format = 'excel';
+      break;
+    case FORMAT_POWERPOINT.includes(fileTypeByUrl(fileUrl)):
+      format = 'powerpoint';
+      break;
+    case FORMAT_PDF.includes(fileTypeByUrl(fileUrl)):
+      format = 'pdf';
+      break;
+    case FORMAT_PHOTOSHOP.includes(fileTypeByUrl(fileUrl)):
+      format = 'photoshop';
+      break;
+    case FORMAT_ILLUSTRATOR.includes(fileTypeByUrl(fileUrl)):
+      format = 'illustrator';
+      break;
+    default:
+      format = fileTypeByUrl(fileUrl);
+  }
+  return format;
+}
+// ----------------------------------------------------------------------
+function fileTypeByUrl(fileUrl = '') {
+  return fileUrl && fileUrl.split('.').pop() || '';
+}
+
+export { fileFormat, fileTypeByUrl };

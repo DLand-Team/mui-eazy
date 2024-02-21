@@ -1,1 +1,79 @@
-import{alpha as r}from"@mui/system";function o(o){const e=o?.color||"#000000",t=o?.blur||6,n=o?.opacity||.8,l=o?.imgUrl;return l?{position:"relative",backgroundImage:`url(${l})`,"&:before":{position:"absolute",top:0,left:0,zIndex:9,content:'""',width:"100%",height:"100%",backdropFilter:`blur(${t}px)`,WebkitBackdropFilter:`blur(${t}px)`,backgroundColor:r(e,n)}}:{backdropFilter:`blur(${t}px)`,WebkitBackdropFilter:`blur(${t}px)`,backgroundColor:r(e,n)}}function e(r){const o=r?.direction||"to bottom",e=r?.startColor,t=r?.endColor,n=r?.imgUrl,l=r?.color;return n?{background:`linear-gradient(${o}, ${e||l}, ${t||l}), url(${n})`,backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPosition:"center center"}:{background:`linear-gradient(${o}, ${e}, ${t})`}}function t(r){return{background:`-webkit-linear-gradient(${r})`,WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}const n={x:{msOverflowStyle:"none",scrollbarWidth:"none",overflowX:"scroll","&::-webkit-scrollbar":{display:"none"}},y:{msOverflowStyle:"none",scrollbarWidth:"none",overflowY:"scroll","&::-webkit-scrollbar":{display:"none"}}};export{o as bgBlur,e as bgGradient,n as hideScroll,t as textGradient};
+import { alpha } from '@mui/system';
+
+// @mui
+function bgBlur(props) {
+  const color = props?.color || '#000000';
+  const blur = props?.blur || 6;
+  const opacity = props?.opacity || 0.8;
+  const imgUrl = props?.imgUrl;
+  if (imgUrl) {
+    return {
+      position: 'relative',
+      backgroundImage: `url(${imgUrl})`,
+      '&:before': {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        zIndex: 9,
+        content: '""',
+        width: '100%',
+        height: '100%',
+        backdropFilter: `blur(${blur}px)`,
+        WebkitBackdropFilter: `blur(${blur}px)`,
+        backgroundColor: alpha(color, opacity)
+      }
+    };
+  }
+  return {
+    backdropFilter: `blur(${blur}px)`,
+    WebkitBackdropFilter: `blur(${blur}px)`,
+    backgroundColor: alpha(color, opacity)
+  };
+}
+function bgGradient(props) {
+  const direction = props?.direction || 'to bottom';
+  const startColor = props?.startColor;
+  const endColor = props?.endColor;
+  const imgUrl = props?.imgUrl;
+  const color = props?.color;
+  if (imgUrl) {
+    return {
+      background: `linear-gradient(${direction}, ${startColor || color}, ${endColor || color}), url(${imgUrl})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center center'
+    };
+  }
+  return {
+    background: `linear-gradient(${direction}, ${startColor}, ${endColor})`
+  };
+}
+// ----------------------------------------------------------------------
+function textGradient(value) {
+  return {
+    background: `-webkit-linear-gradient(${value})`,
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent'
+  };
+}
+// ----------------------------------------------------------------------
+const hideScroll = {
+  x: {
+    msOverflowStyle: 'none',
+    scrollbarWidth: 'none',
+    overflowX: 'scroll',
+    '&::-webkit-scrollbar': {
+      display: 'none'
+    }
+  },
+  y: {
+    msOverflowStyle: 'none',
+    scrollbarWidth: 'none',
+    overflowY: 'scroll',
+    '&::-webkit-scrollbar': {
+      display: 'none'
+    }
+  }
+};
+
+export { bgBlur, bgGradient, hideScroll, textGradient };

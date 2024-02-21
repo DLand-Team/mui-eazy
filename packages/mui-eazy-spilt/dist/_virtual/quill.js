@@ -1,1 +1,3 @@
-var e={exports:{}};export{e as __module};
+var quill = {exports: {}};
+
+export { quill as __module };

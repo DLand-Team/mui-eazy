@@ -1,1 +1,107 @@
-import{j as e}from"../../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js";import*as o from"react";import{useState as t}from"react";import{Iconify as i}from"../../iconify/iconify.js";import{Demo as m}from"./crop.js";import{Alert as r}from"@mui/material";import a from"../../../node_modules/.pnpm/@mui_material@5.15.7_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.54_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/styles/styled.js";import n from"../../../node_modules/.pnpm/@mui_material@5.15.7_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.54_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/Dialog/Dialog.js";import l from"../../../node_modules/.pnpm/@mui_material@5.15.7_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.54_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/DialogTitle/DialogTitle.js";import s from"../../../node_modules/.pnpm/@mui_material@5.15.7_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.54_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/IconButton/IconButton.js";import _ from"../../../node_modules/.pnpm/@mui_material@5.15.7_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.54_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/DialogContent/DialogContent.js";import c from"../../../node_modules/.pnpm/@mui_material@5.15.7_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.54_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/DialogActions/DialogActions.js";import d from"../../../node_modules/.pnpm/@mui_material@5.15.7_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.54_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/Button/Button.js";const p=a(n)((({theme:e})=>({"& .MuiDialogContent-root":{padding:e.spacing(2)},"& .MuiDialogActions-root":{padding:e.spacing(1)}})));function u({open:a,name:n,src:u,validateFunc:g,onComplete:j,setOpen:y}){const f=()=>{D(!1),b(""),y(!1)},x=o.useRef(),[h,D]=t(!1),[C,b]=t("");return e.jsx(o.Fragment,{children:e.jsxs(p,{onClose:f,"aria-labelledby":"customized-dialog-title",open:a,children:[e.jsx(l,{sx:{m:0,p:2},id:"customized-dialog-title",children:"Crop image"}),e.jsx(s,{"aria-label":"close",onClick:f,sx:{position:"absolute",right:8,top:8,color:e=>e.palette.grey[500]},children:e.jsx(i,{icon:"mingcute:close-line",width:16})}),e.jsxs(_,{dividers:!0,children:[h&&e.jsx(r,{severity:"warning",sx:{mb:3},children:C}),e.jsx(m,{name:n,src:u,callRef:x,onComplete:j,validateFunc:e=>{const[o=!0,t="error"]=g?.(e)||[];return o||(D(!0),b(t)),[o,t]}})]}),e.jsx(c,{children:e.jsx(d,{autoFocus:!0,onClick:()=>{const[e=!0,o=""]=x.current?.()||[];D(!e),e?f():b(o)},children:"Ok"})})]})})}export{u as default};
+import { j as jsxRuntimeExports } from '../../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js';
+import * as React from 'react';
+import { useState } from 'react';
+import { Iconify } from '../../iconify/iconify.js';
+import { Demo } from './crop.js';
+import { Alert } from '@mui/material';
+import styled from '../../../node_modules/.pnpm/@mui_material@5.15.10_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.57_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/styles/styled.js';
+import Dialog from '../../../node_modules/.pnpm/@mui_material@5.15.10_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.57_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/Dialog/Dialog.js';
+import DialogTitle from '../../../node_modules/.pnpm/@mui_material@5.15.10_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.57_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/DialogTitle/DialogTitle.js';
+import IconButton from '../../../node_modules/.pnpm/@mui_material@5.15.10_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.57_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/IconButton/IconButton.js';
+import DialogContent from '../../../node_modules/.pnpm/@mui_material@5.15.10_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.57_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/DialogContent/DialogContent.js';
+import DialogActions from '../../../node_modules/.pnpm/@mui_material@5.15.10_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.57_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/DialogActions/DialogActions.js';
+import Button from '../../../node_modules/.pnpm/@mui_material@5.15.10_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.57_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/Button/Button.js';
+
+const BootstrapDialog = styled(Dialog)(({
+  theme
+}) => ({
+  '& .MuiDialogContent-root': {
+    padding: theme.spacing(2)
+  },
+  '& .MuiDialogActions-root': {
+    padding: theme.spacing(1)
+  }
+}));
+function CropModal({
+  open,
+  name,
+  src,
+  validateFunc,
+  onComplete,
+  setOpen
+}) {
+  const handleClose = () => {
+    setErrFlag(false);
+    setErrInfo('');
+    setOpen(false);
+  };
+  const ref = React.useRef();
+  const [errFlag, setErrFlag] = useState(false);
+  const [errorInfo, setErrInfo] = useState('');
+  return jsxRuntimeExports.jsx(React.Fragment, {
+    children: jsxRuntimeExports.jsxs(BootstrapDialog, {
+      onClose: handleClose,
+      "aria-labelledby": "customized-dialog-title",
+      open: open,
+      children: [jsxRuntimeExports.jsx(DialogTitle, {
+        sx: {
+          m: 0,
+          p: 2
+        },
+        id: "customized-dialog-title",
+        children: "Crop image"
+      }), jsxRuntimeExports.jsx(IconButton, {
+        "aria-label": "close",
+        onClick: handleClose,
+        sx: {
+          position: 'absolute',
+          right: 8,
+          top: 8,
+          color: theme => theme.palette.grey[500]
+        },
+        children: jsxRuntimeExports.jsx(Iconify, {
+          icon: "mingcute:close-line",
+          width: 16
+        })
+      }), jsxRuntimeExports.jsxs(DialogContent, {
+        dividers: true,
+        children: [errFlag && jsxRuntimeExports.jsx(Alert, {
+          severity: "warning",
+          sx: {
+            mb: 3
+          },
+          children: errorInfo
+        }), jsxRuntimeExports.jsx(Demo, {
+          name: name,
+          src: src,
+          callRef: ref,
+          onComplete: onComplete,
+          validateFunc: file => {
+            const [flag = true, info = 'error'] = validateFunc?.(file) || [];
+            if (!flag) {
+              setErrFlag(true);
+              setErrInfo(info);
+            }
+            return [flag, info];
+          }
+        })]
+      }), jsxRuntimeExports.jsx(DialogActions, {
+        children: jsxRuntimeExports.jsx(Button, {
+          autoFocus: true,
+          onClick: () => {
+            const [flag = true, info = ''] = ref.current?.() || [];
+            setErrFlag(!flag);
+            if (flag) {
+              handleClose();
+            } else {
+              setErrInfo(info);
+            }
+          },
+          children: "Ok"
+        })
+      })]
+    })
+  });
+}
+
+export { CropModal as default };

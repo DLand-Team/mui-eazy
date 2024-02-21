@@ -1,1 +1,111 @@
-import{j as e}from"../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js";import{useFormContext as o,Controller as r}from"../../node_modules/.pnpm/react-hook-form@7.45.4_react@18.2.0/node_modules/react-hook-form/dist/index.esm.js";import{useEffect as t}from"react";import"../../node_modules/.pnpm/react-lazy-load-image-component@1.6.0_react-dom@18.2.0_react@18.2.0/node_modules/react-lazy-load-image-component/build/index.js";import"../../node_modules/.pnpm/@iconify_react@4.1.1_react@18.2.0/node_modules/@iconify/react/dist/iconify.js";import{UploadBtn as m}from"../upload/upload-btn.js";import{UploadDrag as n}from"../upload/upload-drag/index.js";import"@mui/material";import"../upload/upload-drag/cropModal.js";import l from"../../node_modules/.pnpm/@mui_material@5.15.7_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.54_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/FormHelperText/FormHelperText.js";function a({name:t,...n}){const{control:l}=o();return e.jsx(r,{name:t,control:l,render:({field:o,fieldState:{error:r}})=>e.jsx(m,{files:o.value,error:!!r,...n})})}function d({accept:m,name:a,multiple:d,helperText:i,onUpload:s,isCrop:p,...c}){const{control:u,setValue:_,getValues:f,watch:x,trigger:j}=o();return t((()=>{const e=x(((e,o)=>{o.name==a&&j(a)}));return()=>e.unsubscribe()}),[]),e.jsx(r,{name:a,control:u,render:({field:o,fieldState:{error:r}})=>e.jsx(n,{isCrop:p,multiple:d,accept:m||{"image/*":[]},files:d?o.value:o.value?[o.value]:[],error:!!r,onOrder:e=>{_(a,e)},onAdd:e=>{if(d){const o=f(a)||[];_(a,[...o,e])}else _(a,e)},onDel:e=>{if(d){let o=f(a),r=o.findIndex((o=>o==e));o.splice(r,1),_(a,o)}else _(a,null)},helperText:(!!r||i)&&e.jsx(l,{error:!!r,sx:{px:2},children:r?r?.message:i}),...c})})}export{d as FieldUpload,a as FieldUploadBox};
+import { j as jsxRuntimeExports } from '../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js';
+import { useFormContext, Controller } from '../../node_modules/.pnpm/react-hook-form@7.50.1_react@18.2.0/node_modules/react-hook-form/dist/index.esm.js';
+import { useEffect } from 'react';
+import '../../node_modules/.pnpm/react-lazy-load-image-component@1.6.0_react-dom@18.2.0_react@18.2.0/node_modules/react-lazy-load-image-component/build/index.js';
+import '../../node_modules/.pnpm/@iconify_react@4.1.1_react@18.2.0/node_modules/@iconify/react/dist/iconify.js';
+import { UploadBtn } from '../upload/upload-btn.js';
+import { UploadDrag } from '../upload/upload-drag/index.js';
+import '@mui/material';
+import '../upload/upload-drag/cropModal.js';
+import FormHelperText from '../../node_modules/.pnpm/@mui_material@5.15.10_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.57_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/FormHelperText/FormHelperText.js';
+
+// ----------------------------------------------------------------------
+function FieldUploadBox({
+  name,
+  ...other
+}) {
+  const {
+    control
+  } = useFormContext();
+  return jsxRuntimeExports.jsx(Controller, {
+    name: name,
+    control: control,
+    render: ({
+      field,
+      fieldState: {
+        error
+      }
+    }) => jsxRuntimeExports.jsx(UploadBtn, {
+      files: field.value,
+      error: !!error,
+      ...other
+    })
+  });
+}
+// ----------------------------------------------------------------------
+function FieldUpload({
+  accept,
+  name,
+  multiple,
+  helperText,
+  onUpload,
+  isCrop,
+  ...other
+}) {
+  const {
+    control,
+    setValue,
+    getValues,
+    watch,
+    trigger
+  } = useFormContext();
+  useEffect(() => {
+    const subscription = watch((_, info) => {
+      if (info.name == name) {
+        trigger(name);
+      }
+    });
+    return () => subscription.unsubscribe();
+  }, []);
+  return jsxRuntimeExports.jsx(Controller, {
+    name: name,
+    control: control,
+    render: ({
+      field,
+      fieldState: {
+        error
+      }
+    }) => jsxRuntimeExports.jsx(UploadDrag, {
+      isCrop: isCrop,
+      multiple: multiple,
+      accept: accept || {
+        'image/*': []
+      },
+      files: multiple ? field.value : field.value ? [field.value] : [],
+      error: !!error,
+      onOrder: fileUrls => {
+        setValue(name, fileUrls);
+      },
+      onAdd: fileUrl => {
+        if (multiple) {
+          const fileList = getValues(name) || [];
+          setValue(name, [...fileList, fileUrl]);
+        } else {
+          setValue(name, fileUrl);
+        }
+      },
+      onDel: fileUrl => {
+        if (multiple) {
+          let fileList = getValues(name);
+          let targetid = fileList.findIndex(item => {
+            return item == fileUrl;
+          });
+          fileList.splice(targetid, 1);
+          setValue(name, fileList);
+        } else {
+          setValue(name, null);
+        }
+      },
+      helperText: (!!error || helperText) && jsxRuntimeExports.jsx(FormHelperText, {
+        error: !!error,
+        sx: {
+          px: 2
+        },
+        children: error ? error?.message : helperText
+      }),
+      ...other
+    })
+  });
+}
+
+export { FieldUpload, FieldUploadBox };

@@ -1,1 +1,22 @@
-import e from"../node_modules/.pnpm/date-fns@2.30.0/node_modules/date-fns/esm/format/index.js";import n from"../node_modules/.pnpm/date-fns@2.30.0/node_modules/date-fns/esm/getTime/index.js";import o from"../node_modules/.pnpm/date-fns@2.30.0/node_modules/date-fns/esm/formatDistanceToNow/index.js";function t(n,o){const t=o||"dd MMM yyyy";return n?e(new Date(n),t):""}function d(n,o){const t=o||"dd MMM yyyy p";return n?e(new Date(n),t):""}function m(e){return e?n(new Date(e)):""}function s(e){return e?o(new Date(e),{addSuffix:!0}):""}export{t as fDate,d as fDateTime,m as fTimestamp,s as fToNow};
+import format from '../node_modules/.pnpm/date-fns@2.30.0/node_modules/date-fns/esm/format/index.js';
+import getTime from '../node_modules/.pnpm/date-fns@2.30.0/node_modules/date-fns/esm/getTime/index.js';
+import formatDistanceToNow from '../node_modules/.pnpm/date-fns@2.30.0/node_modules/date-fns/esm/formatDistanceToNow/index.js';
+
+function fDate(date, newFormat) {
+  const fm = newFormat || 'dd MMM yyyy';
+  return date ? format(new Date(date), fm) : '';
+}
+function fDateTime(date, newFormat) {
+  const fm = newFormat || 'dd MMM yyyy p';
+  return date ? format(new Date(date), fm) : '';
+}
+function fTimestamp(date) {
+  return date ? getTime(new Date(date)) : '';
+}
+function fToNow(date) {
+  return date ? formatDistanceToNow(new Date(date), {
+    addSuffix: true
+  }) : '';
+}
+
+export { fDate, fDateTime, fTimestamp, fToNow };

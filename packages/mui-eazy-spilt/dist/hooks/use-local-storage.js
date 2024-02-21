@@ -1,1 +1,70 @@
-import{useState as t,useEffect as o,useCallback as r}from"react";function e(e,s){const[l,i]=t(s);o((()=>{const t=c(e);t&&i((o=>({...o,...t})))}),[e]);const m=r((t=>{i((o=>(n(e,{...o,...t}),{...o,...t})))}),[e]);return{state:l,update:r(((t,o)=>{m({[t]:o})}),[m]),reset:r((()=>{a(e),i(s)}),[s,e])}}const c=t=>{let o=null;try{const r=window.localStorage.getItem(t);r&&(o=JSON.parse(r))}catch(t){console.error(t)}return o},n=(t,o)=>{try{window.localStorage.setItem(t,JSON.stringify(o))}catch(t){console.error(t)}},a=t=>{try{window.localStorage.removeItem(t)}catch(t){console.error(t)}};export{c as getStorage,a as removeStorage,n as setStorage,e as useLocalStorage};
+import { useState, useEffect, useCallback } from 'react';
+
+// ----------------------------------------------------------------------
+function useLocalStorage(key, initialState) {
+  const [state, setState] = useState(initialState);
+  useEffect(() => {
+    const restored = getStorage(key);
+    if (restored) {
+      setState(prevValue => ({
+        ...prevValue,
+        ...restored
+      }));
+    }
+  }, [key]);
+  const updateState = useCallback(updateValue => {
+    setState(prevValue => {
+      setStorage(key, {
+        ...prevValue,
+        ...updateValue
+      });
+      return {
+        ...prevValue,
+        ...updateValue
+      };
+    });
+  }, [key]);
+  const update = useCallback((name, updateValue) => {
+    updateState({
+      [name]: updateValue
+    });
+  }, [updateState]);
+  const reset = useCallback(() => {
+    removeStorage(key);
+    setState(initialState);
+  }, [initialState, key]);
+  return {
+    state,
+    update,
+    reset
+  };
+}
+// ----------------------------------------------------------------------
+const getStorage = key => {
+  let value = null;
+  try {
+    const result = window.localStorage.getItem(key);
+    if (result) {
+      value = JSON.parse(result);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+  return value;
+};
+const setStorage = (key, value) => {
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    console.error(error);
+  }
+};
+const removeStorage = key => {
+  try {
+    window.localStorage.removeItem(key);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export { getStorage, removeStorage, setStorage, useLocalStorage };

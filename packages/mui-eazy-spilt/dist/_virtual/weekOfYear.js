@@ -1,1 +1,3 @@
-var e={exports:{}};export{e as __module};
+var weekOfYear = {exports: {}};
+
+export { weekOfYear as __module };

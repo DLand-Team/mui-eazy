@@ -1,1 +1,11 @@
-const e=(e=1.09,a=.97)=>({hover:{scale:e},tap:{scale:a}});export{e as varHover};
+// ----------------------------------------------------------------------
+const varHover = (hover = 1.09, tap = 0.97) => ({
+  hover: {
+    scale: hover
+  },
+  tap: {
+    scale: tap
+  }
+});
+
+export { varHover };

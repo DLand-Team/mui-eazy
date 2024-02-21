@@ -1,1 +1,3 @@
-var r={};export{r as __exports};
+var slider = {};
+
+export { slider as __exports };

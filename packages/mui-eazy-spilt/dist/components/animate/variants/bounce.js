@@ -1,1 +1,150 @@
-import{varTranEnter as t,varTranExit as a}from"./transition.js";const i=i=>{const n=i?.durationIn,e=i?.durationOut,o=i?.easeIn,s=i?.easeOut;return{in:{initial:{},animate:{scale:[.3,1.1,.9,1.03,.97,1],opacity:[0,1,1,1,1,1],transition:t({durationIn:n,easeIn:o})},exit:{scale:[.9,1.1,.3],opacity:[1,1,0]}},inUp:{initial:{},animate:{y:[720,-24,12,-4,0],scaleY:[4,.9,.95,.985,1],opacity:[0,1,1,1,1],transition:{...t({durationIn:n,easeIn:o})}},exit:{y:[12,-24,720],scaleY:[.985,.9,3],opacity:[1,1,0],transition:a({durationOut:e,easeOut:s})}},inDown:{initial:{},animate:{y:[-720,24,-12,4,0],scaleY:[4,.9,.95,.985,1],opacity:[0,1,1,1,1],transition:t({durationIn:n,easeIn:o})},exit:{y:[-12,24,-720],scaleY:[.985,.9,3],opacity:[1,1,0],transition:a({durationOut:e,easeOut:s})}},inLeft:{initial:{},animate:{x:[-720,24,-12,4,0],scaleX:[3,1,.98,.995,1],opacity:[0,1,1,1,1],transition:t({durationIn:n,easeIn:o})},exit:{x:[0,24,-720],scaleX:[1,.9,2],opacity:[1,1,0],transition:a({durationOut:e,easeOut:s})}},inRight:{initial:{},animate:{x:[720,-24,12,-4,0],scaleX:[3,1,.98,.995,1],opacity:[0,1,1,1,1],transition:t({durationIn:n,easeIn:o})},exit:{x:[0,-24,720],scaleX:[1,.9,2],opacity:[1,1,0],transition:a({durationOut:e,easeOut:s})}},out:{animate:{scale:[.9,1.1,.3],opacity:[1,1,0]}},outUp:{animate:{y:[-12,24,-720],scaleY:[.985,.9,3],opacity:[1,1,0]}},outDown:{animate:{y:[12,-24,720],scaleY:[.985,.9,3],opacity:[1,1,0]}},outLeft:{animate:{x:[0,24,-720],scaleX:[1,.9,2],opacity:[1,1,0]}},outRight:{animate:{x:[0,-24,720],scaleX:[1,.9,2],opacity:[1,1,0]}}}};export{i as varBounce};
+import { varTranEnter, varTranExit } from './transition.js';
+
+// ----------------------------------------------------------------------
+const varBounce = props => {
+  const durationIn = props?.durationIn;
+  const durationOut = props?.durationOut;
+  const easeIn = props?.easeIn;
+  const easeOut = props?.easeOut;
+  return {
+    // IN
+    in: {
+      initial: {},
+      animate: {
+        scale: [0.3, 1.1, 0.9, 1.03, 0.97, 1],
+        opacity: [0, 1, 1, 1, 1, 1],
+        transition: varTranEnter({
+          durationIn,
+          easeIn
+        })
+      },
+      exit: {
+        scale: [0.9, 1.1, 0.3],
+        opacity: [1, 1, 0]
+      }
+    },
+    inUp: {
+      initial: {},
+      animate: {
+        y: [720, -24, 12, -4, 0],
+        scaleY: [4, 0.9, 0.95, 0.985, 1],
+        opacity: [0, 1, 1, 1, 1],
+        transition: {
+          ...varTranEnter({
+            durationIn,
+            easeIn
+          })
+        }
+      },
+      exit: {
+        y: [12, -24, 720],
+        scaleY: [0.985, 0.9, 3],
+        opacity: [1, 1, 0],
+        transition: varTranExit({
+          durationOut,
+          easeOut
+        })
+      }
+    },
+    inDown: {
+      initial: {},
+      animate: {
+        y: [-720, 24, -12, 4, 0],
+        scaleY: [4, 0.9, 0.95, 0.985, 1],
+        opacity: [0, 1, 1, 1, 1],
+        transition: varTranEnter({
+          durationIn,
+          easeIn
+        })
+      },
+      exit: {
+        y: [-12, 24, -720],
+        scaleY: [0.985, 0.9, 3],
+        opacity: [1, 1, 0],
+        transition: varTranExit({
+          durationOut,
+          easeOut
+        })
+      }
+    },
+    inLeft: {
+      initial: {},
+      animate: {
+        x: [-720, 24, -12, 4, 0],
+        scaleX: [3, 1, 0.98, 0.995, 1],
+        opacity: [0, 1, 1, 1, 1],
+        transition: varTranEnter({
+          durationIn,
+          easeIn
+        })
+      },
+      exit: {
+        x: [0, 24, -720],
+        scaleX: [1, 0.9, 2],
+        opacity: [1, 1, 0],
+        transition: varTranExit({
+          durationOut,
+          easeOut
+        })
+      }
+    },
+    inRight: {
+      initial: {},
+      animate: {
+        x: [720, -24, 12, -4, 0],
+        scaleX: [3, 1, 0.98, 0.995, 1],
+        opacity: [0, 1, 1, 1, 1],
+        transition: varTranEnter({
+          durationIn,
+          easeIn
+        })
+      },
+      exit: {
+        x: [0, -24, 720],
+        scaleX: [1, 0.9, 2],
+        opacity: [1, 1, 0],
+        transition: varTranExit({
+          durationOut,
+          easeOut
+        })
+      }
+    },
+    // OUT
+    out: {
+      animate: {
+        scale: [0.9, 1.1, 0.3],
+        opacity: [1, 1, 0]
+      }
+    },
+    outUp: {
+      animate: {
+        y: [-12, 24, -720],
+        scaleY: [0.985, 0.9, 3],
+        opacity: [1, 1, 0]
+      }
+    },
+    outDown: {
+      animate: {
+        y: [12, -24, 720],
+        scaleY: [0.985, 0.9, 3],
+        opacity: [1, 1, 0]
+      }
+    },
+    outLeft: {
+      animate: {
+        x: [0, 24, -720],
+        scaleX: [1, 0.9, 2],
+        opacity: [1, 1, 0]
+      }
+    },
+    outRight: {
+      animate: {
+        x: [0, -24, 720],
+        scaleX: [1, 0.9, 2],
+        opacity: [1, 1, 0]
+      }
+    }
+  };
+};
+
+export { varBounce };

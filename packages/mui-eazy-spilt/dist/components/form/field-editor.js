@@ -1,1 +1,58 @@
-import{j as e}from"../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js";import{useRef as r,useEffect as o}from"react";import{useFormContext as t,Controller as m}from"../../node_modules/.pnpm/react-hook-form@7.45.4_react@18.2.0/node_modules/react-hook-form/dist/index.esm.js";import{Editor as a}from"../editor/editor.js";import n from"../../node_modules/.pnpm/@mui_material@5.15.7_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.54_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/FormHelperText/FormHelperText.js";function s({name:s,helperText:d,id:i,...l}){const{control:p,watch:u,setValue:c,formState:{isSubmitSuccessful:_}}=t(),f=u(),x=r("edit"+Date.now().toString());return o((()=>{"<p><br></p>"===f[s]&&c(s,"",{shouldValidate:!_})}),[_,s,c,f]),e.jsx(m,{name:s,control:p,render:({field:r,fieldState:{error:o}})=>e.jsx(a,{id:x.current,value:r.value,onChange:r.onChange,error:!!o,sx:{width:"100%"},helperText:(!!o||d)&&e.jsx(n,{error:!!o,sx:{px:2},children:o?o?.message:d}),...l})})}export{s as default};
+import { j as jsxRuntimeExports } from '../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js';
+import { useRef, useEffect } from 'react';
+import { useFormContext, Controller } from '../../node_modules/.pnpm/react-hook-form@7.50.1_react@18.2.0/node_modules/react-hook-form/dist/index.esm.js';
+import { Editor } from '../editor/editor.js';
+import FormHelperText from '../../node_modules/.pnpm/@mui_material@5.15.10_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.57_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/FormHelperText/FormHelperText.js';
+
+function FieldEditor({
+  name,
+  helperText,
+  id,
+  ...other
+}) {
+  const {
+    control,
+    watch,
+    setValue,
+    formState: {
+      isSubmitSuccessful
+    }
+  } = useFormContext();
+  const values = watch();
+  const ref = useRef('edit' + Date.now().toString());
+  useEffect(() => {
+    if (values[name] === '<p><br></p>') {
+      setValue(name, '', {
+        shouldValidate: !isSubmitSuccessful
+      });
+    }
+  }, [isSubmitSuccessful, name, setValue, values]);
+  return jsxRuntimeExports.jsx(Controller, {
+    name: name,
+    control: control,
+    render: ({
+      field,
+      fieldState: {
+        error
+      }
+    }) => jsxRuntimeExports.jsx(Editor, {
+      id: ref.current,
+      value: field.value,
+      onChange: field.onChange,
+      error: !!error,
+      sx: {
+        width: '100%'
+      },
+      helperText: (!!error || helperText) && jsxRuntimeExports.jsx(FormHelperText, {
+        error: !!error,
+        sx: {
+          px: 2
+        },
+        children: error ? error?.message : helperText
+      }),
+      ...other
+    })
+  });
+}
+
+export { FieldEditor as default };

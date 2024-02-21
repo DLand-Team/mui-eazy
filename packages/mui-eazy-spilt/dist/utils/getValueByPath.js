@@ -1,1 +1,74 @@
-const r=(e,t,l)=>{let i,n=e.split("-"),a=t;for(let e=0,t=n.length;e<t;e++){let f=n[e];if(f.includes(".")){f=n[e].split(".")[0];let p=n[e].split(".")[1],s=a[f];if(!s)return null;let y=Array.isArray(s)?s:[s],o=[];if(o="ALL"!==p?y.filter((r=>{let e=l[p];return e=Array.isArray(e)?e:[e],e.includes(r?.[p])})):y,!o.length)break;if(o.length){if(e!=t-1){let t=o.map((t=>r(n.slice(e+1).join("-"),t,l))).filter((r=>r));i="ALL"==p?t:Array.prototype.concat.apply([],t)}else i=o;return i.filter((r=>r))}}if(a=a?.[f],!a)return;if(e==t-1)i=a;else if(Array.isArray(a)){let t=a.map((t=>r(n.slice(e+1).join("-"),t,l))).filter((r=>r));return i=Array.prototype.concat.apply([],t),i.filter((r=>r))}}return i};export{r as getValueByPath};
+const getValueByPath = (keyStr, data, options) => {
+  // key拆分
+  let keyArr = keyStr.split('-');
+  let currentData = data;
+  let result;
+  for (let i = 0, n = keyArr.length; i < n; i++) {
+    let key = keyArr[i];
+    if (key.includes('.')) {
+      // 查询的目标值
+      key = keyArr[i].split('.')[0];
+      let targetStr = keyArr[i].split('.')[1];
+      let currentDataItem = currentData[key];
+      if (!currentDataItem) return null;
+      let currentDataArr = Array.isArray(currentDataItem) ? currentDataItem : [currentDataItem];
+      let res = [];
+      if (targetStr !== 'ALL') {
+        res = currentDataArr.filter(item => {
+          let tempArr = options[targetStr];
+          tempArr = Array.isArray(tempArr) ? tempArr : [tempArr];
+          return tempArr.includes(item?.[targetStr]);
+        });
+      } else {
+        res = currentDataArr;
+      }
+      if (!res.length) {
+        break;
+      }
+      if (res.length) {
+        if (i != n - 1) {
+          let resultTemp = res.map(resItem => {
+            return getValueByPath(keyArr.slice(i + 1).join('-'), resItem, options);
+          }).filter(item => {
+            return item;
+          });
+          if (targetStr == 'ALL') {
+            result = resultTemp;
+          } else {
+            result = Array.prototype.concat.apply([], resultTemp);
+          }
+        } else {
+          result = res;
+        }
+        return result.filter(item => {
+          return item;
+        });
+      }
+    }
+    {
+      currentData = currentData?.[key];
+      if (!currentData) {
+        // console.warn('不存在' + key);
+        return;
+      }
+      if (i == n - 1) {
+        result = currentData;
+      } else {
+        if (Array.isArray(currentData)) {
+          let resultTemp = currentData.map(resItem => {
+            return getValueByPath(keyArr.slice(i + 1).join('-'), resItem, options);
+          }).filter(item => {
+            return item;
+          });
+          result = Array.prototype.concat.apply([], resultTemp);
+          return result.filter(item => {
+            return item;
+          });
+        }
+      }
+    }
+  }
+  return result;
+};
+
+export { getValueByPath };

@@ -33,7 +33,7 @@ const commonPlugins = [
 		exclude: "**/node_modules/**",
 	}),
 	json(),
-	terser(),
+	// terser(),
 ];
 
 const esmOutput = {
@@ -43,7 +43,7 @@ const esmOutput = {
 
 export default () => {
 	return {
-		input: [entry, ...componentsEntry],
+		input: [entry],
 		output: {
 			...esmOutput,
 			dir: "dist/",

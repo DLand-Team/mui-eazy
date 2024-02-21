@@ -1,1 +1,61 @@
-import{j as e}from"../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js";import{memo as t,forwardRef as o,useRef as r,useState as a,useImperativeHandle as n,useMemo as s}from"react";import{FormView as i}from"./formView.js";import{TabView as l}from"./tabView/tabView.js";const m=t(o((function({tabConfig:t,tabId:o,handleTabChange:m},d){const f=r({}),[c,u]=a([]),b=async e=>{let t=e.map((e=>e.trigger()));const o=await Promise.all(t);return u(o),!o.some((e=>!e))};n(d,(()=>({validate:b,getTabFormRef:()=>f.current})),[t]);const p=s((()=>{let o=[];for(let r in t){const a=t[r];o.push({id:a.id,label:a.label,node:e.jsx(i,{id:a.id,formRef:f,formConfig:a.node})})}return o}),[t]);return e.jsx(l,{errorResult:c,tabId:o,handleTabChange:m,tabs:p,variant:"scrollable",scrollButtons:"auto"})})));export{m as default};
+import { j as jsxRuntimeExports } from '../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js';
+import { memo, forwardRef, useRef, useState, useImperativeHandle, useMemo } from 'react';
+import { FormView } from './formView.js';
+import { TabView } from './tabView/tabView.js';
+
+// ----------------------------------------------------------------------
+const TabForm = /*#__PURE__*/memo( /*#__PURE__*/forwardRef(function DealFormView({
+  tabConfig,
+  tabId,
+  handleTabChange
+}, ref) {
+  const formMapRef = useRef({});
+  const [errorResult, setErrRes] = useState([]);
+  const validate = async formArr => {
+    let checkArr = formArr.map(item => {
+      return item.trigger();
+    });
+    const resArr = await Promise.all(checkArr);
+    setErrRes(resArr);
+    if (resArr.some(item => {
+      return !item;
+    })) {
+      return false;
+    }
+    return true;
+  };
+  useImperativeHandle(ref, () => {
+    return {
+      validate,
+      getTabFormRef: () => {
+        return formMapRef.current;
+      }
+    };
+  }, [tabConfig]);
+  const tabsNode = useMemo(() => {
+    let result = [];
+    for (let i in tabConfig) {
+      const item = tabConfig[i];
+      result.push({
+        id: item.id,
+        label: item.label,
+        node: jsxRuntimeExports.jsx(FormView, {
+          id: item.id,
+          formRef: formMapRef,
+          formConfig: item.node
+        })
+      });
+    }
+    return result;
+  }, [tabConfig]);
+  return jsxRuntimeExports.jsx(TabView, {
+    errorResult: errorResult,
+    tabId: tabId,
+    handleTabChange: handleTabChange,
+    tabs: tabsNode,
+    variant: "scrollable",
+    scrollButtons: "auto"
+  });
+}));
+
+export { TabForm as default };

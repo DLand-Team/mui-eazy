@@ -1,1 +1,3 @@
-var r={};export{r as __exports};
+var defaultProps = {};
+
+export { defaultProps as __exports };

@@ -1,1 +1,28 @@
-import{useRef as t,useCallback as e}from"react";function r({click:r,doubleClick:c,timeout:u=250}){const i=t();return e((t=>{i&&(clearTimeout(i.current),i.current=null),r&&1===t.detail&&(i.current=setTimeout((()=>{r(t)}),u)),t.detail%2==0&&c(t)}),[r,c,u])}export{r as useDoubleClick};
+import { useRef, useCallback } from 'react';
+
+function useDoubleClick({
+  click,
+  doubleClick,
+  timeout = 250
+}) {
+  const clickTimeout = useRef();
+  const clearClickTimeout = () => {
+    if (clickTimeout) {
+      clearTimeout(clickTimeout.current);
+      clickTimeout.current = null;
+    }
+  };
+  return useCallback(event => {
+    clearClickTimeout();
+    if (click && event.detail === 1) {
+      clickTimeout.current = setTimeout(() => {
+        click(event);
+      }, timeout);
+    }
+    if (event.detail % 2 === 0) {
+      doubleClick(event);
+    }
+  }, [click, doubleClick, timeout]);
+}
+
+export { useDoubleClick };

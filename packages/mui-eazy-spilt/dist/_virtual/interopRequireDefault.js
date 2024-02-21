@@ -1,1 +1,3 @@
-var e={exports:{}};export{e as __module};
+var interopRequireDefault = {exports: {}};
+
+export { interopRequireDefault as __module };

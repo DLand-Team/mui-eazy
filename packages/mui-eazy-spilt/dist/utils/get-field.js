@@ -1,1 +1,28 @@
-import{FieldCheckbox as o}from"../components/form/field-checkbox.js";import e from"../components/form/field-datePicker.js";import m from"../components/form/field-text-field.js";import r from"../components/form/field-mul.js";import{FieldUpload as t,FieldUploadBox as f}from"../components/form/field-upload.js";import i from"../components/form/field-radio-group.js";import{FieldSelect as p,FieldMultiSelect as l}from"../components/form/field-select.js";import s from"../components/form/field-editor.js";import c from"../components/form/field-autocompleteGoogle.js";const n={radio:i,select:p,editer:s,autoCompleteGoogle:c,checkbox:o,datePicker:e,string:m,multiple:r,upload:t,uploadBox:f,multiSelect:l},d=o=>n[o];export{d as getField};
+import { FieldCheckbox } from '../components/form/field-checkbox.js';
+import FieldDatePicker from '../components/form/field-datePicker.js';
+import FieldText from '../components/form/field-text-field.js';
+import FieldMul from '../components/form/field-mul.js';
+import { FieldUpload, FieldUploadBox } from '../components/form/field-upload.js';
+import FieldRadioGroup from '../components/form/field-radio-group.js';
+import { FieldSelect, FieldMultiSelect } from '../components/form/field-select.js';
+import FieldEditor from '../components/form/field-editor.js';
+import FieldAutocompleteGoogle from '../components/form/field-autocompleteGoogle.js';
+
+const FormMapObj = {
+  radio: FieldRadioGroup,
+  select: FieldSelect,
+  editer: FieldEditor,
+  autoCompleteGoogle: FieldAutocompleteGoogle,
+  checkbox: FieldCheckbox,
+  datePicker: FieldDatePicker,
+  string: FieldText,
+  multiple: FieldMul,
+  upload: FieldUpload,
+  uploadBox: FieldUploadBox,
+  multiSelect: FieldMultiSelect
+};
+const getField = type => {
+  return FormMapObj[type];
+};
+
+export { getField };

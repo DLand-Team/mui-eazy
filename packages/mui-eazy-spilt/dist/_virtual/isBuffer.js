@@ -1,1 +1,3 @@
-var e={exports:{}};export{e as __module};
+var isBuffer = {exports: {}};
+
+export { isBuffer as __module };

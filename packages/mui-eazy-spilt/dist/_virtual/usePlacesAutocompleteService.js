@@ -1,1 +1,3 @@
-var r={};export{r as __exports};
+var usePlacesAutocompleteService = {};
+
+export { usePlacesAutocompleteService as __exports };

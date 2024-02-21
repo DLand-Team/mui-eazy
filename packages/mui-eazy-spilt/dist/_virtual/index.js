@@ -1,1 +1,3 @@
-var e={exports:{}};export{e as __module};
+var build = {exports: {}};
+
+export { build as __module };

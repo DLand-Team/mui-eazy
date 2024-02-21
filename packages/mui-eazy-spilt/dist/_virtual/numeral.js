@@ -1,1 +1,3 @@
-var e={exports:{}};export{e as __module};
+var numeral = {exports: {}};
+
+export { numeral as __module };

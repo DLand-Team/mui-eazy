@@ -1,1 +1,3 @@
-var r={};export{r as __exports};
+var reactIs_development = {};
+
+export { reactIs_development as __exports };

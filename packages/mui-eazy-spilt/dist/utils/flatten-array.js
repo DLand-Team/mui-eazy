@@ -1,1 +1,13 @@
-function n(t,e="children"){let c=[];const l=t?.map((n=>(n[e]&&n[e].length&&(c=[...c,...n[e]]),n)));return l?.concat(c.length?n(c,e):c)}export{n as flattenArray};
+// ----------------------------------------------------------------------
+function flattenArray(list, key = 'children') {
+  let children = [];
+  const flatten = list?.map(item => {
+    if (item[key] && item[key].length) {
+      children = [...children, ...item[key]];
+    }
+    return item;
+  });
+  return flatten?.concat(children.length ? flattenArray(children, key) : children);
+}
+
+export { flattenArray };

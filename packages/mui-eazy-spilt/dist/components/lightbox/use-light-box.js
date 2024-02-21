@@ -1,1 +1,21 @@
-import{useState as e,useCallback as t}from"react";function o(o){const[n,r]=e(-1);return{selected:n,open:n>=0,onOpen:t((e=>{const t=o.findIndex((t=>"video"===t.type?t.poster===e:t.src===e));r(t)}),[o]),onClose:t((()=>{r(-1)}),[]),setSelected:r}}export{o as default};
+import { useState, useCallback } from 'react';
+
+function useLightBox(slides) {
+  const [selected, setSelected] = useState(-1);
+  const handleOpen = useCallback(slideUrl => {
+    const slideIndex = slides.findIndex(slide => slide.type === 'video' ? slide.poster === slideUrl : slide.src === slideUrl);
+    setSelected(slideIndex);
+  }, [slides]);
+  const handleClose = useCallback(() => {
+    setSelected(-1);
+  }, []);
+  return {
+    selected,
+    open: selected >= 0,
+    onOpen: handleOpen,
+    onClose: handleClose,
+    setSelected
+  };
+}
+
+export { useLightBox as default };

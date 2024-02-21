@@ -27,51 +27,46 @@ export { default as FieldCodeDemo } from "./FieldCodeDemo";
 export { default as TabViewDemo, TabViewProps } from "./TabViewDemo";
 
 export {
-  default as FieldTextDemo,
-  FieldTextProps,
+	default as FieldTextDemo,
+	FieldTextProps,
 } from "./FieldTextDemo/index";
 export { default as FieldUploadDemo } from "./FieldUploadDemo";
 
 // hoc: 包装组件和函数
 const Hoc = (name, optionCallf?) => {
-  return forwardRef((props, ref) => {
-    return (
-      <BrowserOnly>
-        {() => {
-          optionCallf?.();
-          const LibComponent = require("mui-eazy")[name];
-          return <LibComponent ref={ref} {...props} />;
-        }}
-      </BrowserOnly>
-    );
-  });
+	return forwardRef((props, ref) => {
+		return (
+			<BrowserOnly>
+				{() => {
+					optionCallf?.();
+					const LibComponent = require("mui-eazy")[name];
+					return <LibComponent ref={ref} {...props} />;
+				}}
+			</BrowserOnly>
+		);
+	});
 };
-
 
 const HocFunc = (name, optionCallf?) => {
-  optionCallf?.();
-  return (props?) => {
-    console.log(props);
-    const isBro = useIsBrowser();
-    return isBro && require("mui-eazy")[name](props);
-  };
+	optionCallf?.();
+	return (props?) => {
+		console.log(props);
+		const isBro = useIsBrowser();
+		return isBro && require("mui-eazy")[name](props);
+	};
 };
-
 
 const HocObj = (name, optionCallf?) => {
-  optionCallf?.();
-  return ExecutionEnvironment.canUseDOM && require("mui-eazy")[name];
+	optionCallf?.();
+	return ExecutionEnvironment.canUseDOM && require("mui-eazy")[name];
 };
 // comp
-export const Carousel = Hoc("Carousel", () => {
-});
-export const TreeForm = Hoc("TreeForm", () => {
-});
-export const TabForm = Hoc("TabForm", () => {
-});
+export const Carousel = Hoc("Carousel", () => {});
+export const TreeForm = Hoc("TreeForm", () => {});
+export const TabForm = Hoc("TabForm", () => {});
 // base
-export const Iconify = Hoc('Iconify')
-export const Modal = Hoc('Modal')
+export const Iconify = Hoc("Iconify");
+export const Modal = Hoc("Modal");
 export const Tree = Hoc("Tree");
 export const FieldCode = Hoc("FieldCode");
 export const FieldSwitch = Hoc("FieldSwitch");
@@ -90,12 +85,18 @@ export const NotifyProvider = Hoc("NotifyProvider");
 export const FieldUpload = Hoc("FieldUpload");
 export const TabView = Hoc("TabView");
 export const FormDemoEx = () => {
-  return <BrowserOnly>
-    {() => {
-      return <><FormDemo /></>
-    }}
-  </BrowserOnly>
-}
+	return (
+		<BrowserOnly>
+			{() => {
+				return (
+					<>
+						<FormDemo />
+					</>
+				);
+			}}
+		</BrowserOnly>
+	);
+};
 // func
 export const useCarousel = HocFunc("useCarousel");
 export const useBoolean = HocFunc("useBoolean");
@@ -108,7 +109,13 @@ export const notify = HocObj("notify");
 export const Yup = HocObj("myYup");
 // lib
 export const LiveCodeClient = () => {
-  return ExecutionEnvironment.canUseDOM ? <BrowserOnly>{() => {
-    return <LiveCode>{""}</LiveCode>
-  }}</BrowserOnly> : <div></div>
-}
+	return ExecutionEnvironment.canUseDOM ? (
+		<BrowserOnly>
+			{() => {
+				return <LiveCode>{""}</LiveCode>;
+			}}
+		</BrowserOnly>
+	) : (
+		<div></div>
+	);
+};

@@ -1,1 +1,3 @@
-var e={exports:{}};export{e as __module};
+var relativeTime = {exports: {}};
+
+export { relativeTime as __module };

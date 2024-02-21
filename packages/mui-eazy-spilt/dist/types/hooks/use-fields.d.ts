@@ -22,5 +22,9 @@ export declare function useFields(fromCg: FormConfig, options?: {
         [x: string]: any;
         [x: number]: any;
         [x: symbol]: any;
-    }, any, undefined>;
+    }, any, {
+        [x: string]: any;
+        [x: number]: any;
+        [x: symbol]: any;
+    }>;
 };

@@ -1,1 +1,3 @@
-var r={};export{r as __exports};
+var Close = {};
+
+export { Close as __exports };

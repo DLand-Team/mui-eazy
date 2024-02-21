@@ -1,1 +1,3 @@
-var e={exports:{}};export{e as __module};
+var jsxRuntime = {exports: {}};
+
+export { jsxRuntime as __module };

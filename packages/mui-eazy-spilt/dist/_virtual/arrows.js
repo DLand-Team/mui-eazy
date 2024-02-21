@@ -1,1 +1,3 @@
-var r={};export{r as __exports};
+var arrows = {};
+
+export { arrows as __exports };

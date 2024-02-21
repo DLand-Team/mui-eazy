@@ -1,1 +1,3 @@
-var r={};export{r as __exports};
+var createSvgIcon = {};
+
+export { createSvgIcon as __exports };

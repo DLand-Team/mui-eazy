@@ -1,1 +1,93 @@
-import{j as e}from"../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js";import{Box as i,Stack as t}from"@mui/material";import{varBounce as r}from"../animate/variants/bounce.js";import{MotionContainer as o}from"../animate/motion-container.js";import{Iconify as m}from"../iconify/iconify.js";import{TreeItemStyledItem as n,TreeItemStyledIcon as s,TreeItemStyledDotIcon as a}from"./styles.js";import{m as d}from"../../node_modules/.pnpm/framer-motion@10.16.4_react-dom@18.2.0_react@18.2.0/node_modules/framer-motion/dist/es/render/dom/motion-minimal.js";const l=l=>{const{active:c,depth:p,isError:x,label:h,children:j,formCreater:u,sx:f={},...g}=l;let b=[{ml:0},{ml:1},{ml:2},{ml:3},{ml:4},{ml:5}][p];return e.jsx(i,{children:e.jsxs(t,{alignItems:"center",direction:"row",children:[e.jsxs(n,{sx:{...b,...f},...g,active:c,depth:p,config:{itemGap:v?.itemGap||4,iconSize:v?.iconSize||24,currentRole:v?.currentRole,itemRootHeight:v?.itemRootHeight||44,itemSubHeight:v?.itemSubHeight||36,itemPadding:v?.itemPadding||"4px 8px 4px 12px",itemRadius:v?.itemRadius||8,hiddenLabel:v?.hiddenLabel||!1},children:[e.jsx(s,{sx:{mr:1.5},children:e.jsx(a,{active:c})}),e.jsx(i,{component:"span",sx:{ml:1,lineHeight:0},children:`${h}`}),j]}),e.jsx(i,{sx:{width:"28px"},children:x&&e.jsx(o,{action:!0,animate:x,children:e.jsx(d.div,{variants:r().in,children:e.jsx(m,{color:"red",icon:"material-symbols:error",width:20})})})})]})});var v};export{l as TreeItem};
+import { j as jsxRuntimeExports } from '../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js';
+import { Box, Stack } from '@mui/material';
+import { varBounce } from '../animate/variants/bounce.js';
+import { MotionContainer } from '../animate/motion-container.js';
+import { Iconify } from '../iconify/iconify.js';
+import { TreeItemStyledItem, TreeItemStyledIcon, TreeItemStyledDotIcon } from './styles.js';
+import { m } from '../../node_modules/.pnpm/framer-motion@10.18.0_react-dom@18.2.0_react@18.2.0/node_modules/framer-motion/dist/es/render/dom/motion-minimal.js';
+
+const navVerticalConfig = config => ({
+  itemGap: config?.itemGap || 4,
+  iconSize: config?.iconSize || 24,
+  currentRole: config?.currentRole,
+  itemRootHeight: config?.itemRootHeight || 44,
+  itemSubHeight: config?.itemSubHeight || 36,
+  itemPadding: config?.itemPadding || '4px 8px 4px 12px',
+  itemRadius: config?.itemRadius || 8,
+  hiddenLabel: config?.hiddenLabel || false
+});
+const TreeItem = props => {
+  const {
+    active,
+    depth,
+    isError,
+    label,
+    children,
+    formCreater,
+    sx = {},
+    ...rest
+  } = props;
+  let sxOptionArr = [{
+    ml: 0
+  }, {
+    ml: 1
+  }, {
+    ml: 2
+  }, {
+    ml: 3
+  }, {
+    ml: 4
+  }, {
+    ml: 5
+  }];
+  let sxOption = sxOptionArr[depth];
+  return jsxRuntimeExports.jsx(Box, {
+    children: jsxRuntimeExports.jsxs(Stack, {
+      alignItems: "center",
+      direction: "row",
+      children: [jsxRuntimeExports.jsxs(TreeItemStyledItem, {
+        sx: {
+          ...sxOption,
+          ...sx
+        },
+        ...rest,
+        active: active,
+        depth: depth,
+        config: navVerticalConfig(),
+        children: [jsxRuntimeExports.jsx(TreeItemStyledIcon, {
+          sx: {
+            mr: 1.5
+          },
+          children: jsxRuntimeExports.jsx(TreeItemStyledDotIcon, {
+            active: active
+          })
+        }), jsxRuntimeExports.jsx(Box, {
+          component: "span",
+          sx: {
+            ml: 1,
+            lineHeight: 0
+          },
+          children: `${label}`
+        }), children]
+      }), jsxRuntimeExports.jsx(Box, {
+        sx: {
+          width: '28px'
+        },
+        children: isError && jsxRuntimeExports.jsx(MotionContainer, {
+          action: true,
+          animate: isError,
+          children: jsxRuntimeExports.jsx(m.div, {
+            variants: varBounce().in,
+            children: jsxRuntimeExports.jsx(Iconify, {
+              color: 'red',
+              icon: "material-symbols:error",
+              width: 20
+            })
+          })
+        })
+      })]
+    })
+  });
+};
+
+export { TreeItem };

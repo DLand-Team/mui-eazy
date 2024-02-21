@@ -1,1 +1,249 @@
-import{j as e}from"../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js";import{Box as r}from"@mui/material";import{useMemo as t,useRef as o,useEffect as s,useState as n}from"react";import{useFields as i}from"../../hooks/use-fields.js";import{useResponsive as a}from"../../hooks/use-responsive.js";import{processRecordLoop as m,Tree as l}from"../tree/tree.js";import"../../node_modules/.pnpm/@iconify_react@4.1.1_react@18.2.0/node_modules/@iconify/react/dist/iconify.js";import"../tree/styles.js";import d from"../../node_modules/.pnpm/lodash-es@4.17.21/node_modules/lodash-es/cloneDeep.js";import c from"../../node_modules/.pnpm/@mui_material@5.15.7_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.54_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/Unstable_Grid2/Grid2.js";import u from"../../node_modules/.pnpm/@mui_material@5.15.7_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.54_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/Card/Card.js";import f from"../../node_modules/.pnpm/@mui_material@5.15.7_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.54_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/CardHeader/CardHeader.js";import _ from"../../node_modules/.pnpm/@mui_lab@5.0.0-alpha.142_@emotion_react@11.11.3_@emotion_styled@11.11.0_@mui_material@5.15.7__kme37r2wmzpjjd2b2j6lyqcwzu/node_modules/@mui/lab/LoadingButton/LoadingButton.js";const p=({formRef:e,id:r,formConfig:t})=>{const{formNode:o,methods:n}=i(t,{formId:r});return s((()=>{e.current[r]=n}),[]),o},j=(e,r)=>{r&&Object.entries(e).forEach((([e,t])=>{"checkbox"==t.type?t.defaultValue=!!r[e]:t.defaultValue=r[e]||t.defaultValue||""}))},y=({value:e={},transfer:r,baseData:o})=>t((()=>{if(e&&Object.values(e).length){e=r(d(e));const t=(e,r)=>{e?.formConfig&&j(e?.formConfig,r),e.sections&&e.sections.forEach((e=>{let o=r[e.name];"array"!==e.type?o&&t(e,o):(e.sections=[],Array.isArray(o)&&o.forEach((r=>{let{formConfig:t,...o}=e.formCreater();r&&j(t,r);let s={...o,active:!1,formConfig:t,onDelete:(e,r)=>{let t=r.findIndex((r=>r.id==e));r.splice(t,1)}};e.sections?.push(s)})))}))};t(o,e)}return o}),[e,o]);function h({handleClick:i,treeConfig:d,actionBtnArr:j,transferResult:h,transferInput:x,value:g}){const C=a("up","md"),b=o({}),v=y({value:g,transfer:x,baseData:d});s((()=>{k.current=v,I()}),[v]);let k=o(v);const[w,E]=n(v),D=t((()=>{let e={};return m(k.current,"0",e),e}),[w]),I=()=>{E({...k.current})},S=e.jsxs(e.Fragment,{children:[C&&e.jsx(c,{md:4,children:e.jsx(l,{record:D,update:I,treeRoot:w})}),e.jsx(c,{xs:12,md:8,children:e.jsxs(u,{children:[!C&&e.jsx(f,{title:"Details"}),Object.values(D).map((t=>{let o=t.isCurrent;return e.jsx(r,{style:o?{}:{display:"none"},children:t.formConfig&&e.jsx(p,{formRef:b,id:t.id,formConfig:t.formConfig})},t.id)}))]})})]}),O=e.jsxs(e.Fragment,{children:[C&&e.jsx(c,{md:4}),e.jsxs(c,{xs:12,md:12,sx:{display:"flex",alignItems:"center"},children:[e.jsx(r,{sx:{flex:1}}),j.map(((r,t)=>e.jsx(_,{sx:{mr:2},onClick:async()=>{const{isSuccess:e,result:t}=await(async()=>{let e={};const r=(e,t,o=0)=>{let s=b.current[o];if(s){Object.assign(e,s.getValues());for(let r in t.formConfig)t.formConfig[r].isNotInForm&&"array"!==t.type&&"object"!==t.type&&delete e[r]}t.sections?.length&&t.sections.forEach((t=>{if("array"==t.type){let o=e[t.name||t.label]=[];t.sections?.forEach((e=>{let t={};r(t,e,e.id),o.push(t)}))}else{if(t.judeShow&&!t.judeShow())return;let o=e[t.name||t.label]={};r(o,t,t.id)}}))};r(e,w);let t=!0;for(let e in D)if(b.current[e]){const r=await(b.current[e]?.trigger());D[e].isError=!r,r||(t=!1),I()}return h?.(e),{isSuccess:t,result:e}})();i({type:r.name,isSuccess:e,result:t})},type:"submit",variant:"contained",size:"large",children:r.name},t)))]})]});return e.jsxs(c,{container:!0,children:[S,O]})}export{h as TreeForm,j as setDefault,y as useCreateTreeData};
+import { j as jsxRuntimeExports } from '../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js';
+import { Box } from '@mui/material';
+import { useMemo, useRef, useEffect, useState } from 'react';
+import { useFields } from '../../hooks/use-fields.js';
+import { useResponsive } from '../../hooks/use-responsive.js';
+import { processRecordLoop, Tree } from '../tree/tree.js';
+import '../../node_modules/.pnpm/@iconify_react@4.1.1_react@18.2.0/node_modules/@iconify/react/dist/iconify.js';
+import '../tree/styles.js';
+import cloneDeep from '../../node_modules/.pnpm/lodash-es@4.17.21/node_modules/lodash-es/cloneDeep.js';
+import Grid from '../../node_modules/.pnpm/@mui_material@5.15.10_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.57_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/Unstable_Grid2/Grid2.js';
+import Card from '../../node_modules/.pnpm/@mui_material@5.15.10_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.57_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/Card/Card.js';
+import CardHeader from '../../node_modules/.pnpm/@mui_material@5.15.10_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.57_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/CardHeader/CardHeader.js';
+import LoadingButton from '../../node_modules/.pnpm/@mui_lab@5.0.0-alpha.165_@emotion_react@11.11.3_@emotion_styled@11.11.0_@mui_material@5.15.10_rj7nkmnq6xz32luabwnzcovv4q/node_modules/@mui/lab/LoadingButton/LoadingButton.js';
+
+// ----------------------------------------------------------------------
+const FormItemTe = ({
+  formRef,
+  id,
+  formConfig
+}) => {
+  const {
+    formNode,
+    methods
+  } = useFields(formConfig, {
+    formId: id
+  });
+  useEffect(() => {
+    formRef.current[id] = methods;
+  }, []);
+  return formNode;
+};
+const setDefault = (fields, defaltValues) => {
+  if (defaltValues) {
+    Object.entries(fields).forEach(([key, value]) => {
+      if (value.type == 'checkbox') {
+        value.defaultValue = defaltValues[key] ? true : false;
+      } else {
+        value.defaultValue = defaltValues[key] || value.defaultValue || '';
+      }
+    });
+  }
+};
+const useCreateTreeData = ({
+  value = {},
+  transfer,
+  baseData
+}) => {
+  const result = useMemo(() => {
+    if (value && Object.values(value).length) {
+      value = transfer(cloneDeep(value));
+      const loop = (base, v) => {
+        base?.formConfig && setDefault(base?.formConfig, v);
+        if (base.sections) {
+          base.sections.forEach(item => {
+            let valueTemp = v[item.name];
+            if (item.type !== 'array') {
+              valueTemp && loop(item, valueTemp);
+            } else {
+              item.sections = [];
+              if (Array.isArray(valueTemp)) {
+                valueTemp.forEach(itemChild => {
+                  let {
+                    formConfig,
+                    ...rest
+                  } = item.formCreater();
+                  if (itemChild) {
+                    setDefault(formConfig, itemChild);
+                  }
+                  let fields = {
+                    ...rest,
+                    active: false,
+                    formConfig: formConfig,
+                    onDelete: (id, listArr) => {
+                      let targetId = listArr.findIndex(item => {
+                        return item.id == id;
+                      });
+                      listArr.splice(targetId, 1);
+                    }
+                  };
+                  item.sections?.push(fields);
+                });
+              }
+            }
+          });
+        }
+      };
+      loop(baseData, value);
+    }
+    return baseData;
+  }, [value, baseData]);
+  return result;
+};
+function TreeForm({
+  handleClick,
+  treeConfig,
+  actionBtnArr,
+  transferResult,
+  transferInput,
+  value
+}) {
+  const mdUp = useResponsive('up', 'md');
+  const allFormRef = useRef({});
+  const treeValue = useCreateTreeData({
+    value,
+    transfer: transferInput,
+    baseData: treeConfig
+  });
+  useEffect(() => {
+    mockData.current = treeValue;
+    update();
+  }, [treeValue]);
+  let mockData = useRef(treeValue);
+  const [mockDataMeo, setMockDataMeo] = useState(treeValue);
+  const record = useMemo(() => {
+    let value = {};
+    processRecordLoop(mockData.current, '0', value);
+    return value;
+  }, [mockDataMeo]);
+  const update = () => {
+    setMockDataMeo({
+      ...mockData.current
+    });
+  };
+  const _handleSubmit = async () => {
+    let result = {};
+    const loop = (value, treeDataItem, id = 0) => {
+      let fromIns = allFormRef.current[id];
+      if (fromIns) {
+        Object.assign(value, fromIns.getValues());
+        for (let i in treeDataItem.formConfig) {
+          let current = treeDataItem.formConfig[i];
+          if (current.isNotInForm && treeDataItem.type !== 'array' && treeDataItem.type !== 'object') {
+            delete value[i];
+          }
+        }
+      }
+      if (treeDataItem.sections?.length) {
+        treeDataItem.sections.forEach(item => {
+          if (item.type == 'array') {
+            let current = value[item.name || item.label] = [];
+            item.sections?.forEach(item => {
+              let val = {};
+              loop(val, item, item.id);
+              current.push(val);
+            });
+          } else {
+            if (item.judeShow && !item.judeShow()) {
+              return;
+            }
+            let current = value[item.name || item.label] = {};
+            loop(current, item, item.id);
+          }
+        });
+      }
+    };
+    loop(result, mockDataMeo);
+    let isSuccess = true;
+    // 校验
+    for (let i in record) {
+      if (allFormRef.current[i]) {
+        const isRight = await allFormRef.current[i]?.trigger();
+        record[i].isError = !isRight;
+        if (!isRight) {
+          isSuccess = false;
+        }
+        update();
+      }
+    }
+    transferResult?.(result);
+    return {
+      isSuccess,
+      result
+    };
+  };
+  const renderDetails = jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+    children: [mdUp && jsxRuntimeExports.jsx(Grid, {
+      md: 4,
+      children: jsxRuntimeExports.jsx(Tree, {
+        record: record,
+        update: update,
+        treeRoot: mockDataMeo
+      })
+    }), jsxRuntimeExports.jsx(Grid, {
+      xs: 12,
+      md: 8,
+      children: jsxRuntimeExports.jsxs(Card, {
+        children: [!mdUp && jsxRuntimeExports.jsx(CardHeader, {
+          title: "Details"
+        }), Object.values(record).map(item => {
+          let active = item.isCurrent;
+          return jsxRuntimeExports.jsx(Box, {
+            style: active ? {} : {
+              display: 'none'
+            },
+            children: item.formConfig && jsxRuntimeExports.jsx(FormItemTe, {
+              formRef: allFormRef,
+              id: item.id,
+              formConfig: item.formConfig
+            })
+          }, item.id);
+        })]
+      })
+    })]
+  });
+  const renderActions = jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+    children: [mdUp && jsxRuntimeExports.jsx(Grid, {
+      md: 4
+    }), jsxRuntimeExports.jsxs(Grid, {
+      xs: 12,
+      md: 12,
+      sx: {
+        display: 'flex',
+        alignItems: 'center'
+      },
+      children: [jsxRuntimeExports.jsx(Box, {
+        sx: {
+          flex: 1
+        }
+      }), actionBtnArr.map((item, key) => {
+        return jsxRuntimeExports.jsx(LoadingButton, {
+          sx: {
+            mr: 2
+          },
+          onClick: async () => {
+            const {
+              isSuccess,
+              result
+            } = await _handleSubmit();
+            handleClick({
+              type: item.name,
+              isSuccess,
+              result
+            });
+          },
+          type: "submit",
+          variant: "contained",
+          size: "large",
+          children: item.name
+        }, key);
+      })]
+    })]
+  });
+  return jsxRuntimeExports.jsxs(Grid, {
+    container: true,
+    children: [renderDetails, renderActions]
+  });
+}
+
+export { TreeForm, setDefault, useCreateTreeData };

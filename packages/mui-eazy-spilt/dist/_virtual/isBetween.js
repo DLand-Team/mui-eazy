@@ -1,1 +1,3 @@
-var e={exports:{}};export{e as __module};
+var isBetween = {exports: {}};
+
+export { isBetween as __module };

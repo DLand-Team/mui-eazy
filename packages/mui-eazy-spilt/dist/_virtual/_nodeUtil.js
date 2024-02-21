@@ -1,1 +1,3 @@
-var e={exports:{}};export{e as __module};
+var _nodeUtil = {exports: {}};
+
+export { _nodeUtil as __module };

@@ -1,1 +1,3 @@
-var r={};export{r as __exports};
+var lib = {};
+
+export { lib as __exports };

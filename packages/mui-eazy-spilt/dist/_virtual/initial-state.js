@@ -1,1 +1,3 @@
-var r={};export{r as __exports};
+var initialState = {};
+
+export { initialState as __exports };

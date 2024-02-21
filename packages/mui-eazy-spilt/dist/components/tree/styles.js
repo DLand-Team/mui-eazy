@@ -1,1 +1,143 @@
-import{ListItemButton as t,ListItemIcon as o}from"@mui/material";import{Iconify as e}from"../iconify/iconify.js";import r from"../../node_modules/.pnpm/@mui_material@5.15.7_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.54_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/styles/styled.js";import{alpha as i}from"@mui/system";const a=r(t,{shouldForwardProp:t=>"active"!==t})((({active:t,depth:o,config:e,theme:r})=>{const a=1==o,m=2==o,n=3==o,l=4==o,p=5==o,d={color:"light"===r.palette.mode?"black":r.palette.primary.light,backgroundColor:i(r.palette.primary.main,.16),"&:hover":{backgroundColor:i(r.palette.primary.main,.16)}},c={color:r.palette.text.primary,backgroundColor:i(r.palette.primary.main,.1),"&:hover":{backgroundColor:r.palette.action.hover}},h={color:r.palette.text.primary,backgroundColor:i(r.palette.primary.main,.07),"&:hover":{backgroundColor:r.palette.action.hover}},g={color:r.palette.text.primary,backgroundColor:i(r.palette.primary.main,.05),"&:hover":{backgroundColor:r.palette.action.hover}},s={color:r.palette.text.primary,backgroundColor:i(r.palette.primary.main,.03),"&:hover":{backgroundColor:r.palette.action.hover}},u={color:r.palette.text.primary,backgroundColor:i(r.palette.primary.main,.03),"&:hover":{backgroundColor:r.palette.action.hover}};return{border:"1px solid var(--transparent-primary-12, rgba(17, 70, 52, 0.12))",padding:e.itemPadding,marginBottom:e.itemGap+10,borderRadius:e.itemRadius,minHeight:e.itemRootHeight+10,color:r.palette.text.secondary,marginRight:10,...t&&{...d},...a&&{minHeight:e.itemRootHeight,...t&&{...c}},...m&&{minHeight:e.itemRootHeight,...t&&{...h}},...n&&{minHeight:e.itemRootHeight,...t&&{...g}},...l&&{minHeight:e.itemRootHeight,...t&&{...s}},...p&&{minHeight:e.itemRootHeight,...t&&{...u}}}})),m=r(o)((({size:t})=>({minWidth:"auto",width:t,height:t,flexShrink:0,marginRight:0}))),n=r("span")((({active:t,theme:o})=>({width:4,height:4,borderRadius:"50%",backgroundColor:o.palette.text.disabled,transition:o.transitions.create(["transform"],{duration:o.transitions.duration.shorter}),...t&&{transform:"scale(2)",backgroundColor:o.palette.primary.main}})));r(e)({color:"red"});export{n as TreeItemStyledDotIcon,m as TreeItemStyledIcon,a as TreeItemStyledItem};
+import { ListItemButton, ListItemIcon } from '@mui/material';
+import { Iconify } from '../iconify/iconify.js';
+import styled from '../../node_modules/.pnpm/@mui_material@5.15.10_@emotion_react@11.11.3_@emotion_styled@11.11.0_@types_react@18.2.57_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/styles/styled.js';
+import { alpha } from '@mui/system';
+
+const TreeItemStyledItem = styled(ListItemButton, {
+  shouldForwardProp: prop => prop !== 'active'
+})(({
+  active,
+  depth,
+  config,
+  theme
+}) => {
+  const subItem = depth == 1;
+  const subItem2 = depth == 2;
+  const subItem3 = depth == 3;
+  const subItem4 = depth == 4;
+  const subItem5 = depth == 5;
+  const activeStyles = {
+    root: {
+      color: theme.palette.mode === 'light' ? 'black' : theme.palette.primary.light,
+      backgroundColor: alpha(theme.palette.primary.main, 0.16),
+      '&:hover': {
+        backgroundColor: alpha(theme.palette.primary.main, 0.16)
+      }
+    },
+    sub: {
+      color: theme.palette.text.primary,
+      backgroundColor: alpha(theme.palette.primary.main, 0.1),
+      '&:hover': {
+        backgroundColor: theme.palette.action.hover
+      }
+    },
+    sub2: {
+      color: theme.palette.text.primary,
+      backgroundColor: alpha(theme.palette.primary.main, 0.07),
+      '&:hover': {
+        backgroundColor: theme.palette.action.hover
+      }
+    },
+    sub3: {
+      color: theme.palette.text.primary,
+      backgroundColor: alpha(theme.palette.primary.main, 0.05),
+      '&:hover': {
+        backgroundColor: theme.palette.action.hover
+      }
+    },
+    sub4: {
+      color: theme.palette.text.primary,
+      backgroundColor: alpha(theme.palette.primary.main, 0.03),
+      '&:hover': {
+        backgroundColor: theme.palette.action.hover
+      }
+    },
+    sub5: {
+      color: theme.palette.text.primary,
+      backgroundColor: alpha(theme.palette.primary.main, 0.03),
+      '&:hover': {
+        backgroundColor: theme.palette.action.hover
+      }
+    }
+  };
+  return {
+    border: '1px solid var(--transparent-primary-12, rgba(17, 70, 52, 0.12))',
+    // Root item
+    padding: config.itemPadding,
+    marginBottom: config.itemGap + 10,
+    borderRadius: config.itemRadius,
+    minHeight: config.itemRootHeight + 10,
+    color: theme.palette.text.secondary,
+    marginRight: 10,
+    // Active root item
+    ...(active && {
+      ...activeStyles.root
+    }),
+    // Sub item
+    ...(subItem && {
+      minHeight: config.itemRootHeight,
+      // Active sub item
+      ...(active && {
+        ...activeStyles.sub
+      })
+    }),
+    ...(subItem2 && {
+      minHeight: config.itemRootHeight,
+      // Active sub item
+      ...(active && {
+        ...activeStyles.sub2
+      })
+    }),
+    ...(subItem3 && {
+      minHeight: config.itemRootHeight,
+      // Active sub item
+      ...(active && {
+        ...activeStyles.sub3
+      })
+    }),
+    ...(subItem4 && {
+      minHeight: config.itemRootHeight,
+      // Active sub item
+      ...(active && {
+        ...activeStyles.sub4
+      })
+    }),
+    ...(subItem5 && {
+      minHeight: config.itemRootHeight,
+      // Active sub item
+      ...(active && {
+        ...activeStyles.sub5
+      })
+    })
+  };
+});
+const TreeItemStyledIcon = styled(ListItemIcon)(({
+  size
+}) => ({
+  minWidth: 'auto',
+  width: size,
+  height: size,
+  flexShrink: 0,
+  marginRight: 0
+}));
+const TreeItemStyledDotIcon = styled('span')(({
+  active,
+  theme
+}) => ({
+  width: 4,
+  height: 4,
+  borderRadius: '50%',
+  backgroundColor: theme.palette.text.disabled,
+  transition: theme.transitions.create(['transform'], {
+    duration: theme.transitions.duration.shorter
+  }),
+  ...(active && {
+    transform: 'scale(2)',
+    backgroundColor: theme.palette.primary.main
+  })
+}));
+styled(Iconify)({
+  color: 'red'
+});
+
+export { TreeItemStyledDotIcon, TreeItemStyledIcon, TreeItemStyledItem };

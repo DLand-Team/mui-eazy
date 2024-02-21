@@ -1,1 +1,227 @@
-import{j as e}from"../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js";import{Stack as o,IconButton as t,Button as i,Typography as r}from"@mui/material";import{useState as l,useEffect as n}from"react";import{useFormContext as s,Controller as d}from"../../node_modules/.pnpm/react-hook-form@7.45.4_react@18.2.0/node_modules/react-hook-form/dist/index.esm.js";import"../../hooks/use-fields.js";import{useGetField as a}from"../../hooks/use-get-field.js";import"../../utils/myDay.js";import"../../utils/highlight.js";import"../../node_modules/.pnpm/numeral@2.0.6/node_modules/numeral/numeral.js";import{uuidv4 as m}from"../../utils/uuidv4.js";import{Iconify as c}from"../iconify/iconify.js";import"../../node_modules/.pnpm/react-lazy-load-image-component@1.6.0_react-dom@18.2.0_react@18.2.0/node_modules/react-lazy-load-image-component/build/index.js";import"../upload/upload-drag/cropModal.js";import"../../node_modules/.pnpm/react-quill@2.0.0_react-dom@18.2.0_react@18.2.0/node_modules/react-quill/dist/quill.snow.css.js";import"../../node_modules/.pnpm/react-quill@2.0.0_react-dom@18.2.0_react@18.2.0/node_modules/react-quill/lib/index.js";import"../editor/styles.js";import"../../node_modules/.pnpm/react-google-autocomplete@2.7.3_react@18.2.0/node_modules/react-google-autocomplete/lib/usePlacesAutocompleteService.js";function p(p){const{name:u,mulType:f="one",addLabel:x,itemFieldConfig:h,childFieldConfig:g}=p,{setValue:j,getValues:$,unregister:_,register:k}=s(),{control:b}=s();let y=$(u);const[C,w]=l([{id:m(),label:u}]);n((()=>{y&&Array.isArray(y)&&w(y?.map?.((()=>({id:m(),label:u}))))}),[]);const D=a();let F;const q=C.map(((i,r)=>{const{id:l}=i;let n,s=`${u}.${r}`;if("one"==f)n=D(s,g||{label:h?.placeholder||h?.label,fieldConfig:h||p}),F=e.jsxs(o,{sx:{marginBottom:"10px"},direction:"row",children:[n,e.jsx(t,{sx:{width:"51px",height:"51px"},onClick:e=>{if(C.length<=1)return;let o=[...C];const t=C.findIndex((e=>e.id===l));o.splice(t,1);let i=[...$(u)];i.splice(t,1),_(`${u}`,{keepDefaultValue:!1,keepDirty:!1});for(let e in o)_(`${u}.${e}`,{keepDefaultValue:!1,keepDirty:!1});k(`${u}`);for(let e in o)k(`${u}.${e}`);j(`${u}`,i),i.forEach(((e,o)=>{j(`${u}.${o}`,e)})),w(o)},children:e.jsx(c,{icon:"icon-park-outline:delete"})})]},l);else{if(!g)return e.jsx(e.Fragment,{children:"error"});n=Object.entries(g).map((([t,i])=>{i.name=`${s}.${t}`;let l={...i};return i.labelMap?.[r]&&(l.label=i.labelMap?.[r]),e.jsx(o,{sx:{mb:2,width:"100%"},direction:"row",children:D(`${s}.${t}`,l)},i.name)})),F=e.jsxs(o,{sx:{width:"100%"},children:[n,e.jsx(o,{sx:{width:"100%",mb:2},direction:"row",children:e.jsx(t,{sx:{},onClick:e=>{if(C.length<=1)return;let o=[...C];const t=C.findIndex((e=>e.id===l));o.splice(t,1);let i=[...$(u)];i.splice(t,1);for(let e in o)_(`${u}.${e}`,{keepDefaultValue:!1,keepDirty:!1});for(let e in o)k(`${u}.${e}`);j(`${u}`,i),i.forEach(((e,o)=>{j(`${u}.${o}`,e)})),w(o)},children:e.jsx(c,{icon:"icon-park-outline:delete"})})})]},l)}return F}));return e.jsx(e.Fragment,{children:e.jsx(d,{name:u,control:b,render:({fieldState:{error:o}})=>e.jsxs(e.Fragment,{children:[q,e.jsx("div",{children:e.jsx(i,{onClick:e=>{w([...C,{id:m(),label:u}])},startIcon:e.jsx(c,{color:"#256CCB",width:"32px",height:"32px",icon:"formkit:add"}),children:e.jsx(r,{fontSize:"14px",color:"#256CCB",children:x||`add ${u}`})})}),(o?.root?.message||o?.message)&&e.jsx("div",{style:{color:"#FF5630",lineHeight:1.5,fontSize:"0.75rem",fontWeight:400,textAlign:"left",marginRight:"14px",marginBottom:"0",marginLeft:"14px"},children:o?.message||o?.root?.message})]})})})}export{p as default};
+import { j as jsxRuntimeExports } from '../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js';
+import { Stack, IconButton, Button, Typography } from '@mui/material';
+import { useState, useEffect } from 'react';
+import { useFormContext, Controller } from '../../node_modules/.pnpm/react-hook-form@7.50.1_react@18.2.0/node_modules/react-hook-form/dist/index.esm.js';
+import '../../hooks/use-fields.js';
+import { useGetField } from '../../hooks/use-get-field.js';
+import '../../utils/myDay.js';
+import '../../utils/highlight.js';
+import '../../node_modules/.pnpm/numeral@2.0.6/node_modules/numeral/numeral.js';
+import { uuidv4 } from '../../utils/uuidv4.js';
+import { Iconify } from '../iconify/iconify.js';
+import '../../node_modules/.pnpm/react-lazy-load-image-component@1.6.0_react-dom@18.2.0_react@18.2.0/node_modules/react-lazy-load-image-component/build/index.js';
+import '../upload/upload-drag/cropModal.js';
+import '../../node_modules/.pnpm/react-quill@2.0.0_react-dom@18.2.0_react@18.2.0/node_modules/react-quill/lib/index.js';
+import '../editor/styles.js';
+import '../../node_modules/.pnpm/react-google-autocomplete@2.7.3_react@18.2.0/node_modules/react-google-autocomplete/lib/usePlacesAutocompleteService.js';
+
+function FieldMul(props) {
+  const {
+    name,
+    mulType = 'one',
+    addLabel,
+    itemFieldConfig,
+    childFieldConfig
+  } = props;
+  const {
+    setValue,
+    getValues,
+    unregister,
+    register
+  } = useFormContext();
+  const {
+    control
+  } = useFormContext();
+  let value = getValues(name);
+  const [arr, setArr] = useState([{
+    id: uuidv4(),
+    label: name
+  }]);
+  useEffect(() => {
+    value && Array.isArray(value) && setArr(value?.map?.(() => {
+      return {
+        id: uuidv4(),
+        label: name
+      };
+    }));
+  }, []);
+  const getField = useGetField();
+  let comp;
+  const fields = arr.map((entity, index) => {
+    const {
+      id
+    } = entity;
+    let itemName = `${name}.${index}`;
+    let fields;
+    if (mulType == 'one') {
+      fields = childFieldConfig ? getField(itemName, childFieldConfig) : getField(itemName, {
+        label: itemFieldConfig?.placeholder || itemFieldConfig?.label,
+        fieldConfig: itemFieldConfig || props
+      });
+      comp = jsxRuntimeExports.jsxs(Stack, {
+        sx: {
+          marginBottom: '10px'
+        },
+        direction: "row",
+        children: [fields, jsxRuntimeExports.jsx(IconButton, {
+          sx: {
+            width: '51px',
+            height: '51px'
+          },
+          onClick: _ => {
+            if (arr.length <= 1) {
+              return;
+            }
+            let temp = [...arr];
+            const targetId = arr.findIndex(item => {
+              return item.id === id;
+            });
+            temp.splice(targetId, 1);
+            let formValue = [...getValues(name)];
+            // 删除值
+            formValue.splice(targetId, 1);
+            unregister(`${name}`, {
+              keepDefaultValue: false,
+              keepDirty: false
+            });
+            for (let i in temp) {
+              unregister(`${name}.${i}`, {
+                keepDefaultValue: false,
+                keepDirty: false
+              });
+            }
+            register(`${name}`);
+            for (let i in temp) {
+              register(`${name}.${i}`);
+            }
+            setValue(`${name}`, formValue);
+            formValue.forEach((value, index) => {
+              setValue(`${name}.${index}`, value);
+            });
+            setArr(temp);
+          },
+          children: jsxRuntimeExports.jsx(Iconify, {
+            icon: 'icon-park-outline:delete'
+          })
+        })]
+      }, id);
+    } else if (childFieldConfig) {
+      fields = Object.entries(childFieldConfig).map(([key, value]) => {
+        value.name = `${itemName}.${key}`;
+        let temp = {
+          ...value
+        };
+        if (value.labelMap?.[index]) {
+          temp.label = value.labelMap?.[index];
+        }
+        return jsxRuntimeExports.jsx(Stack, {
+          sx: {
+            mb: 2,
+            width: '100%'
+          },
+          direction: "row",
+          children: getField(`${itemName}.${key}`, temp)
+        }, value.name);
+      });
+      comp = jsxRuntimeExports.jsxs(Stack, {
+        sx: {
+          width: '100%'
+        },
+        children: [fields, jsxRuntimeExports.jsx(Stack, {
+          sx: {
+            width: '100%',
+            mb: 2
+          },
+          direction: "row",
+          children: jsxRuntimeExports.jsx(IconButton, {
+            sx: {},
+            onClick: _ => {
+              if (arr.length <= 1) {
+                return;
+              }
+              let temp = [...arr];
+              const targetId = arr.findIndex(item => {
+                return item.id === id;
+              });
+              temp.splice(targetId, 1);
+              let formValue = [...getValues(name)];
+              // 删除值
+              formValue.splice(targetId, 1);
+              for (let i in temp) {
+                unregister(`${name}.${i}`, {
+                  keepDefaultValue: false,
+                  keepDirty: false
+                });
+              }
+              for (let i in temp) {
+                register(`${name}.${i}`);
+              }
+              setValue(`${name}`, formValue);
+              formValue.forEach((value, index) => {
+                setValue(`${name}.${index}`, value);
+              });
+              setArr(temp);
+            },
+            children: jsxRuntimeExports.jsx(Iconify, {
+              icon: 'icon-park-outline:delete'
+            })
+          })
+        })]
+      }, id);
+    } else {
+      return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
+        children: "error"
+      });
+    }
+    return comp;
+  });
+  return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
+    children: jsxRuntimeExports.jsx(Controller, {
+      name: name,
+      control: control,
+      render: ({
+        fieldState: {
+          error
+        }
+      }) => {
+        return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+          children: [fields, jsxRuntimeExports.jsx("div", {
+            children: jsxRuntimeExports.jsx(Button, {
+              onClick: _ => {
+                setArr([...arr, {
+                  id: uuidv4(),
+                  label: name
+                }]);
+              },
+              startIcon: jsxRuntimeExports.jsx(Iconify, {
+                color: '#256CCB',
+                width: '32px',
+                height: '32px',
+                icon: 'formkit:add'
+              }),
+              children: jsxRuntimeExports.jsx(Typography, {
+                fontSize: '14px',
+                color: '#256CCB',
+                children: addLabel || `add ${name}`
+              })
+            })
+          }), (error?.root?.message || error?.message) && jsxRuntimeExports.jsx("div", {
+            style: {
+              color: '#FF5630',
+              lineHeight: 1.5,
+              fontSize: '0.75rem',
+              fontWeight: 400,
+              textAlign: 'left',
+              marginRight: '14px',
+              marginBottom: '0',
+              marginLeft: '14px'
+            },
+            children: error?.message || error?.root?.message
+          })]
+        });
+      }
+    })
+  });
+}
+
+export { FieldMul as default };

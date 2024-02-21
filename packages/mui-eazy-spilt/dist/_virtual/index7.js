@@ -1,1 +1,3 @@
-var e={exports:{}};export{e as __module};
+var reactIs = {exports: {}};
+
+export { reactIs as __module };

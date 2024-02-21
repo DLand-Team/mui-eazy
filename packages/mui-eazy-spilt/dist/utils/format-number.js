@@ -1,1 +1,31 @@
-import n from"../node_modules/.pnpm/numeral@2.0.6/node_modules/numeral/numeral.js";function r(r){return n(r).format()}function t(r){return f(r?n(r).format("$0,0.00"):"",".00")}function u(r){return f(r?n(r).format("0,0.00"):"",".00")}function o(r){return f(r?n(Number(r)/100).format("0.0%"):"",".0")}function e(r){return f(r?n(r).format("0.00a"):"",".00")}function m(r){return f(r?n(r).format("0.0 b"):"",".0")}function f(n,r=".00"){return n.includes(r)?n.replace(r,""):n}export{t as fCurrency,u as fCurrencyWithout,m as fData,r as fNumber,o as fPercent,e as fShortenNumber};
+import numeral from '../node_modules/.pnpm/numeral@2.0.6/node_modules/numeral/numeral.js';
+
+function fNumber(number) {
+  return numeral(number).format();
+}
+function fCurrency(number) {
+  const format = number ? numeral(number).format('$0,0.00') : '';
+  return result(format, '.00');
+}
+function fCurrencyWithout(number) {
+  const format = number ? numeral(number).format('0,0.00') : '';
+  return result(format, '.00');
+}
+function fPercent(number) {
+  const format = number ? numeral(Number(number) / 100).format('0.0%') : '';
+  return result(format, '.0');
+}
+function fShortenNumber(number) {
+  const format = number ? numeral(number).format('0.00a') : '';
+  return result(format, '.00');
+}
+function fData(number) {
+  const format = number ? numeral(number).format('0.0 b') : '';
+  return result(format, '.0');
+}
+function result(format, key = '.00') {
+  const isInteger = format.includes(key);
+  return isInteger ? format.replace(key, '') : format;
+}
+
+export { fCurrency, fCurrencyWithout, fData, fNumber, fPercent, fShortenNumber };

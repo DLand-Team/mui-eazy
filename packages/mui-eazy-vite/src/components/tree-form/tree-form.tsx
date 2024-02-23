@@ -123,7 +123,7 @@ export function TreeForm({
         [key: string]: any;
       },
       any,
-      undefined
+      any
     >;
   }>({});
 

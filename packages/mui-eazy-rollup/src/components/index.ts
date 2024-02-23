@@ -5,7 +5,6 @@ export * from "./form";
 export * from "./tree";
 export * from "./carousel";
 export * from "./lightbox";
-// base
 export * from "./file-thumbnail";
 export * from "./upload";
 export * from "./iconify";

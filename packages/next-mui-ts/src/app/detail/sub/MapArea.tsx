@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
-import HighlightText from "@/common/components/Text/HighlightText";
-import GoogleMap from "@/common/components/GoogleMap/GoogleMap";
-import LowlightText from "@/common/components/Text/LowlightText";
+import HighlightText from "@/components/Text/HighlightText";
+import GoogleMap from "@/components/GoogleMap/GoogleMap";
+import LowlightText from "@/components/Text/LowlightText";
 
 type MapAreaPropsType = {
 	className?: string;

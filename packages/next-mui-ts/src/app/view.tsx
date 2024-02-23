@@ -2,10 +2,10 @@ import image1 from "@/assets/image/test-image-1.jpg";
 import image2 from "@/assets/image/test-image-2.jpg";
 import image3 from "@/assets/image/test-image-3.webp";
 import image4 from "@/assets/image/test-image-4.webp";
-import LandCard from "@/common/components/Card";
+import LandCard from "@/components/Card";
 import { Container } from "@mui/material";
 import styles from "./index.module.scss";
-import LoginModalComponent from "@/common/components/LoginModal";
+import LoginModalComponent from "@/components/LoginModal";
 
 export default function View() {
 	return (

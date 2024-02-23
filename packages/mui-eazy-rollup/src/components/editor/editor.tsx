@@ -1,3 +1,5 @@
+"use client";
+
 import "../../utils/highlight";
 import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
@@ -8,7 +10,7 @@ import Toolbar, { formats } from "./toolbar";
 
 // ----------------------------------------------------------------------
 
-export function Editor({
+export default function Editor({
 	id = "minimal-quill",
 	error,
 	simple = false,

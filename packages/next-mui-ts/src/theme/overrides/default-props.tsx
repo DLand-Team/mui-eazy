@@ -1,6 +1,6 @@
+import { Iconify } from "@/components/iconify";
 import { Theme } from "@mui/material/styles";
 import SvgIcon, { SvgIconProps } from "@mui/material/SvgIcon";
-import { Iconify } from "mui-eazy";
 
 // ----------------------------------------------------------------------
 

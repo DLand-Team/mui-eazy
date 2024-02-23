@@ -10,10 +10,13 @@
 		"post-update": "echo \"codesandbox preview only, need an update\" && pnpm update --latest"
 	},
 	"dependencies": {
+		"@babel/plugin-transform-runtime": "^7.23.9",
 		"@emotion/cache": "latest",
 		"@emotion/react": "latest",
 		"@emotion/styled": "latest",
+		"@iconify/react": "^4.1.1",
 		"@mui/icons-material": "latest",
+		"@mui/lab": "^5.0.0-alpha.142",
 		"@mui/material": "latest",
 		"@mui/material-nextjs": "latest",
 		"framer-motion": "^11.0.5",

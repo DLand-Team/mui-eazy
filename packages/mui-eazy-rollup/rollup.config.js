@@ -25,12 +25,13 @@ const isProd = process.env.NODE_ENV === "production";
 const commonPlugins = [
 	image(),
 	postcss(),
-	commonjs(),
+	commonjs({
+		transformMixedEsModules: true
+	}),
 	resolve(),
 	typescript({ tsconfig: "./tsconfig.json" }),
 	babel({
 		extensions: [".js", ".jsx", ".ts", ".tsx", ".scss"],
-		exclude: "**/node_modules/**",
 	}),
 	json(),
 	// terser(),

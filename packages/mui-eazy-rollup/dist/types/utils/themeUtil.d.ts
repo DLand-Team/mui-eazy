@@ -17,7 +17,7 @@ export declare function bgBlur(props?: BgBlurProps): {
         readonly height: "100%";
         readonly backdropFilter: `blur(${number}px)`;
         readonly WebkitBackdropFilter: `blur(${number}px)`;
-        readonly backgroundColor: any;
+        readonly backgroundColor: string;
     };
     backdropFilter?: undefined;
     WebkitBackdropFilter?: undefined;
@@ -25,7 +25,7 @@ export declare function bgBlur(props?: BgBlurProps): {
 } | {
     backdropFilter: string;
     WebkitBackdropFilter: string;
-    backgroundColor: any;
+    backgroundColor: string;
     readonly position?: undefined;
     readonly backgroundImage?: undefined;
     readonly '&:before'?: undefined;

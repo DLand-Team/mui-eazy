@@ -21,7 +21,7 @@ declare const FormMapObj: {
     multiSelect: typeof FieldMultiSelect;
 };
 export type InputType = keyof typeof FormMapObj;
-export declare const getField: <T extends "string" | "multiple" | "checkbox" | "radio" | "select" | "editer" | "autoCompleteGoogle" | "datePicker" | "upload" | "uploadBox" | "multiSelect">(type: T) => {
+export declare const getField: <T extends "string" | "select" | "multiple" | "checkbox" | "radio" | "editer" | "autoCompleteGoogle" | "datePicker" | "upload" | "uploadBox" | "multiSelect">(type: T) => {
     radio: typeof FieldRadioGroup;
     select: typeof FieldSelect;
     editer: typeof FieldEditor;

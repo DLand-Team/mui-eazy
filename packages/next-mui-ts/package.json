@@ -16,6 +16,7 @@
 		"@mui/icons-material": "latest",
 		"@mui/material": "latest",
 		"@mui/material-nextjs": "latest",
+		"framer-motion": "^11.0.5",
 		"lodash-es": "^4.17.21",
 		"mui-eazy": "workspace:^",
 		"next": "latest",

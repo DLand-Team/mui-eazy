@@ -7,7 +7,7 @@ export declare const varBounce: (props?: VariantsType) => {
             opacity: number[];
             transition: {
                 duration: number;
-                ease: "linear" | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate" | number[];
+                ease: "linear" | number[] | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate";
             };
         };
         exit: {
@@ -23,7 +23,7 @@ export declare const varBounce: (props?: VariantsType) => {
             opacity: number[];
             transition: {
                 duration: number;
-                ease: "linear" | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate" | number[];
+                ease: "linear" | number[] | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate";
             };
         };
         exit: {
@@ -32,7 +32,7 @@ export declare const varBounce: (props?: VariantsType) => {
             opacity: number[];
             transition: {
                 duration: number;
-                ease: "linear" | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate" | number[];
+                ease: "linear" | number[] | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate";
             };
         };
     };
@@ -44,7 +44,7 @@ export declare const varBounce: (props?: VariantsType) => {
             opacity: number[];
             transition: {
                 duration: number;
-                ease: "linear" | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate" | number[];
+                ease: "linear" | number[] | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate";
             };
         };
         exit: {
@@ -53,7 +53,7 @@ export declare const varBounce: (props?: VariantsType) => {
             opacity: number[];
             transition: {
                 duration: number;
-                ease: "linear" | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate" | number[];
+                ease: "linear" | number[] | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate";
             };
         };
     };
@@ -65,7 +65,7 @@ export declare const varBounce: (props?: VariantsType) => {
             opacity: number[];
             transition: {
                 duration: number;
-                ease: "linear" | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate" | number[];
+                ease: "linear" | number[] | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate";
             };
         };
         exit: {
@@ -74,7 +74,7 @@ export declare const varBounce: (props?: VariantsType) => {
             opacity: number[];
             transition: {
                 duration: number;
-                ease: "linear" | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate" | number[];
+                ease: "linear" | number[] | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate";
             };
         };
     };
@@ -86,7 +86,7 @@ export declare const varBounce: (props?: VariantsType) => {
             opacity: number[];
             transition: {
                 duration: number;
-                ease: "linear" | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate" | number[];
+                ease: "linear" | number[] | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate";
             };
         };
         exit: {
@@ -95,7 +95,7 @@ export declare const varBounce: (props?: VariantsType) => {
             opacity: number[];
             transition: {
                 duration: number;
-                ease: "linear" | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate" | number[];
+                ease: "linear" | number[] | "easeIn" | "easeOut" | "easeInOut" | "circIn" | "circOut" | "circInOut" | "backIn" | "backOut" | "backInOut" | "anticipate";
             };
         };
     };

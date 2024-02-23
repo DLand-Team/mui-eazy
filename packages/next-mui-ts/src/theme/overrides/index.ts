@@ -1,7 +1,5 @@
 import { merge } from "lodash-es";
-
 import { Theme } from "@mui/material/styles";
-
 import { alert } from "./components/alert";
 import { appBar } from "./components/appbar";
 import { avatar } from "./components/avatar";
@@ -23,7 +21,6 @@ import { stepper } from "./components/stepper";
 import { switchs } from "./components/switch";
 import { table } from "./components/table";
 import { tabs } from "./components/tabs";
-
 import { accordion } from "./components/accordion";
 import { autocomplete } from "./components/autocomplete";
 import { backdrop } from "./components/backdrop";

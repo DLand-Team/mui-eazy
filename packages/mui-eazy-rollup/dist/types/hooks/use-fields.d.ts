@@ -18,5 +18,13 @@ export declare function useFields(fromCg: FormConfig, options?: {
     sx?: SxProps;
 }): {
     formNode: import("react/jsx-runtime").JSX.Element;
-    methods: any;
+    methods: UseFormReturn<{
+        [x: string]: any;
+        [x: number]: any;
+        [x: symbol]: any;
+    }, any, {
+        [x: string]: any;
+        [x: number]: any;
+        [x: symbol]: any;
+    }>;
 };

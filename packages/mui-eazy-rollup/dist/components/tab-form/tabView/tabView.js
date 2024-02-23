@@ -19,7 +19,7 @@ import '../../../node_modules/.pnpm/react-google-autocomplete@2.7.3_react@18.2.0
 import '../../../node_modules/.pnpm/mui-one-time-password-input@2.0.2_@emotion_react@11.11.3_@emotion_styled@11.11.0_@mui_materia_zfj6k7f6yfwygnu6ebtjrsucvm/node_modules/mui-one-time-password-input/dist/mui-one-time-password-input.es.js';
 import '../../../node_modules/.pnpm/slick-carousel@1.8.1_jquery@3.7.1/node_modules/slick-carousel/slick/slick.css.js';
 import '../../../node_modules/.pnpm/slick-carousel@1.8.1_jquery@3.7.1/node_modules/slick-carousel/slick/slick-theme.css.js';
-import '../../../node_modules/.pnpm/react-slick@0.29.0_react-dom@18.2.0_react@18.2.0/node_modules/react-slick/lib/index.js';
+import 'react-slick';
 import '../../carousel/carousel-dots.js';
 import '../../carousel/carousel-arrows.js';
 import '../../carousel/carousel-arrow-index.js';

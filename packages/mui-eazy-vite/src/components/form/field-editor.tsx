@@ -34,6 +34,7 @@ export default function FieldEditor({ name, helperText, id, ...other }: FieldEdi
       control={control}
       render={({ field, fieldState: { error } }) => (
         <Editor
+          //@ts-ignore
           id={ref.current}
           value={field.value}
           onChange={field.onChange}

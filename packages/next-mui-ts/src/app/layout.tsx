@@ -4,6 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Provider from "@/provider/SetupLazyProvider";
+import "mui-eazy/dist/style.css";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
 	return (

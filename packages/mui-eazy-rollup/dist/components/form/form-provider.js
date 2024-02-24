@@ -1,0 +1,1 @@
+import{j as o}from"../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js";import{FormProvider as e}from"../../node_modules/.pnpm/react-hook-form@7.50.1_react@18.2.0/node_modules/react-hook-form/dist/index.esm.js";function r({children:r,onSubmit:m,formRef:n}){return o.jsx(e,{...n,children:o.jsx("form",{onSubmit:m,children:r})})}export{r as default};

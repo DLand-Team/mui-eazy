@@ -12,6 +12,7 @@ import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
 import replace from "@rollup/plugin-replace";
 // import swc from "@rollup/plugin-swc";
+import url from "@rollup/plugin-url";
 import { swc, defineRollupSwcOption } from "rollup-plugin-swc3";
 import dts from "rollup-plugin-dts";
 /**entries */
@@ -38,6 +39,7 @@ const commonPlugins = [
 	// 		baseUrl: path.resolve("./"),
 	// 	},
 	// }),
+	terser(),
 	esbuild({
 		tsconfig: "./tsconfig.json",
 	}),

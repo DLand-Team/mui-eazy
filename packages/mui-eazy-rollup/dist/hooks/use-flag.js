@@ -1,0 +1,1 @@
+import{useState as e,useCallback as o}from"react";function n(n){const[r,t]=e(!!n);return{value:r,onTrue:o((()=>{t(!0)}),[]),onFalse:o((()=>{t(!1)}),[]),onToggle:o((()=>{t((e=>!e))}),[]),setValue:t}}export{n as useFlag};

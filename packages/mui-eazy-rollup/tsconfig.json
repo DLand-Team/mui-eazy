@@ -24,7 +24,7 @@
 		"declaration": true, // 是否生成声明文件
 		"declarationDir": "./dist/types/", // 声明文件打包的位置
 		"moduleResolution": "node",
-		"module": "esnext",
+		"module": "ESNext",
 		"types": ["node"],
 		"typeRoots": ["./node_modules/@types"],
 		"jsx": "react-jsx",

@@ -1,0 +1,1 @@
+import{useState as e,useCallback as t}from"react";function o(o){const[n,r]=e(-1);return{selected:n,open:n>=0,onOpen:t((e=>{const t=o.findIndex((t=>"video"===t.type?t.poster===e:t.src===e));r(t)}),[o]),onClose:t((()=>{r(-1)}),[]),setSelected:r}}export{o as default};

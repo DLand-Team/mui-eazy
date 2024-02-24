@@ -1,0 +1,1 @@
+import{j as r}from"../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-runtime.js";import{useState as e,useEffect as o,Suspense as s,lazy as t}from"react";const a=t((()=>import("./editor.js")));var d=()=>{const[t,d]=e(!1);return o((()=>{d(!0)}),[]),r.jsx(s,{children:r.jsx("div",{children:t&&r.jsx(a,{})})})};export{a as EditorCom,d as default};

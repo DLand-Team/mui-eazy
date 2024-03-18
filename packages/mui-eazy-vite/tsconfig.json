@@ -30,8 +30,8 @@
     "jsx": "react-jsx",
     "allowJs": true
   },
-  "exclude": ["node_modules", "dist"],
-  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "src/pages/**/*"],
+  "include": ["src/**/*", "src/pages"],
   "references": [
     {
       "path": "./tsconfig.node.json"

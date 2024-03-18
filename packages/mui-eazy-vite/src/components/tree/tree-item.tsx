@@ -24,27 +24,9 @@ const navVerticalConfig = (config?: TreeItemConfigProps) => ({
 
 export const TreeItem = (props: TreeItemProps & DOMAttributes<any>) => {
   const { active, depth, isError, label, children, formCreater, sx = {}, ...rest } = props;
-  let sxOptionArr: SxProps<Theme>[] = [
-    {
-      ml: 0,
-    },
-    {
-      ml: 1,
-    },
-    {
-      ml: 2,
-    },
-    {
-      ml: 3,
-    },
-    {
-      ml: 4,
-    },
-    {
-      ml: 5,
-    },
-  ];
-  let sxOption = sxOptionArr[depth];
+  let sxOption = {
+    ml: depth,
+  };
   return (
     <Box>
       <Stack alignItems="center" direction="row">
@@ -63,19 +45,20 @@ export const TreeItem = (props: TreeItemProps & DOMAttributes<any>) => {
           </Box>
           {children}
         </TreeItemStyledItem>
-        <Box
-          sx={{
-            width: '28px',
-          }}
-        >
-          {isError && (
+        {isError && (
+          <Box
+            sx={{
+              width: '0px',
+              marginLeft: '10px',
+            }}
+          >
             <MotionContainer action={true} animate={isError}>
               <m.div variants={varBounce().in}>
                 <Iconify color={'red'} icon="material-symbols:error" width={20} />
               </m.div>
             </MotionContainer>
-          )}
-        </Box>
+          </Box>
+        )}
       </Stack>
     </Box>
   );

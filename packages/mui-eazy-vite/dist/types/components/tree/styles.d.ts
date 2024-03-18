@@ -12,7 +12,7 @@ export type TreeItemConfigProps = {
 };
 export declare const TreeItemStyledItem: import("@emotion/styled").StyledComponent<import("@mui/material").ListItemButtonOwnProps & Omit<import("@mui/material").ButtonBaseOwnProps, "classes"> & import("@mui/material/OverridableComponent").CommonProps & Omit<Omit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & {
     ref?: ((instance: HTMLDivElement | null) => void) | import("react").RefObject<HTMLDivElement> | null | undefined;
-}, "className" | "style" | "classes" | "alignItems" | "children" | "sx" | "autoFocus" | "tabIndex" | "disabled" | "action" | "selected" | "dense" | "centerRipple" | "disableRipple" | "disableTouchRipple" | "focusRipple" | "focusVisibleClassName" | "LinkComponent" | "onFocusVisible" | "TouchRippleProps" | "touchRippleRef" | "divider" | "disableGutters"> & import("@mui/system").MUIStyledCommonProps<import("@mui/material").Theme> & {
+}, "className" | "style" | "classes" | "action" | "centerRipple" | "children" | "disabled" | "disableRipple" | "disableTouchRipple" | "focusRipple" | "focusVisibleClassName" | "LinkComponent" | "onFocusVisible" | "sx" | "tabIndex" | "TouchRippleProps" | "touchRippleRef" | "autoFocus" | "alignItems" | "selected" | "dense" | "disableGutters" | "divider"> & import("@mui/system").MUIStyledCommonProps<import("@mui/material").Theme> & {
     active: boolean;
     depth: number;
     config: TreeItemConfigProps;

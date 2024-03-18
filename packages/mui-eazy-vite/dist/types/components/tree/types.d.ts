@@ -2,7 +2,7 @@
 import { SxProps, Theme } from '@mui/material';
 export interface TreeProps {
     currentId?: string;
-    treeRoot: TreeItemProps;
+    treeConfig: TreeItemProps[];
     sx?: SxProps<Theme>;
     update?: () => void;
     onSwitch?: (id: string, record: any) => void;
@@ -20,6 +20,7 @@ export interface TreeItemProps {
     uuid?: string;
     active: boolean;
     isCurrent?: boolean;
+    isRoot?: boolean;
     depth: number;
     label: string;
     name?: string;

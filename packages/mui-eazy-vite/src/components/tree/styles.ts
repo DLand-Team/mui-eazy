@@ -79,7 +79,6 @@ export const TreeItemStyledItem = styled(ListItemButton, {
     borderRadius: config.itemRadius,
     minHeight: config.itemRootHeight! + 10,
     color: theme.palette.text.secondary,
-    marginRight: 10,
     // Active root item
     ...(active && {
       ...activeStyles.root,

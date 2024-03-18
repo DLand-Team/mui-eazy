@@ -24,110 +24,115 @@ const RenderTreeItemLoop = (
     onDelete,
     onAdd,
     judeShow,
+    isRoot,
+    onSwitch,
     ...rest
   } = props;
 
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   if (judeShow && !judeShow()) {
     return <></>;
   }
   return (
     <>
-      <TreeItem
-        onClick={() => {
-          if (props.formConfig) {
-            for (let i in record) {
-              record[i].active = false;
-              record[i].isCurrent = false;
-            }
-            record[props.id!].active = true;
-            record[props.id!].isCurrent = true;
-            let idStrs = props.id?.split('_').slice(0, -1) || [];
-            if (idStrs?.length! > 1) {
-              idStrs.forEach((_, index) => {
-                let idTemp = props.id
-                  ?.split('_')
-                  .slice(0, index + 1)
-                  .join('_');
-                idTemp && idTemp != '0' && (record[idTemp!].active = true);
-              });
-            }
-            update!?.();
-          } else {
-            if (props.onSwitch) {
+      {!isRoot && (
+        <TreeItem
+          onClick={() => {
+            if (props.formConfig) {
               for (let i in record) {
                 record[i].active = false;
                 record[i].isCurrent = false;
               }
+              debugger;
               record[props.id!].active = true;
               record[props.id!].isCurrent = true;
-              props.onSwitch(props.id!);
-            }
-          }
-
-          if (props.id == '0') {
-            setIsOpen(true);
-          } else {
-            !!sections && setIsOpen(!isOpen);
-          }
-        }}
-        {...rest}
-      >
-        {isAdd && (
-          <IconButton
-            style={{
-              zIndex: 10,
-            }}
-            onClick={(e) => {
-              e.stopPropagation();
-              if (!props.active) {
-                setIsOpen(true);
+              let idStrs = props.id?.split('_').slice(0, -1) || [];
+              if (idStrs?.length! > 1) {
+                idStrs.forEach((_, index) => {
+                  let idTemp = props.id
+                    ?.split('_')
+                    .slice(0, index + 1)
+                    .join('_');
+                  idTemp && idTemp != '0' && (record[idTemp!].active = true);
+                });
               }
-              sections && onAdd!(sections);
               update!?.();
-            }}
-            sx={{ position: 'absolute', right: '40px' }}
-          >
-            <Iconify width={16} icon={'icon-park-outline:add'} />
-          </IconButton>
-        )}
-        {record[props.id?.split('_').slice(0, -1).join('_')!]?.type == 'array' && (
-          <IconButton
-            style={{
-              zIndex: 10,
-            }}
-            onClick={(e) => {
-              e.stopPropagation();
-              if (record[props.id!].active) {
+            } else {
+              if (onSwitch) {
                 for (let i in record) {
                   record[i].active = false;
+                  record[i].isCurrent = false;
                 }
-                record[0].active = true;
+                const target = record[props.id!];
+                target.active = true;
+                if (target.parentId) {
+                  record[target.parentId].active = true;
+                }
+                record[props.id!].isCurrent = true;
+                onSwitch(props.id!);
               }
-              onDelete!(props.id!, parentSections!);
-              update!?.();
-            }}
-            sx={{ position: 'absolute', right: '40px' }}
-          >
-            <Iconify width={16} icon={'icon-park-outline:delete'} />
-          </IconButton>
-        )}
-        {!!sections && props.id !== '0' && (
-          <Iconify
-            width={16}
-            icon={isOpen ? 'eva:arrow-ios-downward-fill' : 'eva:arrow-ios-forward-fill'}
-            sx={{ position: 'absolute', right: '20px' }}
-          />
-        )}
-      </TreeItem>
+            }
+
+            !!sections && setIsOpen(!isOpen);
+          }}
+          {...rest}
+        >
+          {isAdd && (
+            <IconButton
+              style={{
+                zIndex: 10,
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (!props.active) {
+                  setIsOpen(true);
+                }
+                sections && onAdd!(sections);
+                update!?.();
+              }}
+              sx={{ position: 'absolute', right: '40px' }}
+            >
+              <Iconify width={16} icon={'icon-park-outline:add'} />
+            </IconButton>
+          )}
+          {record[props.id?.split('_').slice(0, -1).join('_')!]?.type == 'array' && (
+            <IconButton
+              style={{
+                zIndex: 10,
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (record[props.id!].active) {
+                  for (let i in record) {
+                    record[i].active = false;
+                  }
+                  record[0].active = true;
+                }
+                onDelete!(props.id!, parentSections!);
+                update!?.();
+              }}
+              sx={{ position: 'absolute', right: '40px' }}
+            >
+              <Iconify width={16} icon={'icon-park-outline:delete'} />
+            </IconButton>
+          )}
+          {!!sections && props.id !== '0' && (
+            <Iconify
+              width={16}
+              icon={isOpen ? 'eva:arrow-ios-downward-fill' : 'eva:arrow-ios-forward-fill'}
+              sx={{ position: 'absolute', right: '20px' }}
+            />
+          )}
+        </TreeItem>
+      )}
       {!!sections && (
-        <Collapse in={isOpen}>
+        <Collapse in={isOpen || isRoot}>
           {sections?.map((item, index) => {
             const { label, parentId, onDelete, ...rest } = item;
             return (
               <div key={item.id}>
                 <RenderTreeItemLoop
-                  onSwitch={props.onSwitch}
+                  onSwitch={onSwitch}
                   onDelete={onDelete}
                   parentSections={onDelete ? sections : null}
                   update={update}
@@ -151,9 +156,10 @@ export const processRecordLoop = (
 ) => {
   if (!id) {
     id = uuidv4();
-  }
-  if (id == '0') {
-    record[id] = data;
+  } else {
+    if (!(id in record)) {
+      record[id] = data;
+    }
   }
   data.id = id;
   const { sections } = data;
@@ -168,16 +174,26 @@ export const processRecordLoop = (
 };
 
 export const Tree = (props: TreeProps) => {
-  const { treeRoot, update, record, onSwitch, ...rest } = props;
-  let temp = treeRoot;
-  let recordTemp = record;
+  const { treeConfig, update, record, onSwitch, ...rest } = props;
   let ref = useRef({});
   const [_, setFreshFlag] = useState(Date.now());
+  let treeRoot: TreeItemProps = {
+    depth: 0,
+    label: 'root',
+    active: true,
+    isCurrent: true,
+    isRoot: true,
+    judeShow: () => {
+      return true;
+    },
+    sections: treeConfig,
+  };
+  let recordTemp = record;
+  let temp = treeRoot;
   if (!record) {
     recordTemp = ref.current;
-    processRecordLoop(temp, '0', recordTemp);
+    processRecordLoop(treeRoot, '0', recordTemp);
   }
-
   return (
     <Box {...rest}>
       <RenderTreeItemLoop

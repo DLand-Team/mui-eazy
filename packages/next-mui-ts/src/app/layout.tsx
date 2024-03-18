@@ -1,10 +1,10 @@
-import * as React from "react";
+import Provider from "@/provider/SetupLazyProvider";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import CssBaseline from "@mui/material/CssBaseline";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Provider from "@/provider/SetupLazyProvider";
 import "mui-eazy/dist/style.css";
+import * as React from "react";
+import Menu from "./components/menu";
+import { Container, Stack } from "@mui/material";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
 	return (
@@ -13,9 +13,10 @@ export default function RootLayout(props: { children: React.ReactNode }) {
 				<AppRouterCacheProvider options={{ enableCssLayer: true }}>
 					<Provider>
 						<CssBaseline />
-						<Header></Header>
-						{props.children}
-						<Footer></Footer>
+						<Stack direction="row">
+							<Menu />
+							{props.children}
+						</Stack>
 					</Provider>
 				</AppRouterCacheProvider>
 			</body>

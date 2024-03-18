@@ -212,7 +212,7 @@ export function TreeForm({
     <>
       {mdUp && (
         <Grid md={4}>
-          <Tree record={record} update={update} treeRoot={mockDataMeo} />
+          <Tree record={record} update={update} treeConfig={[mockDataMeo]} />
         </Grid>
       )}
 

@@ -2,21 +2,15 @@
 
 import { ThemeOptions, createTheme } from "@mui/material/styles";
 import { merge } from "lodash-es";
-import { Roboto } from "next/font/google";
-import { componentsOverrides } from "./overrides";
 import { customShadows } from "./custom-shadows";
 import { darkMode } from "./options/dark-mode";
 import { presets } from "./options/presets";
 import { direction } from "./options/right-to-left";
+import { componentsOverrides } from "./overrides";
 import { palette } from "./palette";
 import { shadows } from "./shadows";
 import { typography } from "./typography";
 
-const roboto = Roboto({
-	weight: ["300", "400", "500", "700"],
-	subsets: ["latin"],
-	display: "swap",
-});
 // ----------------------------------------------------------------------
 
 type Props = {

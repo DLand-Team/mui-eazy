@@ -8,7 +8,6 @@
 	"types": "dist/types/index.d.ts",
 	"version": "0.0.10",
 	"author": "闲D阿强",
-	"homepage": "https://design.06k4.com",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/WangYeWei/design-06k4"

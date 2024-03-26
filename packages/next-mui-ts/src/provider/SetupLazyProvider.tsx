@@ -1,7 +1,5 @@
 "use client";
 
-import theme from "@/theme";
-import { ThemeProvider } from "@mui/material/styles";
 import { LazyMotion, domMax, m } from "framer-motion";
 // ----------------------------------------------------------------------
 
@@ -12,9 +10,7 @@ type Props = {
 function SetupProvider({ children }: Props) {
 	return (
 		<LazyMotion strict features={domMax}>
-			<m.div style={{ height: "100%" }}>
-				<ThemeProvider theme={theme}>{children}</ThemeProvider>
-			</m.div>
+			<m.div style={{ height: "100%" }}>{children}</m.div>
 		</LazyMotion>
 	);
 }
